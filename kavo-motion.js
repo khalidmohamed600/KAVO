@@ -21,6 +21,9 @@
     document.body.insertBefore(fx, document.body.firstChild);
     var prog = document.createElement('div'); prog.id = 'kavo-prog'; document.body.appendChild(prog);
 
+    sc.setAttribute('tabindex', '-1'); sc.style.outline = 'none';
+    try { sc.focus({ preventScroll: true }); } catch (e) {}
+    document.addEventListener('pointerdown', function () { setTimeout(function () { var a = document.activeElement; if (!a || a === document.body) { try { sc.focus({ preventScroll: true }); } catch (e) {} } }, 0); }, true);
     var cur = 0, tgt = 0, running = false;
     function frame() {
       var vh = sc.clientHeight, max = Math.max(1, sc.scrollHeight - vh);
