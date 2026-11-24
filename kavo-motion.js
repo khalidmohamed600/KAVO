@@ -39,7 +39,7 @@
         var els = sc.querySelectorAll('.kavo-reveal');
         for (var k = 0; k < els.length; k++) {
           var r = els[k].getBoundingClientRect();
-          var rv = clamp((vh * 1.0 - r.top) / (vh * 0.4), 0, 1);
+          var rv = clamp((vh * 1.02 - r.top) / (vh * 0.26), 0, 1);
           rv = rv * rv * (3 - 2 * rv);
           els[k].style.setProperty('--rv', rv.toFixed(3));
         }
