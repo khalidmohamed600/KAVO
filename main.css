@@ -766,3 +766,9 @@ body {
   flex: none;
   color: #e6c152;
 }
+#kavo-home,
+#kavo-results,
+#kavo-cases,
+#kavo-contact {
+  scroll-margin-top: 136px;
+}
