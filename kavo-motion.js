@@ -6,7 +6,7 @@
     if (!sc) return false;
     if (document.getElementById('kavo-fx')) return true;
     var fx = document.createElement('div'); fx.id = 'kavo-fx'; fx.setAttribute('aria-hidden', 'true');
-    var words = 'PERFORMANCE \u2022 RESULTS \u2022 GROWTH \u2022 ROAS \u2022 ';
+    var words = 'PERFORMANCE \u2022 RESULTS \u2022 GROWTH \u2022 SCALE \u2022 ';
     var b1 = document.createElement('div'); b1.className = 'fx-band b1'; b1.textContent = words + words + words;
     var b2 = document.createElement('div'); b2.className = 'fx-band b2'; b2.textContent = 'KAVO \u2022 SCALE \u2022 KAVO \u2022 SCALE \u2022 KAVO \u2022 SCALE \u2022 KAVO \u2022 SCALE \u2022 ';
     fx.appendChild(b1); fx.appendChild(b2);

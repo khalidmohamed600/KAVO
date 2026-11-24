@@ -14261,9 +14261,8 @@ Error generating stack: ` + i.message + `
     ctaPrimary: "Message Khalid on WhatsApp",
     ctaSecondary: "See the results",
     heroStats: [
-      { value: "4.22x", label: "Average purchase ROAS" },
-      { value: "76", label: "Purchases driven" },
-      { value: "432,680", label: "Accounts reached" }
+      { value: "3", label: "Ad platforms: Meta, TikTok, Snapchat" },
+      { value: "2", label: "Brands featured" }
     ],
     whyLabel: "Why KAVO",
     whyHeading: "A performance-first approach",
@@ -14284,36 +14283,8 @@ Error generating stack: ` + i.message + `
     cs1Heading: "Automotive accessories brand",
     cs1P1: "Logo Drip is a Shopify store selling custom car emblems in three different designs, plus wheel center caps. The goal is online sales to car enthusiasts.",
     cs1P2: "KAVO runs the full funnel: sales campaigns built on creative testing and scaling, backed by traffic, engagement and follower campaigns that keep new audiences coming in.",
-    resultsHeading: "Results at a glance",
-    totals: [
-      { label: "Ad spend managed", value: "21,578.90 EGP" },
-      { label: "Purchases", value: "76" },
-      { label: "Average purchase ROAS", value: "4.22x" },
-      { label: "Average cost per purchase", value: "283.93 EGP" },
-      { label: "Conversion value reported by Meta", value: "91,108.00 EGP" },
-      { label: "Accounts reached", value: "432,680" }
-    ],
-    totalsCaption: "Totals from Meta Ads Manager, all 13 campaigns in the account, as screenshotted in November 2026, covering the full period KAVO has managed the account.",
-    salesHeading: "Sales campaigns",
-    sales: [
-      { number: 1, name: "az Flex creative 20/10 // 300 EGP", detail: "3,288.23 EGP spent, 26,683.00 EGP conversion value, 24 purchases at 137.01 EGP each", value: "8.11x ROAS" },
-      { number: 2, name: "KM // Scale Winner Campaign", detail: "513.71 EGP spent, 3,025.00 EGP conversion value, 3 purchases at 171.24 EGP each", value: "5.89x ROAS" },
-      { number: 3, name: "az creative 07/11/ 250", detail: "3,353.31 EGP spent, 18,912.00 EGP conversion value, 15 purchases at 223.55 EGP each", value: "5.64x ROAS" },
-      { number: 4, name: "AZ Flex 5/11 / 600 EGP", detail: "4,863.18 EGP spent, 26,980.00 EGP conversion value, 18 purchases at 270.18 EGP each", value: "5.55x ROAS" },
-      { number: 5, name: "az 20/11 // 150", detail: "356.31 EGP spent, 980.00 EGP conversion value, 1 purchase at 356.31 EGP", value: "2.75x ROAS" }
-    ],
-    salesCaption: "Per Meta Ads Manager. Sorted by return on ad spend.",
-    funnelHeading: "Traffic and engagement support",
-    funnel: [
-      { name: "KM // LD Traffic // LPV // 23/10", detail: "103,787 accounts reached, 19,065 link clicks at 0.15 EGP per click", value: "11.16% CTR" },
-      { name: "KM // Instagram Followers // 09-11", detail: "2,082 link clicks at 0.33 EGP per click", value: "7.88% CTR" },
-      { name: "KM // Engagement // Instagram // 05/11", detail: "107,178 accounts reached on 1,634.70 EGP spend", value: "12.44 EGP CPM" }
-    ],
-    shotsLabel: "From the ad account",
-    shotsHeading: "The actual screenshots",
-    shotsCaption: "Screenshots from the client ad account, shared by KAVO. Tap any image to zoom in. The client name stays private.",
-    measureTitle: "How to read these numbers",
-    measureBody: "All figures are as reported by Meta Ads Manager. Conversion value is what Meta attributes to purchases after someone sees or clicks an ad; it is not independently verified Shopify revenue.",
+    privHeading: "Results, in person",
+    privBody: "Campaign numbers and reports belong to the brands KAVO works with, so they are not published here. Message Khalid to see the full results for this brand in a private walkthrough.",
     cs2Label: "Cavelle",
     moreLabel: "More campaign work",
     moreHeading: "Across product categories",
@@ -14338,7 +14309,7 @@ Error generating stack: ` + i.message + `
     nameBody: "KAVO stands for Khalid Abdelzizz Value Optimization. The name says what the work is about: getting more value out of every pound of ad spend.",
     finalTitle: "Ready to grow your brand?",
     finalText: "Send a WhatsApp message with your product and your goal. It lands directly on Khalid's phone.",
-    closing: "Logo Drip figures from Meta Ads Manager screenshots, November 2026. Cavelle figures from Khalid's earlier portfolio."
+    closing: "Brand names are shown with permission of the work only. Detailed campaign results are shared privately."
   };
 
   // src/content-ar.ts
@@ -14350,9 +14321,8 @@ Error generating stack: ` + i.message + `
     ctaPrimary: "\u0643\u0644\u0651\u0645 \u062E\u0627\u0644\u062F \u0639\u0644\u0649 \u0648\u0627\u062A\u0633\u0627\u0628",
     ctaSecondary: "\u0634\u0627\u0647\u062F \u0627\u0644\u0646\u062A\u0627\u0626\u062C",
     heroStats: [
-      { value: "4.22x", label: "\u0645\u062A\u0648\u0633\u0637 ROAS \u0644\u0644\u0645\u0634\u062A\u0631\u064A\u0627\u062A" },
-      { value: "76", label: "\u0639\u0645\u0644\u064A\u0629 \u0634\u0631\u0627\u0621 \u0645\u0643\u062A\u0645\u0644\u0629" },
-      { value: "432,680", label: "\u062D\u0633\u0627\u0628 \u062A\u0645 \u0627\u0644\u0648\u0635\u0648\u0644 \u0644\u0647" }
+      { value: "3", label: "منصات إعلانية: ميتا وتيك توك وسناب" },
+      { value: "2", label: "براندات في الأعمال" }
     ],
     whyLabel: "\u0644\u0645\u0627\u0630\u0627 KAVO",
     whyHeading: "\u0645\u0646\u0647\u062C\u064A\u0629 \u0645\u0628\u0646\u064A\u0629 \u0639\u0644\u0649 \u0627\u0644\u0623\u062F\u0627\u0621",
@@ -14373,36 +14343,8 @@ Error generating stack: ` + i.message + `
     cs1Heading: "\u0628\u0631\u0627\u0646\u062F \u0625\u0643\u0633\u0633\u0648\u0627\u0631\u0627\u062A \u0633\u064A\u0627\u0631\u0627\u062A",
     cs1P1: "\u0627\u0644\u0639\u0645\u064A\u0644 \u0645\u062A\u062C\u0631 Shopify \u0628\u064A\u0628\u064A\u0639 \u0639\u0644\u0627\u0645\u0627\u062A \u0633\u064A\u0627\u0631\u0627\u062A \u0645\u0639\u062F\u0644\u0629 \u0628\u062B\u0644\u0627\u062B \u062A\u0635\u0645\u064A\u0645\u0627\u062A \u0645\u062E\u062A\u0644\u0641\u0629\u060C \u0628\u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0625\u0644\u0649 \u0637\u0628\u0627\u062A \u062C\u0646\u0648\u0637. \u0627\u0644\u0647\u062F\u0641 \u0647\u0648 \u0645\u0628\u064A\u0639\u0627\u062A \u0623\u0648\u0646\u0644\u0627\u064A\u0646 \u0644\u062C\u0645\u0647\u0648\u0631 \u0645\u0647\u062A\u0645 \u0628\u0627\u0644\u0633\u064A\u0627\u0631\u0627\u062A.",
     cs1P2: "KAVO \u0628\u062A\u062F\u064A\u0631 \u0627\u0644\u0642\u0645\u0639 \u0643\u0644\u0647: \u062D\u0645\u0644\u0627\u062A \u0645\u0628\u064A\u0639\u0627\u062A \u0645\u0628\u0646\u064A\u0629 \u0639\u0644\u0649 \u0627\u062E\u062A\u0628\u0627\u0631 \u0627\u0644\u0643\u0631\u064A\u0627\u062A\u064A\u0641 \u0648\u0627\u0644\u062A\u0648\u0633\u0639\u060C \u0645\u062F\u0639\u0648\u0645\u0629 \u0628\u062D\u0645\u0644\u0627\u062A \u062A\u0631\u0627\u0641\u064A\u0643 \u0648\u062A\u0641\u0627\u0639\u0644 \u0648\u0645\u062A\u0627\u0628\u0639\u064A\u0646 \u0628\u062A\u062C\u0630\u0628 \u062C\u0645\u0627\u0647\u064A\u0631 \u062C\u062F\u064A\u062F\u0629 \u0628\u0627\u0633\u062A\u0645\u0631\u0627\u0631.",
-    resultsHeading: "\u0627\u0644\u0646\u062A\u0627\u0626\u062C \u0641\u064A \u0644\u0645\u062D\u0629",
-    totals: [
-      { label: "\u0625\u062C\u0645\u0627\u0644\u064A \u0627\u0644\u0625\u0646\u0641\u0627\u0642 \u0627\u0644\u0625\u0639\u0644\u0627\u0646\u064A", value: "21,578.90 \u062C\u0646\u064A\u0647" },
-      { label: "\u0645\u0634\u062A\u0631\u064A\u0627\u062A", value: "76" },
-      { label: "\u0645\u062A\u0648\u0633\u0637 ROAS \u0644\u0644\u0645\u0634\u062A\u0631\u064A\u0627\u062A", value: "4.22x" },
-      { label: "\u0645\u062A\u0648\u0633\u0637 \u062A\u0643\u0644\u0641\u0629 \u0627\u0644\u0634\u0631\u0627\u0621", value: "283.93 \u062C\u0646\u064A\u0647" },
-      { label: "\u0642\u064A\u0645\u0629 \u0627\u0644\u062A\u062D\u0648\u064A\u0644\u0627\u062A \u0627\u0644\u0645\u0633\u062C\u0644\u0629 \u0641\u064A \u0645\u064A\u062A\u0627", value: "91,108.00 \u062C\u0646\u064A\u0647" },
-      { label: "\u062D\u0633\u0627\u0628\u0627\u062A \u062A\u0645 \u0627\u0644\u0648\u0635\u0648\u0644 \u0644\u0647\u0627", value: "432,680" }
-    ],
-    totalsCaption: "\u0625\u062C\u0645\u0627\u0644\u064A\u0627\u062A \u0645\u0646 Meta Ads Manager \u0644\u0643\u0644 \u062D\u0645\u0644\u0627\u062A \u0627\u0644\u062D\u0633\u0627\u0628 \u0627\u0644\u0640 13\u060C \u0643\u0645\u0627 \u0638\u0647\u0631\u062A \u0641\u064A \u0644\u0642\u0637\u0627\u062A \u0646\u0648\u0641\u0645\u0628\u0631 2026\u060C \u0648\u062A\u063A\u0637\u064A \u0627\u0644\u0641\u062A\u0631\u0629 \u0627\u0644\u0643\u0627\u0645\u0644\u0629 \u0644\u0625\u062F\u0627\u0631\u0629 KAVO \u0644\u0644\u062D\u0633\u0627\u0628.",
-    salesHeading: "\u062D\u0645\u0644\u0627\u062A \u0627\u0644\u0645\u0628\u064A\u0639\u0627\u062A",
-    sales: [
-      { number: 1, name: "az Flex creative 20/10 // 300 EGP", detail: "\u0625\u0646\u0641\u0627\u0642 3,288.23 \u062C\u0646\u064A\u0647\u060C \u0642\u064A\u0645\u0629 \u062A\u062D\u0648\u064A\u0644\u0627\u062A 26,683.00 \u062C\u0646\u064A\u0647\u060C 24 \u0639\u0645\u0644\u064A\u0629 \u0634\u0631\u0627\u0621 \u0628\u062A\u0643\u0644\u0641\u0629 137.01 \u062C\u0646\u064A\u0647 \u0644\u0644\u0639\u0645\u0644\u064A\u0629", value: "8.11x ROAS" },
-      { number: 2, name: "KM // Scale Winner Campaign", detail: "\u0625\u0646\u0641\u0627\u0642 513.71 \u062C\u0646\u064A\u0647\u060C \u0642\u064A\u0645\u0629 \u062A\u062D\u0648\u064A\u0644\u0627\u062A 3,025.00 \u062C\u0646\u064A\u0647\u060C 3 \u0645\u0634\u062A\u0631\u064A\u0627\u062A \u0628\u062A\u0643\u0644\u0641\u0629 171.24 \u062C\u0646\u064A\u0647 \u0644\u0644\u0639\u0645\u0644\u064A\u0629", value: "5.89x ROAS" },
-      { number: 3, name: "az creative 07/11/ 250", detail: "\u0625\u0646\u0641\u0627\u0642 3,353.31 \u062C\u0646\u064A\u0647\u060C \u0642\u064A\u0645\u0629 \u062A\u062D\u0648\u064A\u0644\u0627\u062A 18,912.00 \u062C\u0646\u064A\u0647\u060C 15 \u0639\u0645\u0644\u064A\u0629 \u0634\u0631\u0627\u0621 \u0628\u062A\u0643\u0644\u0641\u0629 223.55 \u062C\u0646\u064A\u0647 \u0644\u0644\u0639\u0645\u0644\u064A\u0629", value: "5.64x ROAS" },
-      { number: 4, name: "AZ Flex 5/11 / 600 EGP", detail: "\u0625\u0646\u0641\u0627\u0642 4,863.18 \u062C\u0646\u064A\u0647\u060C \u0642\u064A\u0645\u0629 \u062A\u062D\u0648\u064A\u0644\u0627\u062A 26,980.00 \u062C\u0646\u064A\u0647\u060C 18 \u0639\u0645\u0644\u064A\u0629 \u0634\u0631\u0627\u0621 \u0628\u062A\u0643\u0644\u0641\u0629 270.18 \u062C\u0646\u064A\u0647 \u0644\u0644\u0639\u0645\u0644\u064A\u0629", value: "5.55x ROAS" },
-      { number: 5, name: "az 20/11 // 150", detail: "\u0625\u0646\u0641\u0627\u0642 356.31 \u062C\u0646\u064A\u0647\u060C \u0642\u064A\u0645\u0629 \u062A\u062D\u0648\u064A\u0644\u0627\u062A 980.00 \u062C\u0646\u064A\u0647\u060C \u0639\u0645\u0644\u064A\u0629 \u0634\u0631\u0627\u0621 \u0648\u0627\u062D\u062F\u0629 \u0628\u062A\u0643\u0644\u0641\u0629 356.31 \u062C\u0646\u064A\u0647", value: "2.75x ROAS" }
-    ],
-    salesCaption: "\u062D\u0633\u0628 Meta Ads Manager\u060C \u0645\u0631\u062A\u0628\u0629 \u062D\u0633\u0628 \u0627\u0644\u0639\u0627\u0626\u062F \u0639\u0644\u0649 \u0627\u0644\u0625\u0646\u0641\u0627\u0642 \u0627\u0644\u0625\u0639\u0644\u0627\u0646\u064A.",
-    funnelHeading: "\u062D\u0645\u0644\u0627\u062A \u0627\u0644\u062A\u0631\u0627\u0641\u064A\u0643 \u0648\u0627\u0644\u062A\u0641\u0627\u0639\u0644",
-    funnel: [
-      { name: "KM // LD Traffic // LPV // 23/10", detail: "\u0627\u0644\u0648\u0635\u0648\u0644 \u0644\u0640 103,787 \u062D\u0633\u0627\u0628\u060C 19,065 \u0646\u0642\u0631\u0629 \u0639\u0644\u0649 \u0627\u0644\u0644\u064A\u0646\u0643 \u0628\u062A\u0643\u0644\u0641\u0629 0.15 \u062C\u0646\u064A\u0647 \u0644\u0644\u0646\u0642\u0631\u0629", value: "11.16% CTR" },
-      { name: "KM // Instagram Followers // 09-11", detail: "2,082 \u0646\u0642\u0631\u0629 \u0639\u0644\u0649 \u0627\u0644\u0644\u064A\u0646\u0643 \u0628\u062A\u0643\u0644\u0641\u0629 0.33 \u062C\u0646\u064A\u0647 \u0644\u0644\u0646\u0642\u0631\u0629", value: "7.88% CTR" },
-      { name: "KM // Engagement // Instagram // 05/11", detail: "\u0627\u0644\u0648\u0635\u0648\u0644 \u0644\u0640 107,178 \u062D\u0633\u0627\u0628 \u0628\u0625\u0646\u0641\u0627\u0642 1,634.70 \u062C\u0646\u064A\u0647", value: "12.44 \u062C\u0646\u064A\u0647 CPM" }
-    ],
-    shotsLabel: "\u0645\u0646 \u062D\u0633\u0627\u0628 \u0627\u0644\u0625\u0639\u0644\u0627\u0646\u0627\u062A",
-    shotsHeading: "\u0627\u0644\u0644\u0642\u0637\u0627\u062A \u0627\u0644\u0641\u0639\u0644\u064A\u0629",
-    shotsCaption: "\u0644\u0642\u0637\u0627\u062A \u0645\u0646 \u062D\u0633\u0627\u0628 \u0625\u0639\u0644\u0627\u0646\u0627\u062A \u0627\u0644\u0639\u0645\u064A\u0644 \u0634\u0627\u0631\u0643\u062A\u0647\u0627 KAVO. \u0627\u0636\u063A\u0637 \u0639\u0644\u0649 \u0623\u064A \u0635\u0648\u0631\u0629 \u0644\u0644\u062A\u0643\u0628\u064A\u0631. \u0627\u0633\u0645 \u0627\u0644\u0639\u0645\u064A\u0644 \u063A\u064A\u0631 \u0645\u0639\u0644\u0646.",
-    measureTitle: "\u0625\u0632\u0627\u064A \u062A\u0642\u0631\u0627 \u0627\u0644\u0623\u0631\u0642\u0627\u0645 \u062F\u064A",
-    measureBody: "\u0643\u0644 \u0627\u0644\u0623\u0631\u0642\u0627\u0645 \u0643\u0645\u0627 \u0633\u062C\u0644\u062A\u0647\u0627 \u0645\u0646\u0635\u0629 Meta Ads Manager. \u0642\u064A\u0645\u0629 \u0627\u0644\u062A\u062D\u0648\u064A\u0644\u0627\u062A \u0647\u064A \u0627\u0644\u0642\u064A\u0645\u0629 \u0627\u0644\u062A\u064A \u062A\u0646\u0633\u0628\u0647\u0627 \u0645\u064A\u062A\u0627 \u0644\u0644\u0645\u0634\u062A\u0631\u064A\u0627\u062A \u0628\u0639\u062F \u0645\u0634\u0627\u0647\u062F\u0629 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0623\u0648 \u0627\u0644\u0636\u063A\u0637 \u0639\u0644\u064A\u0647\u060C \u0648\u0644\u064A\u0633\u062A \u0625\u064A\u0631\u0627\u062F\u0627\u062A Shopify \u0645\u0648\u062B\u0642\u0629 \u0628\u0634\u0643\u0644 \u0645\u0633\u062A\u0642\u0644.",
+    privHeading: "النتائج بتتعرض في لقاء",
+    privBody: "أرقام الحملات والتقارير ملك البراندات اللي بنشتغل معاها، فمش بننشرها هنا. ابعت لخالد على واتساب وهيعرضلك النتائج الكاملة للبراند ده في لقاء خاص.",
     cs2Label: "Cavelle",
     moreLabel: "\u0634\u063A\u0644 \u0625\u0636\u0627\u0641\u064A",
     moreHeading: "\u0639\u0628\u0631 \u0641\u0626\u0627\u062A \u0645\u0646\u062A\u062C\u0627\u062A \u0645\u062E\u062A\u0644\u0641\u0629",
@@ -14427,17 +14369,8 @@ Error generating stack: ` + i.message + `
     nameBody: "KAVO \u0627\u062E\u062A\u0635\u0627\u0631 \u0644\u0640 Khalid Abdelzizz Value Optimization. \u0627\u0644\u0627\u0633\u0645 \u0628\u064A\u0639\u0628\u0651\u0631 \u0639\u0646 \u0641\u0643\u0631\u0629 \u0627\u0644\u0634\u063A\u0644: \u062A\u062D\u0642\u064A\u0642 \u0623\u0642\u0635\u0649 \u0642\u064A\u0645\u0629 \u0645\u0646 \u0643\u0644 \u062C\u0646\u064A\u0647 \u0625\u0639\u0644\u0627\u0646\u064A.",
     finalTitle: "\u062C\u0627\u0647\u0632 \u062A\u0646\u0645\u0651\u064A \u0628\u0631\u0627\u0646\u062F\u0643\u061F",
     finalText: "\u0627\u0628\u0639\u062A \u0631\u0633\u0627\u0644\u0629 \u0648\u0627\u062A\u0633\u0627\u0628 \u0641\u064A\u0647\u0627 \u0645\u0646\u062A\u062C\u0643 \u0648\u0647\u062F\u0641\u0643. \u0627\u0644\u0631\u0633\u0627\u0644\u0629 \u0628\u062A\u0648\u0635\u0644 \u0645\u0628\u0627\u0634\u0631\u0629 \u0639\u0644\u0649 \u062A\u0644\u064A\u0641\u0648\u0646 \u062E\u0627\u0644\u062F.",
-    closing: "أرقام Logo Drip من لقطات Meta Ads Manager، نوفمبر 2026. أرقام Cavelle من البورتفوليو السابق لخالد."
+    closing: "تفاصيل نتائج الحملات بتتشارك بشكل خاص."
   };
-
-  // src/photos/ads-manager-spend.jpg
-  var ads_manager_spend_default = "./assets/72TRR5XQ.jpg";
-
-  // src/photos/ads-manager-funnel.jpg
-  var ads_manager_funnel_default = "./assets/YAQQGNV2.jpg";
-
-  // src/photos/ads-manager-reach.jpg
-  var ads_manager_reach_default = "./assets/N3VVM5U4.jpg";
 
   // src/App.tsx
   var import_jsx_runtime = __toESM(require_jsx_runtime());
@@ -14532,12 +14465,6 @@ Error generating stack: ` + i.message + `
     const [brand, setBrand] = (0, import_react.useState)("drip");
     const t = lang === "ar" ? ar2 : en2;
     const rtl = lang === "ar";
-    const shots = [ads_manager_spend_default, ads_manager_funnel_default, ads_manager_reach_default];
-    const shotsAlt = [
-      "Meta Ads Manager campaigns table showing spend, purchases and ROAS columns",
-      "Meta Ads Manager campaigns table showing adds to cart, landing page views and CTR columns",
-      "Meta Ads Manager campaigns table showing reach, impressions, frequency and CPM columns"
-    ];
     return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileCard, { lang, dir: rtl ? "rtl" : "ltr", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "kavo", children: [
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-splash", "aria-hidden": "true", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "kavo-splash-inner", children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-wordmark kavo-wordmark-splash", children: "KAVO" }),
@@ -14604,18 +14531,17 @@ Error generating stack: ` + i.message + `
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-stat-value", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CountUp, { value: s.value }) }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-stat-label", children: s.label })
         ] }, s.label)) }),
-        (0, import_jsx_runtime.jsx)("p", { className: "kavo-stat-note", children: rtl ? "أرقام براند Logo Drip" : "Logo Drip campaign figures" })
-      ] }, lang),
+              ] }, lang),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.whyLabel, heading: t.whyHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-cards", children: t.why.map((c) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "kavo-card", children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-card-title", children: c.title }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-card-text", children: c.text })
       ] }, c.title)) }) }) }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.howLabel, heading: t.howHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NumberedList, { items: t.approach }) }) }),
       
-      (0, import_jsx_runtime.jsx)("section", { id: "kavo-brands", className: "kavo-brands", children: (0, import_jsx_runtime.jsx)(Reveal2, { children: (0, import_jsx_runtime.jsxs)(Group, { label: rtl ? "البراندات" : "Brands", heading: rtl ? "اختار البراند علشان تشوف أرقامه وتفاصيل شغله" : "Pick a brand to see its numbers and project details", children: [
+      (0, import_jsx_runtime.jsx)("section", { id: "kavo-brands", className: "kavo-brands", children: (0, import_jsx_runtime.jsx)(Reveal2, { children: (0, import_jsx_runtime.jsxs)(Group, { label: rtl ? "البراندات" : "Brands", heading: rtl ? "اختار البراند علشان تشوف KAVO بتشغّل له إيه" : "Pick a brand to see what KAVO runs for it", children: [
         (0, import_jsx_runtime.jsx)("div", { className: "kavo-tabs", role: "tablist", children: [
-          { id: "drip", name: "Logo Drip", tag: rtl ? "إكسسوارات سيارات · حملات مبيعات Shopify" : "Car accessories · Shopify sales", key: "4.22x ROAS" },
-          { id: "cavelle", name: "Cavelle", tag: rtl ? "براند شنط" : "Bags brand", key: rtl ? "+59 رسالة مؤهلة" : "59+ qualified messages" }
+          { id: "drip", name: "Logo Drip", tag: rtl ? "إكسسوارات سيارات · حملات مبيعات Shopify" : "Car accessories · Shopify sales", key: rtl ? "حملات مبيعات" : "Sales campaigns" },
+          { id: "cavelle", name: "Cavelle", tag: rtl ? "براند شنط" : "Bags brand", key: rtl ? "حملات رسائل" : "Messaging campaigns" }
         ].map((b) => (0, import_jsx_runtime.jsxs)("button", { type: "button", role: "tab", "aria-selected": brand === b.id, className: "kavo-tab" + (brand === b.id ? " is-active" : ""), onClick: () => setBrand(b.id), children: [
           (0, import_jsx_runtime.jsx)("span", { className: "kavo-tab-name", children: b.name }),
           (0, import_jsx_runtime.jsx)("span", { className: "kavo-tab-tag", children: b.tag }),
@@ -14623,46 +14549,20 @@ Error generating stack: ` + i.message + `
         ] }, b.id)) })
       ] }) }) }),
       brand === "drip" ? (0, import_jsx_runtime.jsxs)(import_react.Fragment, { children: [
-      (0, import_jsx_runtime.jsx)("section", { id: "kavo-results", children: (0, import_jsx_runtime.jsx)(Reveal2, { children: (0, import_jsx_runtime.jsxs)(Group, { label: t.cs1Label, heading: t.resultsHeading, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-facts", children: t.totals.map((f) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "kavo-fact", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-fact-value", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CountUp, { value: f.value }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-fact-label", children: f.label })
-        ] }, f.label)) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Caption, { children: t.totalsCaption })
+      (0, import_jsx_runtime.jsx)("section", { id: "kavo-results", children: (0, import_jsx_runtime.jsx)(Reveal2, { children: (0, import_jsx_runtime.jsxs)(Group, { label: t.cs1Label, heading: t.privHeading, children: [
+        (0, import_jsx_runtime.jsx)(Text, { children: (0, import_jsx_runtime.jsx)(Paragraph, { children: t.privBody }) }),
+        (0, import_jsx_runtime.jsx)(ButtonLink, { href: WHATSAPP, variant: "primary", pill: true, children: t.ctaPrimary })
       ] }) }) }, "res-" + brand),
-      (0, import_jsx_runtime.jsxs)("section", { id: "kavo-cases", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.cs1Label, heading: t.cs1Heading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Text, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Paragraph, { children: t.cs1P1 }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Paragraph, { children: t.cs1P2 })
-        ] }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Group, { label: t.cs1Label, heading: t.salesHeading, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Rows, { children: t.sales.map((c) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Row, { number: c.number, name: c.name, detail: c.detail, value: c.value, valueKnown: true }, c.name)) }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Caption, { children: t.salesCaption })
-        ] }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.cs1Label, heading: t.funnelHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Rows, { children: t.funnel.map((c) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Row, { name: c.name, detail: c.detail, value: c.value, valueKnown: true }, c.name)) }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Group, { label: t.shotsLabel, heading: t.shotsHeading, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-            Photos,
-            {
-              label: "Meta Ads Manager",
-              title: "Meta Ads Manager campaign views",
-              layout: "strip",
-              items: shots.map((src, i) => ({ src, alt: shotsAlt[i] }))
-            }
-          ),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Caption, { children: t.shotsCaption }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Callout, { title: t.measureTitle, tone: "note", children: t.measureBody })
-        ] }) }),
-      ] }, "cases-" + brand),
+      (0, import_jsx_runtime.jsx)("section", { id: "kavo-cases", children: (0, import_jsx_runtime.jsx)(Reveal2, { children: (0, import_jsx_runtime.jsx)(Group, { label: t.cs1Label, heading: t.cs1Heading, children: (0, import_jsx_runtime.jsxs)(Text, { children: [
+        (0, import_jsx_runtime.jsx)(Paragraph, { children: t.cs1P1 }),
+        (0, import_jsx_runtime.jsx)(Paragraph, { children: t.cs1P2 })
+      ] }) }) }) }, "cases-" + brand)
       ] }) : (0, import_jsx_runtime.jsxs)(import_react.Fragment, { children: [
-      (0, import_jsx_runtime.jsx)("section", { id: "kavo-results", children: (0, import_jsx_runtime.jsx)(Reveal2, { children: (0, import_jsx_runtime.jsxs)(Group, { label: t.cs2Label, heading: rtl ? "النتائج في لمحة" : "Results at a glance", children: [
-        (0, import_jsx_runtime.jsx)("div", { className: "kavo-facts", children: [{ value: rtl ? "+59" : "59+", label: rtl ? "رسالة مؤهلة" : "Qualified messages" }, { value: rtl ? "7.5 جنيه" : "7.5 EGP", label: rtl ? "تكلفة الرسالة" : "Cost per message" }, { value: rtl ? "447 جنيه" : "447 EGP", label: rtl ? "إجمالي الإنفاق الإعلاني" : "Total ad spend" }].map((f) => (0, import_jsx_runtime.jsxs)("div", { className: "kavo-fact", children: [
-          (0, import_jsx_runtime.jsx)("span", { className: "kavo-fact-value", children: (0, import_jsx_runtime.jsx)(CountUp, { value: f.value }) }),
-          (0, import_jsx_runtime.jsx)("span", { className: "kavo-fact-label", children: f.label })
-        ] }, f.label)) }),
-        (0, import_jsx_runtime.jsx)(Caption, { children: rtl ? "أرقام الحملة كما هي في البورتفوليو السابق لخالد." : "Campaign figures as reported in Khalid's earlier portfolio." })
+      (0, import_jsx_runtime.jsx)("section", { id: "kavo-results", children: (0, import_jsx_runtime.jsx)(Reveal2, { children: (0, import_jsx_runtime.jsxs)(Group, { label: t.cs2Label, heading: t.privHeading, children: [
+        (0, import_jsx_runtime.jsx)(Text, { children: (0, import_jsx_runtime.jsx)(Paragraph, { children: t.privBody }) }),
+        (0, import_jsx_runtime.jsx)(ButtonLink, { href: WHATSAPP, variant: "primary", pill: true, children: t.ctaPrimary })
       ] }) }) }, "res-" + brand),
-      (0, import_jsx_runtime.jsx)("section", { id: "kavo-cases", children: (0, import_jsx_runtime.jsx)(Reveal2, { children: (0, import_jsx_runtime.jsx)(Group, { label: t.cs2Label, heading: rtl ? "براند شنط" : "Bags brand", children: (0, import_jsx_runtime.jsx)(Text, { children: (0, import_jsx_runtime.jsx)(Paragraph, { children: rtl ? "Cavelle براند شنط. حملة رسائل على ميتا جابت +59 رسالة مؤهلة بتكلفة 7.5 جنيه للرسالة على إنفاق 447 جنيه. باقي تفاصيل المشروع هتتضاف هنا." : "Cavelle is a bags brand. The Meta messaging campaign brought 59+ qualified messages at 7.5 EGP each on 447 EGP of ad spend. More project details will be added here." }) }) }) }) }, "cases-" + brand),
+      (0, import_jsx_runtime.jsx)("section", { id: "kavo-cases", children: (0, import_jsx_runtime.jsx)(Reveal2, { children: (0, import_jsx_runtime.jsx)(Group, { label: t.cs2Label, heading: rtl ? "براند شنط" : "Bags brand", children: (0, import_jsx_runtime.jsx)(Text, { children: (0, import_jsx_runtime.jsx)(Paragraph, { children: rtl ? "Cavelle براند شنط. KAVO بتشغّل له حملات رسائل على ميتا بهدف جلب محادثات مؤهلة من عملاء مهتمين بالمنتج." : "Cavelle is a bags brand. KAVO runs Meta messaging campaigns for it, aimed at bringing in qualified conversations from interested buyers." }) }) }) }) }, "cases-" + brand)
       ] }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.indLabel, heading: t.indHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-chips", children: t.industries.map((i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-chip", children: i }, i)) }) }) }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.servLabel, heading: t.servHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Bullets, { items: t.services }) }) }),

@@ -56,3 +56,17 @@ html, body { background: #0c0b0d; }
 }
 @media (max-width: 700px) { #kavo-fx .fx-band.b2 { display: none; } }
 @media (prefers-reduced-motion: reduce) { #kavo-fx .fx-band, #kavo-fx .fx-shard, #kavo-fx .fx-ring { display: none; } }
+
+/* eye-comfort pass: softer charcoal base, calmer glow, clearer body text */
+html, body { background: #131217; }
+.kavo { --ds-foreground-2: rgb(244 241 234 / 0.84); --ds-foreground-3: rgb(244 241 234 / 0.68); --ds-hairline: rgb(244 241 234 / 0.16); scrollbar-color: #b8962e #131217; }
+.kavo::-webkit-scrollbar-track { background: #131217; }
+.kavo::-webkit-scrollbar-thumb { border-color: #131217; }
+#kavo-fx { background:
+    radial-gradient(1000px 520px at 50% -100px, rgb(212 175 55 / 0.10), transparent 72%),
+    radial-gradient(800px 600px at 90% 45%, rgb(120 110 160 / 0.07), transparent 72%),
+    linear-gradient(180deg, #17161c 0%, #131217 55%, #15141a 100%); }
+#kavo-fx .fx-band { -webkit-text-stroke-color: rgb(212 175 55 / 0.09); }
+#kavo-fx .fx-band.b2 { -webkit-text-stroke-color: rgb(244 241 234 / 0.045); }
+#kavo-fx .fx-shard { box-shadow: 0 0 18px rgb(212 175 55 / 0.10); opacity: 0.8; }
+.kavo-card, .kavo-fact, .kavo-tab { background-color: rgb(30 28 36 / 0.82); }
