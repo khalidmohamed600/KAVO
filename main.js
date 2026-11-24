@@ -14464,9 +14464,6 @@ Error generating stack: ` + i.message + `
     closing: "\u0623\u0631\u0642\u0627\u0645 \u0628\u0631\u0627\u0646\u062F \u0625\u0643\u0633\u0633\u0648\u0627\u0631\u0627\u062A \u0627\u0644\u0633\u064A\u0627\u0631\u0627\u062A \u0645\u0646 \u0644\u0642\u0637\u0627\u062A Meta Ads Manager\u060C \u0646\u0648\u0641\u0645\u0628\u0631 2026. \u0623\u0631\u0642\u0627\u0645 \u062D\u0645\u0644\u0629 \u0627\u0644\u0623\u0632\u064A\u0627\u0621 \u0645\u0646\u0642\u0648\u0644\u0629 \u0645\u0646 \u0627\u0644\u0628\u0648\u0631\u062A\u0641\u0644\u064A\u0648 \u0627\u0644\u0633\u0627\u0628\u0642 \u0644\u062E\u0627\u0644\u062F."
   };
 
-  // src/photos/kavo-logo.jpg
-  var kavo_logo_default = "./assets/Y4HUVKZJ.jpg";
-
   // src/photos/ads-manager-spend.jpg
   var ads_manager_spend_default = "./assets/72TRR5XQ.jpg";
 
@@ -14576,7 +14573,7 @@ Error generating stack: ` + i.message + `
     ];
     return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileCard, { lang, dir: rtl ? "rtl" : "ltr", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "kavo", children: [
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-splash", "aria-hidden": "true", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "kavo-splash-inner", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", { src: kavo_logo_default, alt: "" }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-wordmark kavo-wordmark-splash", children: "KAVO" }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-splash-sub", children: "Performance Marketing" }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-splash-bar" }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-splash-status", children: "Loading Experience" })
@@ -14620,9 +14617,8 @@ Error generating stack: ` + i.message + `
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {}),
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {})
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-logo-clip", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", { className: "kavo-logo", src: kavo_logo_default, alt: "KAVO Performance Marketing logo, gold and silver wordmark on black" }) })
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", { className: "kavo-wordmark", children: "KAVO" })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", { className: "kavo-title", children: "KAVO" }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "kavo-subtitle", children: t.subtitle }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "kavo-intro", children: t.intro }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "kavo-cta", children: [
@@ -14643,18 +14639,18 @@ Error generating stack: ` + i.message + `
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-card-text", children: c.text })
       ] }, c.title)) }) }) }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.howLabel, heading: t.howHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NumberedList, { items: t.approach }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", { id: "kavo-cases", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { id: "kavo-results", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { id: "kavo-cases", children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.cs1Label, heading: t.cs1Heading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Text, { children: [
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Paragraph, { children: t.cs1P1 }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Paragraph, { children: t.cs1P2 })
         ] }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Group, { label: t.cs1Label, heading: t.resultsHeading, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", { id: "kavo-results", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Group, { label: t.nav.results, heading: t.resultsHeading, children: [
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-facts", children: t.totals.map((f) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "kavo-fact", children: [
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-fact-value", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CountUp, { value: f.value }) }),
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-fact-label", children: f.label })
           ] }, f.label)) }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Caption, { children: t.totalsCaption })
-        ] }) }),
+        ] }) }) }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Group, { label: t.cs1Label, heading: t.salesHeading, children: [
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Rows, { children: t.sales.map((c) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Row, { number: c.number, name: c.name, detail: c.detail, value: c.value, valueKnown: true }, c.name)) }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Caption, { children: t.salesCaption })
@@ -14672,19 +14668,19 @@ Error generating stack: ` + i.message + `
           ),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Caption, { children: t.shotsCaption }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Callout, { title: t.measureTitle, tone: "note", children: t.measureBody })
+        ] }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Group, { label: t.cs2Label, heading: t.cs2Heading, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Text, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Paragraph, { children: t.cs2P1 }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-stats", children: t.cs2Stats.map((s) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "kavo-stat", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-stat-value", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CountUp, { value: s.value }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-stat-label", children: s.label })
+          ] }, s.label)) }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Caption, { children: t.cs2Caption }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Text, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Paragraph, { children: t.cs2Worked }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Bullets, { items: t.cs2Strategy }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Callout, { title: t.cs2InsightTitle, tone: "note", children: t.cs2Insight })
         ] }) })
-      ] }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Group, { label: t.cs2Label, heading: t.cs2Heading, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Text, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Paragraph, { children: t.cs2P1 }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-stats", children: t.cs2Stats.map((s) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "kavo-stat", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-stat-value", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CountUp, { value: s.value }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-stat-label", children: s.label })
-        ] }, s.label)) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Caption, { children: t.cs2Caption }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Text, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Paragraph, { children: t.cs2Worked }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Bullets, { items: t.cs2Strategy }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Callout, { title: t.cs2InsightTitle, tone: "note", children: t.cs2Insight })
-      ] }) }),
+      ] }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.moreLabel, heading: t.moreHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Rows, { children: t.more.map((c) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Row, { name: c.name, detail: c.detail, value: c.value, valueKnown: true }, c.name)) }) }) }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.indLabel, heading: t.indHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-chips", children: t.industries.map((i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-chip", children: i }, i)) }) }) }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.servLabel, heading: t.servHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Bullets, { items: t.services }) }) }),
