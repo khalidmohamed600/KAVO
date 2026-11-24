@@ -14639,17 +14639,17 @@ Error generating stack: ` + i.message + `
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-card-text", children: c.text })
       ] }, c.title)) }) }) }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.howLabel, heading: t.howHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NumberedList, { items: t.approach }) }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", { id: "kavo-results", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Group, { label: t.nav.results, heading: t.resultsHeading, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-facts", children: t.totals.map((f) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "kavo-fact", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-fact-value", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CountUp, { value: f.value }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-fact-label", children: f.label })
+        ] }, f.label)) }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Caption, { children: t.totalsCaption })
+      ] }) }) }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { id: "kavo-cases", children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.cs1Label, heading: t.cs1Heading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Text, { children: [
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Paragraph, { children: t.cs1P1 }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Paragraph, { children: t.cs1P2 })
-        ] }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", { id: "kavo-results", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Group, { label: t.nav.results, heading: t.resultsHeading, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-facts", children: t.totals.map((f) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "kavo-fact", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-fact-value", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CountUp, { value: f.value }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-fact-label", children: f.label })
-          ] }, f.label)) }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Caption, { children: t.totalsCaption })
         ] }) }) }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Group, { label: t.cs1Label, heading: t.salesHeading, children: [
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Rows, { children: t.sales.map((c) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Row, { number: c.number, name: c.name, detail: c.detail, value: c.value, valueKnown: true }, c.name)) }),
