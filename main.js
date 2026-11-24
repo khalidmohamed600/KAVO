@@ -14507,7 +14507,8 @@ Error generating stack: ` + i.message + `
     { en: "WhatsApp \xB7 Abdelaziz", ar: "\u0648\u0627\u062A\u0633\u0627\u0628 \xB7 \u0639\u0628\u062F \u0627\u0644\u0639\u0632\u064A\u0632", href: WHATSAPP_ABDELAZIZ, icon: "whatsapp" },
     { en: "Instagram \xB7 Khalid", ar: "\u0625\u0646\u0633\u062A\u062C\u0631\u0627\u0645 \xB7 \u062E\u0627\u0644\u062F", href: "https://www.instagram.com/khalid__mohamed/", icon: "instagram" },
     { en: "Instagram \xB7 Abdelaziz", ar: "\u0625\u0646\u0633\u062A\u062C\u0631\u0627\u0645 \xB7 \u0639\u0628\u062F \u0627\u0644\u0639\u0632\u064A\u0632", href: "https://www.instagram.com/abdelaziz_ahmed.1/", icon: "instagram" },
-    { en: "Facebook", ar: "\u0641\u064A\u0633\u0628\u0648\u0643", href: "https://www.facebook.com/share/1AnnV5Wc8c/?mibextid=wwXIfr", icon: "facebook" }
+    { en: "Facebook \xB7 Khalid", ar: "\u0641\u064A\u0633\u0628\u0648\u0643 \xB7 \u062E\u0627\u0644\u062F", href: "https://www.facebook.com/share/1AnnV5Wc8c/?mibextid=wwXIfr", icon: "facebook" },
+    { en: "Facebook \xB7 Abdelaziz", ar: "\u0641\u064A\u0633\u0628\u0648\u0643 \xB7 \u0639\u0628\u062F \u0627\u0644\u0639\u0632\u064A\u0632", href: "https://www.facebook.com/share/1EL7XGbNDT/?mibextid=wwXIfr", icon: "facebook" }
   ];
   function Reveal2({ children }) {
     const ref = (0, import_react.useRef)(null);
