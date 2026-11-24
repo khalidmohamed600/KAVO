@@ -14496,11 +14496,70 @@ Error generating stack: ` + i.message + `
     ] }),
     contact: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", { width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" }) })
   };
+  var BRAND_ICONS = {
+    whatsapp: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", { width: "16", height: "16", viewBox: "0 0 24 24", fill: "currentColor", "aria-hidden": "true", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413" }) }),
+    instagram: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", { width: "16", height: "16", viewBox: "0 0 24 24", fill: "currentColor", "aria-hidden": "true", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" }) }),
+    facebook: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", { width: "16", height: "16", viewBox: "0 0 24 24", fill: "currentColor", "aria-hidden": "true", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" }) })
+  };
   var SOCIALS = [
-    { en: "WhatsApp", ar: "\u0648\u0627\u062A\u0633\u0627\u0628", href: WHATSAPP },
-    { en: "Instagram", ar: "\u0625\u0646\u0633\u062A\u062C\u0631\u0627\u0645", href: "https://www.instagram.com/khalid_m3geztoo?igsh=dHhkaHdjcXlpajBr&utm_source=qr" },
-    { en: "Facebook", ar: "\u0641\u064A\u0633\u0628\u0648\u0643", href: "https://www.facebook.com/share/1AnnV5Wc8c/?mibextid=wwXIfr" }
+    { en: "WhatsApp", ar: "\u0648\u0627\u062A\u0633\u0627\u0628", href: WHATSAPP, icon: "whatsapp" },
+    { en: "Instagram", ar: "\u0625\u0646\u0633\u062A\u062C\u0631\u0627\u0645", href: "https://www.instagram.com/khalid_m3geztoo/", icon: "instagram" },
+    { en: "Facebook", ar: "\u0641\u064A\u0633\u0628\u0648\u0643", href: "https://www.facebook.com/share/1AnnV5Wc8c/?mibextid=wwXIfr", icon: "facebook" }
   ];
+  function Reveal2({ children }) {
+    const ref = (0, import_react.useRef)(null);
+    const [on, setOn] = (0, import_react.useState)(false);
+    (0, import_react.useEffect)(() => {
+      const el = ref.current;
+      if (!el) return;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setOn(true);
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.12 });
+      observer.observe(el);
+      return () => observer.disconnect();
+    }, []);
+    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { ref, className: "kavo-reveal" + (on ? " is-on" : ""), children });
+  }
+  function CountUp({ value }) {
+    const ref = (0, import_react.useRef)(null);
+    const [display, setDisplay] = (0, import_react.useState)(value);
+    (0, import_react.useEffect)(() => {
+      const el = ref.current;
+      const match = /^(\+?)([\d,]+(?:\.\d+)?)(.*)$/.exec(value);
+      if (!el || !match || typeof IntersectionObserver === "undefined") return;
+      const prefix = match[1];
+      const target = parseFloat(match[2].replace(/,/g, ""));
+      const suffix = match[3];
+      const decimals = (match[2].split(".")[1] || "").length;
+      const format = (n) => prefix + n.toLocaleString("en-US", { minimumFractionDigits: decimals, maximumFractionDigits: decimals }) + suffix;
+      let started = false;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting || started) return;
+          started = true;
+          observer.disconnect();
+          const t02 = performance.now();
+          const duration = 1600;
+          const tick = (now) => {
+            const p = Math.min((now - t02) / duration, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            setDisplay(format(target * eased));
+            if (p < 1) requestAnimationFrame(tick);
+            else setDisplay(value);
+          };
+          requestAnimationFrame(tick);
+        });
+      }, { threshold: 0.4 });
+      observer.observe(el);
+      return () => observer.disconnect();
+    }, [value]);
+    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { ref, children: display });
+  }
   function App() {
     const [lang, setLang] = (0, import_react.useState)("en");
     const t = lang === "ar" ? ar2 : en2;
@@ -14514,7 +14573,9 @@ Error generating stack: ` + i.message + `
     return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileCard, { lang, dir: rtl ? "rtl" : "ltr", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "kavo", children: [
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-splash", "aria-hidden": "true", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "kavo-splash-inner", children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", { src: kavo_logo_default, alt: "" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-splash-bar" })
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-splash-sub", children: "Performance Marketing" }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-splash-bar" }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-splash-status", children: "Loading Experience" })
       ] }) }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "kavo-lang", role: "group", "aria-label": "Language", children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { type: "button", className: lang === "en" ? "is-active" : "", onClick: () => setLang("en"), children: "EN" }),
@@ -14540,7 +14601,23 @@ Error generating stack: ` + i.message + `
       ] }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { className: "kavo-hero", id: "kavo-home", children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-eyebrow", children: t.eyebrow }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", { className: "kavo-logo", src: kavo_logo_default, alt: "KAVO Performance Marketing logo, gold and silver wordmark on black" }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "kavo-logo-stage", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "kavo-particles", "aria-hidden": "true", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {}),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {}),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {}),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {}),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {}),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {}),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {}),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {}),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {}),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {}),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {}),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {})
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", { className: "kavo-logo", src: kavo_logo_default, alt: "KAVO Performance Marketing logo, gold and silver wordmark on black" })
+        ] }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", { className: "kavo-title", children: "KAVO" }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "kavo-subtitle", children: t.subtitle }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "kavo-intro", children: t.intro }),
@@ -14548,35 +14625,38 @@ Error generating stack: ` + i.message + `
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ButtonLink, { href: WHATSAPP, variant: "primary", pill: true, children: t.ctaPrimary }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", { className: "file-button is-pill", "data-variant": "secondary", href: "#kavo-results", children: t.ctaSecondary })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-social", children: SOCIALS.map((s22) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", { href: s22.href, children: rtl ? s22.ar : s22.en }, s22.en)) }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-social", children: SOCIALS.map((s22) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", { href: s22.href, target: "_blank", rel: "noreferrer", children: [
+          BRAND_ICONS[s22.icon],
+          rtl ? s22.ar : s22.en
+        ] }, s22.en)) }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-stats", children: t.heroStats.map((s) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "kavo-stat", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-stat-value", children: s.value }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-stat-value", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CountUp, { value: s.value }) }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-stat-label", children: s.label })
         ] }, s.label)) })
       ] }, lang),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.whyLabel, heading: t.whyHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-cards", children: t.why.map((c) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "kavo-card", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.whyLabel, heading: t.whyHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-cards", children: t.why.map((c) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "kavo-card", children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-card-title", children: c.title }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-card-text", children: c.text })
-      ] }, c.title)) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.howLabel, heading: t.howHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NumberedList, { items: t.approach }) }),
+      ] }, c.title)) }) }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.howLabel, heading: t.howHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NumberedList, { items: t.approach }) }) }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", { id: "kavo-cases", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { id: "kavo-results", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.cs1Label, heading: t.cs1Heading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Text, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.cs1Label, heading: t.cs1Heading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Text, { children: [
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Paragraph, { children: t.cs1P1 }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Paragraph, { children: t.cs1P2 })
-        ] }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Group, { label: t.cs1Label, heading: t.resultsHeading, children: [
+        ] }) }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Group, { label: t.cs1Label, heading: t.resultsHeading, children: [
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-facts", children: t.totals.map((f) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "kavo-fact", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-fact-value", children: f.value }),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-fact-value", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CountUp, { value: f.value }) }),
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-fact-label", children: f.label })
           ] }, f.label)) }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Caption, { children: t.totalsCaption })
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Group, { label: t.cs1Label, heading: t.salesHeading, children: [
+        ] }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Group, { label: t.cs1Label, heading: t.salesHeading, children: [
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Rows, { children: t.sales.map((c) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Row, { number: c.number, name: c.name, detail: c.detail, value: c.value, valueKnown: true }, c.name)) }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Caption, { children: t.salesCaption })
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.cs1Label, heading: t.funnelHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Rows, { children: t.funnel.map((c) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Row, { name: c.name, detail: c.detail, value: c.value, valueKnown: true }, c.name)) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Group, { label: t.shotsLabel, heading: t.shotsHeading, children: [
+        ] }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.cs1Label, heading: t.funnelHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Rows, { children: t.funnel.map((c) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Row, { name: c.name, detail: c.detail, value: c.value, valueKnown: true }, c.name)) }) }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Group, { label: t.shotsLabel, heading: t.shotsHeading, children: [
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
             Photos,
             {
@@ -14588,28 +14668,31 @@ Error generating stack: ` + i.message + `
           ),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Caption, { children: t.shotsCaption }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Callout, { title: t.measureTitle, tone: "note", children: t.measureBody })
-        ] })
+        ] }) })
       ] }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Group, { label: t.cs2Label, heading: t.cs2Heading, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Group, { label: t.cs2Label, heading: t.cs2Heading, children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Text, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Paragraph, { children: t.cs2P1 }) }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-stats", children: t.cs2Stats.map((s) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "kavo-stat", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-stat-value", children: s.value }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-stat-value", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CountUp, { value: s.value }) }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-stat-label", children: s.label })
         ] }, s.label)) }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Caption, { children: t.cs2Caption }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Text, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Paragraph, { children: t.cs2Worked }) }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Bullets, { items: t.cs2Strategy }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Callout, { title: t.cs2InsightTitle, tone: "note", children: t.cs2Insight })
-      ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.moreLabel, heading: t.moreHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Rows, { children: t.more.map((c) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Row, { name: c.name, detail: c.detail, value: c.value, valueKnown: true }, c.name)) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.indLabel, heading: t.indHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-chips", children: t.industries.map((i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-chip", children: i }, i)) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.servLabel, heading: t.servHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Bullets, { items: t.services }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.nameLabel, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Text, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Paragraph, { children: t.nameBody }) }) }),
+      ] }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.moreLabel, heading: t.moreHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Rows, { children: t.more.map((c) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Row, { name: c.name, detail: c.detail, value: c.value, valueKnown: true }, c.name)) }) }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.indLabel, heading: t.indHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-chips", children: t.industries.map((i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-chip", children: i }, i)) }) }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.servLabel, heading: t.servHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Bullets, { items: t.services }) }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.nameLabel, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Text, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Paragraph, { children: t.nameBody }) }) }) }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { className: "kavo-final", id: "kavo-contact", children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { className: "kavo-final-title", children: t.finalTitle }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "kavo-final-text", children: t.finalText }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ButtonLink, { href: WHATSAPP, variant: "primary", pill: true, children: t.ctaPrimary }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-social", children: SOCIALS.map((s22) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", { href: s22.href, children: rtl ? s22.ar : s22.en }, s22.en)) })
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-social", children: SOCIALS.map((s22) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", { href: s22.href, target: "_blank", rel: "noreferrer", children: [
+          BRAND_ICONS[s22.icon],
+          rtl ? s22.ar : s22.en
+        ] }, s22.en)) })
       ] }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Closing, { children: t.closing })
     ] }) });
