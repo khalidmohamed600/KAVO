@@ -790,3 +790,6 @@ body {
 .kavo-tab.is-active .kavo-tab-name { color: #e6c152; }
 .kavo-tab-tag { font-size: 12.5px; color: var(--ds-foreground-2); }
 .kavo-tab-key { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; color: #d4af37; }
+
+#kavo-brands, #kavo-results, #kavo-cases { margin-bottom: 26px; }
+#kavo-cases { padding-top: 6px; }

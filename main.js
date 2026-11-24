@@ -14282,7 +14282,7 @@ Error generating stack: ` + i.message + `
     ],
     cs1Label: "Logo Drip",
     cs1Heading: "Automotive accessories brand",
-    cs1P1: "The client is a Shopify store selling custom car emblems in three different designs, plus wheel center caps. The goal is online sales to car enthusiasts.",
+    cs1P1: "Logo Drip is a Shopify store selling custom car emblems in three different designs, plus wheel center caps. The goal is online sales to car enthusiasts.",
     cs1P2: "KAVO runs the full funnel: sales campaigns built on creative testing and scaling, backed by traffic, engagement and follower campaigns that keep new audiences coming in.",
     resultsHeading: "Results at a glance",
     totals: [
@@ -14699,7 +14699,6 @@ Error generating stack: ` + i.message + `
       (0, import_jsx_runtime.jsxs)("section", { id: "kavo-cases", children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Group, { label: t.cs2Label, heading: t.cs2Heading, children: [
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Text, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Paragraph, { children: t.cs2P1 }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Caption, { children: t.cs2Caption }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Text, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Paragraph, { children: t.cs2Worked }) }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Bullets, { items: t.cs2Strategy }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Callout, { title: t.cs2InsightTitle, tone: "note", children: t.cs2Insight })
