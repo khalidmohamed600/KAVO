@@ -14315,23 +14315,6 @@ Error generating stack: ` + i.message + `
     measureTitle: "How to read these numbers",
     measureBody: "All figures are as reported by Meta Ads Manager. Conversion value is what Meta attributes to purchases after someone sees or clicks an ad; it is not independently verified Shopify revenue.",
     cs2Label: "Cavelle",
-    cs2Heading: "Bags brand campaign",
-    cs2P1: "A performance-driven Meta messaging campaign for Cavelle, a bags brand in Egypt: creative testing, audience optimization and qualified message generation.",
-    cs2Stats: [
-      { value: "59+", label: "Qualified messages" },
-      { value: "7.5 EGP", label: "Cost per message" },
-      { value: "447 EGP", label: "Total ad spend" }
-    ],
-    cs2Caption: "Reported campaign figures, carried over from Khalid's earlier portfolio. CTR and engagement were strong.",
-    cs2Worked: "What worked:",
-    cs2Strategy: [
-      "Tested multiple creatives to identify the strongest-performing product angle",
-      "Focused budget on the highest-demand product and strongest creative",
-      "Used duplication to scale winning ad variations while preserving performance",
-      "Optimized campaigns based on CTR, engagement and cost per message"
-    ],
-    cs2InsightTitle: "Key insight",
-    cs2Insight: "Strong efficiency at the message-generation level. The next gain is raising the conversion rate from messages to actual sales through better offers and sales handling.",
     moreLabel: "More campaign work",
     moreHeading: "Across product categories",
     more: [
@@ -14355,7 +14338,7 @@ Error generating stack: ` + i.message + `
     nameBody: "KAVO stands for Khalid Abdelzizz Value Optimization. The name says what the work is about: getting more value out of every pound of ad spend.",
     finalTitle: "Ready to grow your brand?",
     finalText: "Send a WhatsApp message with your product and your goal. It lands directly on Khalid's phone.",
-    closing: "Logo Drip figures from Meta Ads Manager screenshots, November 2026. Cavelle figures carried over from Khalid's earlier portfolio."
+    closing: "Logo Drip figures from Meta Ads Manager screenshots, November 2026."
   };
 
   // src/content-ar.ts
@@ -14421,23 +14404,6 @@ Error generating stack: ` + i.message + `
     measureTitle: "\u0625\u0632\u0627\u064A \u062A\u0642\u0631\u0627 \u0627\u0644\u0623\u0631\u0642\u0627\u0645 \u062F\u064A",
     measureBody: "\u0643\u0644 \u0627\u0644\u0623\u0631\u0642\u0627\u0645 \u0643\u0645\u0627 \u0633\u062C\u0644\u062A\u0647\u0627 \u0645\u0646\u0635\u0629 Meta Ads Manager. \u0642\u064A\u0645\u0629 \u0627\u0644\u062A\u062D\u0648\u064A\u0644\u0627\u062A \u0647\u064A \u0627\u0644\u0642\u064A\u0645\u0629 \u0627\u0644\u062A\u064A \u062A\u0646\u0633\u0628\u0647\u0627 \u0645\u064A\u062A\u0627 \u0644\u0644\u0645\u0634\u062A\u0631\u064A\u0627\u062A \u0628\u0639\u062F \u0645\u0634\u0627\u0647\u062F\u0629 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0623\u0648 \u0627\u0644\u0636\u063A\u0637 \u0639\u0644\u064A\u0647\u060C \u0648\u0644\u064A\u0633\u062A \u0625\u064A\u0631\u0627\u062F\u0627\u062A Shopify \u0645\u0648\u062B\u0642\u0629 \u0628\u0634\u0643\u0644 \u0645\u0633\u062A\u0642\u0644.",
     cs2Label: "Cavelle",
-    cs2Heading: "حملة براند شنط",
-    cs2P1: "حملة رسائل على ميتا لبراند Cavelle للشنط في مصر: اختبار كرياتيف وتحسين جمهور وتوليد رسائل مؤهلة.",
-    cs2Stats: [
-      { value: "+59", label: "\u0631\u0633\u0627\u0644\u0629 \u0645\u0624\u0647\u0644\u0629" },
-      { value: "7.5 \u062C\u0646\u064A\u0647", label: "\u062A\u0643\u0644\u0641\u0629 \u0627\u0644\u0631\u0633\u0627\u0644\u0629" },
-      { value: "447 \u062C\u0646\u064A\u0647", label: "\u0625\u062C\u0645\u0627\u0644\u064A \u0627\u0644\u0625\u0646\u0641\u0627\u0642 \u0627\u0644\u0625\u0639\u0644\u0627\u0646\u064A" }
-    ],
-    cs2Caption: "\u0623\u0631\u0642\u0627\u0645 \u0627\u0644\u062D\u0645\u0644\u0629 \u0643\u0645\u0627 \u0646\u064F\u0634\u0631\u062A \u0641\u064A \u0627\u0644\u0628\u0648\u0631\u062A\u0641\u0644\u064A\u0648 \u0627\u0644\u0633\u0627\u0628\u0642 \u0644\u062E\u0627\u0644\u062F. \u0646\u0633\u0628\u0629 \u0627\u0644\u0646\u0642\u0631 \u0648\u0627\u0644\u062A\u0641\u0627\u0639\u0644 \u0643\u0627\u0646\u0648\u0627 \u0642\u0648\u064A\u064A\u0646.",
-    cs2Worked: "\u0627\u0644\u0644\u064A \u0646\u062C\u062D:",
-    cs2Strategy: [
-      "\u0627\u062E\u062A\u0628\u0627\u0631 \u0623\u0643\u062B\u0631 \u0645\u0646 \u0643\u0631\u064A\u0627\u062A\u064A\u0641 \u0644\u062A\u062D\u062F\u064A\u062F \u0632\u0627\u0648\u064A\u0629 \u0627\u0644\u0645\u0646\u062A\u062C \u0627\u0644\u0623\u0642\u0648\u0649 \u0623\u062F\u0627\u0621\u064B",
-      "\u062A\u0631\u0643\u064A\u0632 \u0627\u0644\u0645\u064A\u0632\u0627\u0646\u064A\u0629 \u0639\u0644\u0649 \u0627\u0644\u0645\u0646\u062A\u062C \u0627\u0644\u0623\u0639\u0644\u0649 \u0637\u0644\u0628\u064B\u0627 \u0648\u0627\u0644\u0643\u0631\u064A\u0627\u062A\u064A\u0641 \u0627\u0644\u0623\u0642\u0648\u0649",
-      "\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0627\u0644\u0646\u0633\u062E \u0644\u062A\u0648\u0633\u064A\u0639 \u0627\u0644\u0625\u0639\u0644\u0627\u0646\u0627\u062A \u0627\u0644\u0646\u0627\u062C\u062D\u0629 \u0645\u0639 \u0627\u0644\u062D\u0641\u0627\u0638 \u0639\u0644\u0649 \u0627\u0644\u0623\u062F\u0627\u0621",
-      "\u062A\u062D\u0633\u064A\u0646 \u0627\u0644\u062D\u0645\u0644\u0627\u062A \u0628\u0646\u0627\u0621\u064B \u0639\u0644\u0649 CTR \u0648\u0627\u0644\u062A\u0641\u0627\u0639\u0644 \u0648\u062A\u0643\u0644\u0641\u0629 \u0627\u0644\u0631\u0633\u0627\u0644\u0629"
-    ],
-    cs2InsightTitle: "\u0627\u0644\u062E\u0644\u0627\u0635\u0629",
-    cs2Insight: "\u0643\u0641\u0627\u0621\u0629 \u0642\u0648\u064A\u0629 \u0639\u0644\u0649 \u0645\u0633\u062A\u0648\u0649 \u062A\u0648\u0644\u064A\u062F \u0627\u0644\u0631\u0633\u0627\u0626\u0644. \u0627\u0644\u062E\u0637\u0648\u0629 \u0627\u0644\u062A\u0627\u0644\u064A\u0629 \u0647\u064A \u0631\u0641\u0639 \u0645\u0639\u062F\u0644 \u062A\u062D\u0648\u064A\u0644 \u0627\u0644\u0631\u0633\u0627\u0626\u0644 \u0625\u0644\u0649 \u0645\u0628\u064A\u0639\u0627\u062A \u0641\u0639\u0644\u064A\u0629 \u0645\u0646 \u062E\u0644\u0627\u0644 \u0639\u0631\u0648\u0636 \u0623\u0641\u0636\u0644 \u0648\u0625\u062F\u0627\u0631\u0629 \u0645\u0628\u064A\u0639\u0627\u062A \u0623\u062D\u0633\u0646.",
     moreLabel: "\u0634\u063A\u0644 \u0625\u0636\u0627\u0641\u064A",
     moreHeading: "\u0639\u0628\u0631 \u0641\u0626\u0627\u062A \u0645\u0646\u062A\u062C\u0627\u062A \u0645\u062E\u062A\u0644\u0641\u0629",
     more: [
@@ -14461,7 +14427,7 @@ Error generating stack: ` + i.message + `
     nameBody: "KAVO \u0627\u062E\u062A\u0635\u0627\u0631 \u0644\u0640 Khalid Abdelzizz Value Optimization. \u0627\u0644\u0627\u0633\u0645 \u0628\u064A\u0639\u0628\u0651\u0631 \u0639\u0646 \u0641\u0643\u0631\u0629 \u0627\u0644\u0634\u063A\u0644: \u062A\u062D\u0642\u064A\u0642 \u0623\u0642\u0635\u0649 \u0642\u064A\u0645\u0629 \u0645\u0646 \u0643\u0644 \u062C\u0646\u064A\u0647 \u0625\u0639\u0644\u0627\u0646\u064A.",
     finalTitle: "\u062C\u0627\u0647\u0632 \u062A\u0646\u0645\u0651\u064A \u0628\u0631\u0627\u0646\u062F\u0643\u061F",
     finalText: "\u0627\u0628\u0639\u062A \u0631\u0633\u0627\u0644\u0629 \u0648\u0627\u062A\u0633\u0627\u0628 \u0641\u064A\u0647\u0627 \u0645\u0646\u062A\u062C\u0643 \u0648\u0647\u062F\u0641\u0643. \u0627\u0644\u0631\u0633\u0627\u0644\u0629 \u0628\u062A\u0648\u0635\u0644 \u0645\u0628\u0627\u0634\u0631\u0629 \u0639\u0644\u0649 \u062A\u0644\u064A\u0641\u0648\u0646 \u062E\u0627\u0644\u062F.",
-    closing: "أرقام Logo Drip من لقطات Meta Ads Manager، نوفمبر 2026. أرقام Cavelle منقولة من البورتفوليو السابق لخالد."
+    closing: "أرقام Logo Drip من لقطات Meta Ads Manager، نوفمبر 2026."
   };
 
   // src/photos/ads-manager-spend.jpg
@@ -14649,7 +14615,7 @@ Error generating stack: ` + i.message + `
       (0, import_jsx_runtime.jsx)("section", { id: "kavo-brands", className: "kavo-brands", children: (0, import_jsx_runtime.jsx)(Reveal2, { children: (0, import_jsx_runtime.jsxs)(Group, { label: rtl ? "البراندات" : "Brands", heading: rtl ? "اختار البراند علشان تشوف أرقامه وتفاصيل شغله" : "Pick a brand to see its numbers and project details", children: [
         (0, import_jsx_runtime.jsx)("div", { className: "kavo-tabs", role: "tablist", children: [
           { id: "drip", name: "Logo Drip", tag: rtl ? "إكسسوارات سيارات · حملات مبيعات Shopify" : "Car accessories · Shopify sales", key: "4.22x ROAS" },
-          { id: "cavelle", name: "Cavelle", tag: rtl ? "براند شنط · حملة رسائل على ميتا" : "Bags · Meta messaging", key: rtl ? "+59 رسالة مؤهلة" : "59+ qualified messages" }
+          { id: "cavelle", name: "Cavelle", tag: rtl ? "براند شنط" : "Bags brand", key: rtl ? "التفاصيل قريبًا" : "Details being added" }
         ].map((b) => (0, import_jsx_runtime.jsxs)("button", { type: "button", role: "tab", "aria-selected": brand === b.id, className: "kavo-tab" + (brand === b.id ? " is-active" : ""), onClick: () => setBrand(b.id), children: [
           (0, import_jsx_runtime.jsx)("span", { className: "kavo-tab-name", children: b.name }),
           (0, import_jsx_runtime.jsx)("span", { className: "kavo-tab-tag", children: b.tag }),
@@ -14689,21 +14655,8 @@ Error generating stack: ` + i.message + `
         ] }) }),
       ] }, "cases-" + brand),
       ] }) : (0, import_jsx_runtime.jsxs)(import_react.Fragment, { children: [
-      (0, import_jsx_runtime.jsx)("section", { id: "kavo-results", children: (0, import_jsx_runtime.jsx)(Reveal2, { children: (0, import_jsx_runtime.jsxs)(Group, { label: t.cs2Label, heading: t.resultsHeading, children: [
-        (0, import_jsx_runtime.jsx)("div", { className: "kavo-facts", children: t.cs2Stats.map((f) => (0, import_jsx_runtime.jsxs)("div", { className: "kavo-fact", children: [
-          (0, import_jsx_runtime.jsx)("span", { className: "kavo-fact-value", children: (0, import_jsx_runtime.jsx)(CountUp, { value: f.value }) }),
-          (0, import_jsx_runtime.jsx)("span", { className: "kavo-fact-label", children: f.label })
-        ] }, f.label)) }),
-        (0, import_jsx_runtime.jsx)(Caption, { children: t.cs2Caption })
-      ] }) }) }, "res-" + brand),
-      (0, import_jsx_runtime.jsxs)("section", { id: "kavo-cases", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Group, { label: t.cs2Label, heading: t.cs2Heading, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Text, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Paragraph, { children: t.cs2P1 }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Text, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Paragraph, { children: t.cs2Worked }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Bullets, { items: t.cs2Strategy }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Callout, { title: t.cs2InsightTitle, tone: "note", children: t.cs2Insight })
-        ] }) })
-      ] }, "cases-" + brand),
+      (0, import_jsx_runtime.jsx)("section", { id: "kavo-results", children: (0, import_jsx_runtime.jsx)(Reveal2, { children: (0, import_jsx_runtime.jsx)(Group, { label: t.cs2Label, heading: rtl ? "النتائج في لمحة" : "Results at a glance", children: (0, import_jsx_runtime.jsx)(Text, { children: (0, import_jsx_runtime.jsx)(Paragraph, { children: rtl ? "أرقام Cavelle بتتأكد وهتتضاف هنا." : "Cavelle figures are being confirmed and will be added here." }) }) }) }) }, "res-" + brand),
+      (0, import_jsx_runtime.jsx)("section", { id: "kavo-cases", children: (0, import_jsx_runtime.jsx)(Reveal2, { children: (0, import_jsx_runtime.jsx)(Group, { label: t.cs2Label, heading: rtl ? "براند شنط" : "Bags brand", children: (0, import_jsx_runtime.jsx)(Text, { children: (0, import_jsx_runtime.jsx)(Paragraph, { children: rtl ? "Cavelle براند شنط. تفاصيل المشروع هتتضاف هنا." : "Cavelle is a bags brand. Its project details will be added here." }) }) }) }) }, "cases-" + brand),
       ] }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.indLabel, heading: t.indHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-chips", children: t.industries.map((i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "kavo-chip", children: i }, i)) }) }) }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal2, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Group, { label: t.servLabel, heading: t.servHeading, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Bullets, { items: t.services }) }) }),
