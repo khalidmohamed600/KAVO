@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KAVO | Khalid Abdelzizz - Performance Marketing Portfolio</title>
+<meta name="description" content="KAVO - Khalid Abdelzizz Value Optimization. Performance marketing portfolio: Meta ads results, case studies, and contact.">
+<link rel="icon" href="assets/Y4HUVKZJ.jpg">
+<link rel="stylesheet" href="main.css">
+</head>
+<body style="margin:0;padding:0;">
+<div id="root"></div>
+<script>
+(() => {
+  const base = location.href.split('#')[0].split('?')[0].split('/').slice(0,-1).join('/') + '/';
+  window.instinctFile = Object.freeze({
+    initialRoute: decodeURIComponent(location.hash.slice(1) || '/'),
+    route: () => {},
+    asset: (name) => new URL(name, base).href,
+    request: () => Promise.reject(new Error('Not available in the standalone build')),
+    live: Object.freeze({ subscribe: () => () => {}, hold: () => {}, reveal: () => {} }),
+  });
+})();
+</script>
+<script src="main.js"></script>
+</body>
+</html>
