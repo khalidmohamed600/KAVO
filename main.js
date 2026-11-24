@@ -14479,6 +14479,7 @@ Error generating stack: ` + i.message + `
   // src/App.tsx
   var import_jsx_runtime = __toESM(require_jsx_runtime());
   var WHATSAPP = "https://wa.me/201022517124?text=Hi+Khalid%2C+I+saw+your+KAVO+portfolio+and+I+would+like+to+discuss+working+together.";
+  var WHATSAPP_ABDELAZIZ = "https://wa.me/201120058157?text=Hi+Abdelaziz%2C+I+saw+the+KAVO+portfolio+and+I+would+like+to+discuss+working+together.";
   var ICONS = {
     home: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", { width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", children: [
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M3 10.5 12 3l9 7.5" }),
@@ -14502,8 +14503,10 @@ Error generating stack: ` + i.message + `
     facebook: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", { width: "16", height: "16", viewBox: "0 0 24 24", fill: "currentColor", "aria-hidden": "true", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" }) })
   };
   var SOCIALS = [
-    { en: "WhatsApp", ar: "\u0648\u0627\u062A\u0633\u0627\u0628", href: WHATSAPP, icon: "whatsapp" },
-    { en: "Instagram", ar: "\u0625\u0646\u0633\u062A\u062C\u0631\u0627\u0645", href: "https://www.instagram.com/khalid_m3geztoo/", icon: "instagram" },
+    { en: "WhatsApp \xB7 Khalid", ar: "\u0648\u0627\u062A\u0633\u0627\u0628 \xB7 \u062E\u0627\u0644\u062F", href: WHATSAPP, icon: "whatsapp" },
+    { en: "WhatsApp \xB7 Abdelaziz", ar: "\u0648\u0627\u062A\u0633\u0627\u0628 \xB7 \u0639\u0628\u062F \u0627\u0644\u0639\u0632\u064A\u0632", href: WHATSAPP_ABDELAZIZ, icon: "whatsapp" },
+    { en: "Instagram \xB7 Khalid", ar: "\u0625\u0646\u0633\u062A\u062C\u0631\u0627\u0645 \xB7 \u062E\u0627\u0644\u062F", href: "https://www.instagram.com/khalid__mohamed/", icon: "instagram" },
+    { en: "Instagram \xB7 Abdelaziz", ar: "\u0625\u0646\u0633\u062A\u062C\u0631\u0627\u0645 \xB7 \u0639\u0628\u062F \u0627\u0644\u0639\u0632\u064A\u0632", href: "https://www.instagram.com/abdelaziz_ahmed.1/", icon: "instagram" },
     { en: "Facebook", ar: "\u0641\u064A\u0633\u0628\u0648\u0643", href: "https://www.facebook.com/share/1AnnV5Wc8c/?mibextid=wwXIfr", icon: "facebook" }
   ];
   function Reveal2({ children }) {
