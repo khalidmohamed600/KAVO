@@ -14616,7 +14616,7 @@ Error generating stack: ` + i.message + `
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {}),
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {})
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", { className: "kavo-logo", src: kavo_logo_default, alt: "KAVO Performance Marketing logo, gold and silver wordmark on black" })
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "kavo-logo-clip", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", { className: "kavo-logo", src: kavo_logo_default, alt: "KAVO Performance Marketing logo, gold and silver wordmark on black" }) })
         ] }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", { className: "kavo-title", children: "KAVO" }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "kavo-subtitle", children: t.subtitle }),

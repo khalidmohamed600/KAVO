@@ -554,7 +554,16 @@ body {
 .kavo-logo-stage {
   position: relative;
   display: block;
-  margin-top: 6px;
+  width: fit-content;
+  margin: 6px auto 0;
+}
+.kavo-logo-clip {
+  position: relative;
+  overflow: hidden;
+  border-radius: 26px;
+}
+.kavo-logo-clip .kavo-logo {
+  margin-top: 0;
 }
 .kavo-logo-stage::before {
   content: "";
@@ -579,12 +588,8 @@ body {
     transform: scale(1.04);
   }
 }
-.kavo-logo-stage .kavo-logo {
-  position: relative;
-  margin-top: 0;
-}
 @media (prefers-reduced-motion: no-preference) {
-  .kavo-logo-stage .kavo-logo {
+  .kavo-logo-clip {
     animation: kavo-float 5s ease-in-out 3s infinite;
   }
   @keyframes kavo-float {
@@ -595,16 +600,16 @@ body {
       transform: translateY(-8px);
     }
   }
-  .kavo-logo-stage::after {
+  .kavo-logo-clip::after {
     content: "";
     position: absolute;
     inset: 0;
     background:
       linear-gradient(
         115deg,
-        transparent 30%,
-        rgb(255 238 180 / 0.4) 50%,
-        transparent 70%);
+        transparent 38%,
+        rgb(255 238 180 / 0.35) 50%,
+        transparent 62%);
     transform: translateX(-130%) skewX(-12deg);
     animation: kavo-logo-shine 4.8s ease-in-out 3.4s infinite;
     pointer-events: none;
