@@ -16,8 +16,10 @@ em{font-style:normal;color:var(--gold)}
 .mark{display:flex;direction:ltr;font:500 clamp(46px,10vw,92px)/1 Season,serif;letter-spacing:.18em;margin-right:-.18em}
 .mark span{opacity:0;transform:translateY(.25em);animation:ltr .55s cubic-bezier(.22,.8,.3,1) forwards}
 .mark span:nth-child(1){animation-delay:.05s}.mark span:nth-child(2){animation-delay:.17s}.mark span:nth-child(3){animation-delay:.29s}.mark span:nth-child(4){animation-delay:.41s;color:var(--gold)}
-.bar{height:1px;width:0;background:var(--gold);opacity:.7;animation:bar .8s cubic-bezier(.4,0,.2,1) .15s forwards}
-@keyframes bar{to{width:min(220px,42vw)}}
+.bar{position:relative;height:2px;width:min(220px,46vw);background:var(--line);border-radius:2px;overflow:hidden;opacity:0;animation:barin .3s ease .1s forwards}
+.bar::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);transform-origin:left;animation:fill .85s cubic-bezier(.45,.05,.25,1) .15s forwards}
+@keyframes barin{to{opacity:1}}
+@keyframes fill{to{transform:scaleX(1)}}
 @keyframes ltr{to{opacity:1;transform:none}}
 @keyframes out{to{opacity:0;visibility:hidden}}
 /* top bar */
