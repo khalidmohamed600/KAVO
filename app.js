@@ -2,7 +2,7 @@
 var d=document,root=d.documentElement,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 /* intro: remove from the page once it has faded */
 var intro=d.getElementById('intro');
-if(intro){setTimeout(function(){intro.remove()},reduce?0:1700)}
+if(intro){setTimeout(function(){intro.remove()},reduce?0:1500)}
 /* language */
 function setLang(l){
   root.lang=l;root.dir=l==='ar'?'rtl':'ltr';
@@ -17,7 +17,7 @@ var els=d.querySelectorAll('.r');
 if('IntersectionObserver' in window&&!reduce){
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
   els.forEach(function(e,i){e.style.transitionDelay=(Math.min(i%4,3)*60)+'ms';io.observe(e)});
-  setTimeout(function(){els.forEach(function(e){if(e.getBoundingClientRect().top<innerHeight)e.classList.add('in')})},1100);
+  setTimeout(function(){els.forEach(function(e){if(e.getBoundingClientRect().top<innerHeight)e.classList.add('in')})},900);
 }else els.forEach(function(e){e.classList.add('in')});
 /* brand panels */
 function count(b){
