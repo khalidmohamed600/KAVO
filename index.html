@@ -1,29 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>KAVO | Khalid Abdelzizz - Performance Marketing Portfolio</title>
-<meta name="description" content="KAVO - Khalid Abdelzizz Value Optimization. Performance marketing portfolio: Meta ads results, case studies, and contact.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KAVO | Khalid Abdelzizz - Performance Marketing</title>
+<meta name="description" content="KAVO - Khalid Abdelzizz Value Optimization. Performance marketing and media buying for e-commerce brands.">
+<meta name="theme-color" content="#121211">
 <link rel="icon" href="assets/Y4HUVKZJ.jpg">
-<link rel="stylesheet" href="main.css">
-<link rel="stylesheet" href="kavo-motion.css?v=4">
+<link rel="preload" href="fonts/SeasonMix-Medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/GT-America-Standard-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css?v=1">
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('kavo-lang')==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl'}}catch(e){}</script>
 </head>
-<body style="margin:0;padding:0;">
-<div id="root"></div>
-<script>
-(() => {
-  const base = location.href.split('#')[0].split('?')[0].split('/').slice(0,-1).join('/') + '/';
-  window.instinctFile = Object.freeze({
-    initialRoute: decodeURIComponent(location.hash.slice(1) || '/'),
-    route: () => {},
-    asset: (name) => new URL(name, base).href,
-    request: () => Promise.reject(new Error('Not available in the standalone build')),
-    live: Object.freeze({ subscribe: () => () => {}, hold: () => {}, reveal: () => {} }),
-  });
-})();
-</script>
-<script src="main.js"></script>
-<script src="kavo-motion.js?v=4"></script>
+<body>
+<div class="intro" id="intro" aria-hidden="true"><div class="mark"><span>K</span><span>A</span><span>V</span><span>O</span></div></div>
+
+<header class="top">
+  <a class="logo" href="#home" aria-label="KAVO">KAVO</a>
+  <nav aria-label="Sections">
+    <a href="#brands" data-en="Brands" data-ar="البراندات">Brands</a>
+    <a href="#approach" data-en="Approach" data-ar="الأسلوب">Approach</a>
+    <a href="#services" data-en="Services" data-ar="الخدمات">Services</a>
+    <a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a>
+  </nav>
+  <button class="lang" id="lang" type="button" aria-label="Language"><span data-l="en">EN</span><span data-l="ar">عربي</span></button>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="glow" aria-hidden="true"></div>
+  <p class="eyebrow r" data-en="Performance marketing · Media buying" data-ar="تسويق بالأداء · شراء إعلانات">Performance marketing · Media buying</p>
+  <h1 class="r" data-en="Ads that bring <em>buyers</em>, not just clicks." data-ar="إعلانات تجيب <em>مشترين</em>، مش مجرد نقرات.">Ads that bring <em>buyers</em>, not just clicks.</h1>
+  <p class="lead r" data-en="KAVO runs paid campaigns on Meta, TikTok and Snapchat for e-commerce brands. Test the creative, keep what sells, scale it." data-ar="KAVO بتدير حملات مدفوعة على ميتا وتيك توك وسناب لبراندات التجارة الإلكترونية. نختبر الكرياتيف، نكمّل على اللي بيبيع، ونكبّره.">KAVO runs paid campaigns on Meta, TikTok and Snapchat for e-commerce brands. Test the creative, keep what sells, scale it.</p>
+  <div class="cta r">
+    <a class="btn solid" href="#brands" data-en="See the brands" data-ar="شوف البراندات">See the brands</a>
+    <a class="btn line" href="https://wa.me/201022517124?text=Hi+Khalid%2C+I+saw+your+KAVO+portfolio+and+I+would+like+to+discuss+working+together." target="_blank" rel="noreferrer" data-en="Message Khalid on WhatsApp" data-ar="كلّم خالد على واتساب">Message Khalid on WhatsApp</a>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="track"><span>META</span><i></i><span>TIKTOK</span><i></i><span>SNAPCHAT</span><i></i><span>SHOPIFY</span><i></i><span>CREATIVE TESTING</span><i></i><span>SCALING</span><i></i><span>META</span><i></i><span>TIKTOK</span><i></i><span>SNAPCHAT</span><i></i><span>SHOPIFY</span><i></i><span>CREATIVE TESTING</span><i></i><span>SCALING</span><i></i></div></div>
+
+<section class="sec" id="brands">
+  <p class="lab r" data-en="Brands" data-ar="البراندات">Brands</p>
+  <h2 class="r" data-en="Work that sells" data-ar="شغل بيبيع">Work that sells</h2>
+
+  <div class="brand open r">
+    <button type="button" aria-expanded="true" aria-controls="p1">
+      <span class="n">01</span>
+      <span class="bt"><span class="nm">Logo Drip</span><span class="tg" data-en="Car accessories · Shopify sales campaigns" data-ar="إكسسوارات سيارات · حملات مبيعات Shopify">Car accessories · Shopify sales campaigns</span></span>
+      <span class="ar"></span>
+    </button>
+    <div class="panel" id="p1"><div>
+      <p class="desc" data-en="Logo Drip is a Shopify store selling custom car emblems in three designs, plus wheel center caps. KAVO runs the full funnel: sales campaigns built on creative testing and scaling, backed by traffic, engagement and follower campaigns." data-ar="Logo Drip متجر Shopify بيبيع علامات سيارات معدلة بثلاث تصميمات، بالإضافة إلى طبات الجنوط. KAVO بتدير القمع كله: حملات مبيعات مبنية على اختبار الكرياتيف والتوسع، مدعومة بحملات ترافيك وتفاعل ومتابعين.">Logo Drip is a Shopify store selling custom car emblems in three designs, plus wheel center caps. KAVO runs the full funnel: sales campaigns built on creative testing and scaling, backed by traffic, engagement and follower campaigns.</p>
+      <div class="figs">
+        <div class="fig"><b data-to="76">76</b><span data-en="Purchases" data-ar="عمليات شراء">Purchases</span></div>
+        <div class="fig"><b data-to="4.22" data-d="2" data-s="x">4.22x</b><span data-en="Average purchase ROAS" data-ar="متوسط ROAS للمشتريات">Average purchase ROAS</span></div>
+        <div class="fig"><b data-to="432680">432,680</b><span data-en="Accounts reached" data-ar="حساب تم الوصول له">Accounts reached</span></div>
+      </div>
+      <p class="cap" data-en="As reported by Meta Ads Manager across the full period KAVO has managed the account." data-ar="كما هي في Meta Ads Manager عن الفترة كاملة اللي KAVO بتدير فيها الحساب.">As reported by Meta Ads Manager across the full period KAVO has managed the account.</p>
+      <p class="priv"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span data-en="Spend and revenue are shared in a private meeting." data-ar="الصرف والمبيعات بتتعرض في لقاء خاص.">Spend and revenue are shared in a private meeting.</span></p>
+    </div></div>
+  </div>
+
+  <div class="brand r">
+    <button type="button" aria-expanded="false" aria-controls="p2">
+      <span class="n">02</span>
+      <span class="bt"><span class="nm">Cavelle</span><span class="tg" data-en="Bags · Meta messaging campaigns" data-ar="براند شنط · حملات رسائل على ميتا">Bags · Meta messaging campaigns</span></span>
+      <span class="ar"></span>
+    </button>
+    <div class="panel" id="p2"><div>
+      <p class="desc" data-en="Cavelle is a bags brand. KAVO runs Meta messaging campaigns for it, aimed at bringing in qualified conversations from interested buyers." data-ar="Cavelle براند شنط. KAVO بتشغّل له حملات رسائل على ميتا بهدف جلب محادثات مؤهلة من عملاء مهتمين بالمنتج.">Cavelle is a bags brand. KAVO runs Meta messaging campaigns for it, aimed at bringing in qualified conversations from interested buyers.</p>
+      <div class="figs">
+        <div class="fig"><b data-to="59" data-s="+">59+</b><span data-en="Qualified messages" data-ar="رسالة مؤهلة">Qualified messages</span></div>
+      </div>
+      <p class="cap" data-en="Campaign figure from Khalid's earlier portfolio." data-ar="رقم الحملة من البورتفوليو السابق لخالد.">Campaign figure from Khalid's earlier portfolio.</p>
+      <p class="priv"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span data-en="Spend and cost per message are shared in a private meeting." data-ar="الصرف وتكلفة الرسالة بيتعرضوا في لقاء خاص.">Spend and cost per message are shared in a private meeting.</span></p>
+    </div></div>
+  </div>
+</section>
+
+<section class="sec" id="approach">
+  <p class="lab r" data-en="Approach" data-ar="الأسلوب">Approach</p>
+  <h2 class="r" data-en="Launch, optimize, scale" data-ar="نطلق، نحسّن، نكبّر">Launch, optimize, scale</h2>
+  <ol class="steps">
+    <li class="r"><b data-en="Launch" data-ar="إطلاق">Launch</b><p data-en="Build structured campaigns, test creative angles and open multiple audience opportunities." data-ar="نبني حملات منظمة، ونختبر زوايا كرياتيف مختلفة، ونفتح أكثر من فرصة جمهور.">Build structured campaigns, test creative angles and open multiple audience opportunities.</p></li>
+    <li class="r"><b data-en="Optimize" data-ar="تحسين">Optimize</b><p data-en="Read the performance data, identify winning combinations and improve efficiency." data-ar="نقرا بيانات الأداء، ونحدد التركيبات الرابحة، ونرفع الكفاءة.">Read the performance data, identify winning combinations and improve efficiency.</p></li>
+    <li class="r"><b data-en="Scale" data-ar="توسّع">Scale</b><p data-en="Increase investment in proven winners while keeping control over efficiency." data-ar="نزوّد الاستثمار في الرابحين المثبتين مع الحفاظ على التحكم في الكفاءة.">Increase investment in proven winners while keeping control over efficiency.</p></li>
+  </ol>
+</section>
+
+<section class="sec" id="services">
+  <p class="lab r" data-en="Services" data-ar="الخدمات">Services</p>
+  <h2 class="r" data-en="What KAVO does" data-ar="KAVO بتعمل إيه">What KAVO does</h2>
+  <ul class="svc">
+    <li class="r" data-en="Media buying across Meta, TikTok, Snapchat and Google Ads" data-ar="شراء إعلانات على ميتا وتيك توك وسناب وGoogle Ads">Media buying across Meta, TikTok, Snapchat and Google Ads</li>
+    <li class="r" data-en="Shopify sales campaigns built around creative testing and scaling" data-ar="حملات مبيعات Shopify مبنية على اختبار الكرياتيف والتوسع">Shopify sales campaigns built around creative testing and scaling</li>
+    <li class="r" data-en="Full-funnel support: traffic, engagement, messaging and audience growth" data-ar="دعم القمع كله: ترافيك وتفاعل ورسائل ونمو الجمهور">Full-funnel support: traffic, engagement, messaging and audience growth</li>
+    <li class="r" data-en="Performance optimization on CTR, CPC, CPM and cost per result" data-ar="تحسين الأداء على CTR وCPC وCPM وتكلفة النتيجة">Performance optimization on CTR, CPC, CPM and cost per result</li>
+    <li class="r" data-en="Clear reporting straight from the ad platforms" data-ar="تقارير واضحة مباشرة من منصات الإعلانات">Clear reporting straight from the ad platforms</li>
+  </ul>
+  <p class="name r" data-en="KAVO stands for Khalid Abdelzizz Value Optimization: getting more value out of every pound of ad spend." data-ar="KAVO اختصار Khalid Abdelzizz Value Optimization: نطلّع قيمة أكبر من كل جنيه إعلان.">KAVO stands for Khalid Abdelzizz Value Optimization: getting more value out of every pound of ad spend.</p>
+</section>
+
+<section class="sec end" id="contact">
+  <h2 class="r" data-en="Have a brand to grow?" data-ar="عندك براند عايز تكبّره؟">Have a brand to grow?</h2>
+  <p class="lead r" data-en="Send a WhatsApp message with your product and your goal. It lands directly on Khalid's phone." data-ar="ابعت رسالة واتساب بمنتجك وهدفك. بتوصل مباشرة لموبايل خالد.">Send a WhatsApp message with your product and your goal. It lands directly on Khalid's phone.</p>
+  <div class="cta r"><a class="btn solid" href="https://wa.me/201022517124?text=Hi+Khalid%2C+I+saw+your+KAVO+portfolio+and+I+would+like+to+discuss+working+together." target="_blank" rel="noreferrer" data-en="Message Khalid on WhatsApp" data-ar="كلّم خالد على واتساب">Message Khalid on WhatsApp</a></div>
+  <div class="soc r">
+    <a href="https://wa.me/201022517124?text=Hi+Khalid%2C+I+saw+your+KAVO+portfolio+and+I+would+like+to+discuss+working+together." target="_blank" rel="noreferrer" data-en="WhatsApp · Khalid" data-ar="واتساب · خالد">WhatsApp · Khalid</a>
+    <a href="https://wa.me/201120058157?text=Hi+Abdelaziz%2C+I+saw+the+KAVO+portfolio+and+I+would+like+to+discuss+working+together." target="_blank" rel="noreferrer" data-en="WhatsApp · Abdelaziz" data-ar="واتساب · عبد العزيز">WhatsApp · Abdelaziz</a>
+    <a href="https://www.instagram.com/khalid__mohamed/" target="_blank" rel="noreferrer" data-en="Instagram · Khalid" data-ar="إنستجرام · خالد">Instagram · Khalid</a>
+    <a href="https://www.instagram.com/abdelaziz_ahmed.1/" target="_blank" rel="noreferrer" data-en="Instagram · Abdelaziz" data-ar="إنستجرام · عبد العزيز">Instagram · Abdelaziz</a>
+    <a href="https://www.facebook.com/share/1AnnV5Wc8c/?mibextid=wwXIfr" target="_blank" rel="noreferrer" data-en="Facebook · Khalid" data-ar="فيسبوك · خالد">Facebook · Khalid</a>
+    <a href="https://www.facebook.com/share/1EL7XGbNDT/?mibextid=wwXIfr" target="_blank" rel="noreferrer" data-en="Facebook · Abdelaziz" data-ar="فيسبوك · عبد العزيز">Facebook · Abdelaziz</a>
+  </div>
+</section>
+</main>
+<footer class="foot"><span>KAVO</span><span data-en="Campaign money amounts are shared in person." data-ar="مبالغ الحملات بتتعرض في لقاء شخصي.">Campaign money amounts are shared in person.</span></footer>
+<script src="app.js?v=1" defer></script>
 </body>
 </html>
