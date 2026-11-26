@@ -186,7 +186,7 @@ function eased(y,now){
   var dt=Math.min(now-lastT,64);lastT=now;
   var diff=y-sy;
   if(Math.abs(diff)>g.vh*1.6||Math.abs(diff)<0.4){sy=y;return y}
-  sy+=diff*(1-Math.exp(-dt/70));
+  sy+=diff*(1-Math.exp(-dt/110));
   return sy;
 }
 function render(now){
@@ -202,7 +202,7 @@ function render(now){
      heading and card fade out in the first 40% of the swap and the incoming
      ones fade in only in the last 40%, with a clean text-free beat between,
      so no frame ever shows two headings or two cards at once */
-  var t12=seg(pa,0.22,0.27),t23=seg(pa,0.58,0.63);
+  var t12=seg(pa,0.20,0.29),t23=seg(pa,0.56,0.65);
   var coOut12=1-seg(t12,0,0.3),coIn12=seg(t12,0.42,1);
   var coOut23=1-seg(t23,0,0.3),coIn23=seg(t23,0.42,1);
   putScene(s1,v1,t12<1?1:0,coOut12,0,pa,0.6);
