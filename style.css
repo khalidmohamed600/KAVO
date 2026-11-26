@@ -3,11 +3,11 @@
 @font-face{font-family:Gt;src:url(fonts/GT-America-Standard-Medium.woff2) format("woff2");font-weight:500;font-display:swap}
 @font-face{font-family:PlexAr;src:url(fonts/PlexAr-400.woff2) format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:PlexAr;src:url(fonts/PlexAr-500.woff2) format("woff2");font-weight:500;font-display:swap}
-:root{--bg:#121211;--bg2:#171715;--ink:#efe9dd;--mute:#a8a296;--line:#2a2924;--gold:#c9a24b;--gold2:#e2c677;--serif:Season,"PlexAr",Georgia,serif;--sans:Gt,"PlexAr",system-ui,sans-serif}
+:root{--bg:#F7F3EA;--bg2:#FFFDF8;--ink:#14213D;--mute:#566074;--line:#DDD4C2;--gold:#8A6D2C;--gold2:#B08F45;--shadow:0 1px 2px rgb(20 33 61/.05),0 18px 40px -22px rgb(20 33 61/.28);--fade:rgb(247 243 234/.85);--b1:rgb(176 143 69/.30);--b2:rgb(20 33 61/.10);--b3:rgb(176 143 69/.20);--hov:0 2px 4px rgb(20 33 61/.06),0 26px 50px -22px rgb(20 33 61/.34);--serif:Season,"PlexAr",Georgia,serif;--sans:Gt,"PlexAr",system-ui,sans-serif}
 html[lang=ar]{--serif:PlexAr,Season,serif;--sans:PlexAr,Gt,system-ui,sans-serif}
 *{box-sizing:border-box;margin:0}
 html{overflow-x:clip;scroll-behavior:smooth;scroll-padding-top:84px;background:var(--bg)}
-body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--sans);overflow-x:clip;-webkit-font-smoothing:antialiased}
+body{background:transparent;color:var(--ink);font:400 17px/1.6 var(--sans);overflow-x:clip;-webkit-font-smoothing:antialiased}
 html[lang=ar] body{line-height:1.85}
 a{color:inherit}
 em{font-style:normal;color:var(--gold)}
@@ -23,7 +23,7 @@ em{font-style:normal;color:var(--gold)}
 @keyframes ltr{to{opacity:1;transform:none}}
 @keyframes out{to{opacity:0;visibility:hidden}}
 /* top bar */
-.top{position:fixed;inset:0 0 auto 0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px max(22px,calc(50vw - 520px));background:linear-gradient(var(--bg),rgb(18 18 17/.82) 70%,transparent);backdrop-filter:blur(6px)}
+.top{position:fixed;inset:0 0 auto 0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px max(22px,calc(50vw - 520px));background:linear-gradient(var(--bg),var(--fade) 70%,transparent);backdrop-filter:blur(6px)}
 .logo{font:500 21px Season,serif;letter-spacing:.32em;text-decoration:none;direction:ltr}
 .top nav{display:flex;gap:26px;margin-inline-start:auto}
 .top nav a{color:var(--mute);text-decoration:none;font-size:14px;transition:color .2s}
@@ -46,7 +46,7 @@ html[lang=ar] h1{line-height:1.25;letter-spacing:0}
 .cta{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
 .btn{display:inline-block;padding:14px 26px;border-radius:99px;text-decoration:none;font-weight:500;font-size:15px;transition:transform .2s,background .2s,border-color .2s}
 .btn:hover{transform:translateY(-2px)}
-.solid{background:var(--ink);color:var(--bg)}.solid:hover{background:var(--gold2)}
+.solid{background:var(--ink);color:var(--bg)}.solid:hover{background:var(--gold)}
 .line{border:1px solid var(--line)}.line:hover{border-color:var(--gold)}
 /* ticker */
 .ticker{border-block:1px solid var(--line);overflow:hidden;direction:ltr;margin:0 calc(50% - 50vw)}
@@ -59,8 +59,8 @@ html[lang=ar] h1{line-height:1.25;letter-spacing:0}
 html[lang=ar] .lab{letter-spacing:0;font-size:15px}
 h2{font:500 clamp(32px,4.6vw,56px)/1.1 var(--serif);margin-bottom:34px}
 html[lang=ar] h2{line-height:1.3}
-.brand{border-bottom:1px solid var(--line)}
-.brand:first-of-type{border-top:1px solid var(--line)}
+.brand{background:var(--bg2);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:0 30px;margin-bottom:18px;transition:box-shadow .4s,transform .4s,opacity .7s}
+.brand:hover{box-shadow:var(--hov)}
 .brand button{all:unset;cursor:pointer;display:grid;grid-template-columns:64px 1fr 40px;align-items:center;gap:18px;padding:34px 0;width:100%;box-sizing:border-box}
 .n{color:var(--gold);font-size:14px;direction:ltr}
 .nm{display:block;font:500 clamp(34px,5.4vw,64px)/1.05 Season,serif;transition:transform .3s,color .3s}
@@ -124,4 +124,51 @@ html[dir=rtl] .pc a i{transform:rotate(-135deg)}
 .pc a:hover i{transform:translateX(3px) rotate(45deg)}
 html[dir=rtl] .pc a:hover i{transform:translateX(-3px) rotate(-135deg)}
 @media(max-width:760px){.people{grid-template-columns:1fr}}
+
+/* motion: restrained, one language across the whole page */
+.prog{position:fixed;inset:0 0 auto 0;height:2px;z-index:60;background:var(--gold2);transform:scaleX(0);transform-origin:left;pointer-events:none}
+html[dir=rtl] .prog{transform-origin:right}
+.glow{animation:drift 16s ease-in-out infinite alternate;translate:0 var(--py,0)}
+.js .r{transform:translateY(30px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.js h2.r{transform:translateY(22px)}
+.js .brand.r{transform:translateY(44px) scale(.985)}
+.js .svc li.r{transform:translateX(-12px)}
+html[dir=rtl].js .svc li.r,html[dir=rtl] .js .svc li.r{transform:translateX(12px)}
+.js .r.in,.js .svc li.r.in,.js .brand.r.in{opacity:1;transform:none}
+.lab{display:flex;align-items:center;gap:14px}
+.lab::after{content:"";height:1px;width:0;background:var(--gold2);transition:width 1s cubic-bezier(.2,.7,.2,1) .25s}
+.lab.in::after{width:64px}
+.pc{box-shadow:var(--shadow);transition:box-shadow .4s,transform .4s,opacity .9s}
+.pc:hover{transform:translateY(-4px)}
+.steps li{transition:border-color .5s}.steps li.in{border-color:var(--gold2)}
+.top nav a.on{color:var(--ink)}
+.fig b{will-change:contents}
+@media(prefers-reduced-motion:reduce){.glow{animation:none}.prog{display:none}}
 .fig b.cur{unicode-bidi:plaintext}html[dir=rtl] .fig b.cur{direction:rtl}
+
+/* floating background: the old soft gold glow, now three slow drifting washes on the light page */
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.bg i{position:absolute;border-radius:50%;filter:blur(70px);will-change:transform}
+.bg i:nth-child(1){width:46vw;height:46vw;max-width:620px;max-height:620px;top:-8%;inset-inline-end:-8%;background:radial-gradient(closest-side,var(--b1),transparent 72%);animation:fl1 22s ease-in-out infinite alternate}
+.bg i:nth-child(2){width:50vw;height:50vw;max-width:680px;max-height:680px;top:38%;inset-inline-start:-14%;background:radial-gradient(closest-side,var(--b2),transparent 72%);animation:fl2 28s ease-in-out infinite alternate}
+.bg i:nth-child(3){width:38vw;height:38vw;max-width:520px;max-height:520px;bottom:-10%;inset-inline-end:8%;background:radial-gradient(closest-side,var(--b3),transparent 72%);animation:fl3 25s ease-in-out infinite alternate}
+@keyframes fl1{to{transform:translate3d(-9vw,12vh,0) scale(1.12)}}
+@keyframes fl2{to{transform:translate3d(10vw,-9vh,0) scale(1.08)}}
+@keyframes fl3{to{transform:translate3d(-8vw,-12vh,0) scale(1.15)}}
+html[dir=rtl] .bg i{animation-direction:alternate-reverse}
+.glow{display:none}
+@media(prefers-reduced-motion:reduce){.bg i{animation:none}}
+
+/* night theme: the original dark look */
+html[data-theme=dark]{--bg:#121211;--bg2:#171715;--ink:#efe9dd;--mute:#a8a296;--line:#2a2924;--gold:#c9a24b;--gold2:#e2c677;--shadow:0 1px 2px rgb(0 0 0/.3),0 18px 40px -22px rgb(0 0 0/.7);--fade:rgb(18 18 17/.82);--b1:rgb(201 162 75/.16);--b2:rgb(120 140 190/.07);--b3:rgb(201 162 75/.10);--hov:0 2px 4px rgb(0 0 0/.35),0 26px 50px -22px rgb(0 0 0/.8);color-scheme:dark}
+html{transition:background-color .5s}
+body,.top,.brand,.pc{transition:background-color .5s,border-color .5s,color .5s,box-shadow .4s,transform .4s,opacity .7s}
+.theme{all:unset;cursor:pointer;width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--line);border-radius:99px;color:var(--mute);transition:color .2s,border-color .2s}
+.theme:hover{color:var(--ink);border-color:var(--gold)}
+.theme:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.theme svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:none}
+.theme[data-mode=light] .sun,.theme[data-mode=dark] .moon,.theme[data-mode=auto] .auto{display:block}
+.top .theme{margin-inline-start:12px}
+.top .lang{margin-inline-start:0}
+.top nav{margin-inline-end:4px}
+@media(max-width:760px){.top .lang{margin-inline-start:auto}.top .theme{margin-inline-start:10px}}
