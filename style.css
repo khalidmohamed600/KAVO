@@ -124,3 +124,4 @@ html[dir=rtl] .pc a i{transform:rotate(-135deg)}
 .pc a:hover i{transform:translateX(3px) rotate(45deg)}
 html[dir=rtl] .pc a:hover i{transform:translateX(-3px) rotate(-135deg)}
 @media(max-width:760px){.people{grid-template-columns:1fr}}
+.fig b.cur{unicode-bidi:plaintext}html[dir=rtl] .fig b.cur{direction:rtl}
