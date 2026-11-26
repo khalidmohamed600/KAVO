@@ -146,12 +146,13 @@ var dotEls=dots.querySelectorAll('i');
 function clamp(v,a,b){return Math.min(b,Math.max(a,v))}
 function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
 function seg(p,a,b){return ease(clamp((p-a)/(b-a),0,1))}
-function putScene(el,vis,op,rise,pa,float){
-  el.style.opacity=op;
+function putScene(el,vis,bo,co,rise,pa,float){
+  el.style.setProperty('--bo',bo);
+  el.style.setProperty('--co',co);
   el.style.transform='translateY('+rise+'px)';
   if(vis){
     var par=(pa-0.5)*-40*float;
-    vis.style.opacity=op;
+    vis.style.opacity=co;
     vis.style.transform='translateY(calc(var(--vbase, -50%) + '+(rise+par)+'px)) rotate('+(rise/90*6)+'deg)';
   }
 }
@@ -183,17 +184,18 @@ function render(){
   var cover=(y+g.vh>g.c1t&&y<g.c1b)||(y+g.vh>g.c2t&&y<g.c2b);
   if(!force&&pa===lastPa&&pb===lastPb&&over===lastOver&&cover===lastCover)return;
   lastPa=pa;lastPb=pb;lastCover=cover;force=false;
-  /* hero scenes: the incoming scene fades and rises over the outgoing one,
-     which stays fully opaque underneath until it is completely covered, so
-     scenes never dissolve through each other or through the page background */
+  /* hero scenes: backgrounds crossfade with the outgoing one fully opaque
+     underneath until covered, while the CONTENT is sequential: the outgoing
+     heading and card fade out in the first 40% of the swap and the incoming
+     ones fade in only in the last 40%, with a clean text-free beat between,
+     so no frame ever shows two headings or two cards at once */
   var t12=seg(pa,0.20,0.33),t23=seg(pa,0.56,0.68);
-  var o1=t12<1?1:0;
-  var o2=t23>0?(t23<1?1:0):t12;
-  var o3=t23;
-  putScene(s1,v1,o1,0,pa,0.6);
-  if(pill)pill.style.pointerEvents=t12<0.15?'auto':'none';
-  putScene(s2,v2,o2,(1-t12)*90,pa,1.0);
-  putScene(s3,v3,o3,(1-t23)*90,pa,0.8);
+  var coOut12=1-seg(t12,0,0.4),coIn12=seg(t12,0.6,1);
+  var coOut23=1-seg(t23,0,0.4),coIn23=seg(t23,0.6,1);
+  putScene(s1,v1,t12<1?1:0,coOut12,0,pa,0.6);
+  if(pill)pill.style.pointerEvents=t12<0.02?'auto':'none';
+  putScene(s2,v2,t23>0?(t23<1?1:0):t12,t23>0?coOut23:coIn12,t23>0?0:(1-t12)*90,pa,1.0);
+  putScene(s3,v3,t23,coIn23,(1-t23)*90,pa,0.8);
   var a2=pa*2.2;
   c21.style.left=(30+22*Math.cos(a2))+'%';c21.style.top=(6+5*Math.sin(a2))+'%';
   c22.style.left=(26+20*Math.cos(a2+2.4))+'%';c22.style.top=(86+4*Math.sin(a2+2.4))+'%';
