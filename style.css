@@ -23,7 +23,7 @@ em{font-style:normal;color:var(--gold)}
 @keyframes ltr{to{opacity:1;transform:none}}
 @keyframes out{to{transform:translateY(-101%);visibility:hidden}}
 /* top bar */
-.top{position:fixed;inset:0 0 auto 0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:calc(16px + env(safe-area-inset-top,0px)) max(22px,calc(50vw - 520px)) 16px;background:linear-gradient(var(--bg),var(--fade) 70%,transparent);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.top{position:fixed;inset:0 0 auto 0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:calc(16px + env(safe-area-inset-top,0px)) max(22px,calc(50vw - 520px)) 16px;background:linear-gradient(var(--bg) 45%,var(--fade) 80%,transparent)}
 .logo{font:500 21px Season,serif;letter-spacing:.32em;text-decoration:none;direction:ltr}
 .top nav{display:flex;gap:26px;margin-inline-start:auto}
 .top nav a{color:var(--mute);text-decoration:none;font-size:14px;transition:color .2s}
@@ -43,7 +43,7 @@ main{max-width:1040px;margin:0 auto;padding:0 22px}
 .js .hero .lead{animation-delay:1.44s}
 .js .hero .cta{animation-delay:1.58s}
 #dust{position:fixed;inset:0;z-index:-1;pointer-events:none}
-.glow{position:absolute;inset:-10% -10% auto auto;width:70vw;height:70vw;max-width:760px;max-height:760px;background:radial-gradient(closest-side,rgb(201 162 75/.07),transparent 70%);filter:blur(10px);z-index:-1;}
+.glow{position:absolute;inset:-10% -10% auto auto;width:70vw;height:70vw;max-width:760px;max-height:760px;background:radial-gradient(closest-side,rgb(201 162 75/.07),transparent 70%);z-index:-1;}
 html[dir=rtl] .glow{inset:-10% auto auto -10%}
 @keyframes drift{to{transform:translate3d(-6%,8%,0) scale(1.08)}}
 .eyebrow{color:var(--gold);font-size:13px;letter-spacing:.18em;text-transform:uppercase}
@@ -136,7 +136,7 @@ html[dir=rtl] .pc a:hover i{transform:translateX(-3px) rotate(-135deg)}
 @media(max-width:760px){.people{grid-template-columns:1fr}}
 
 /* motion: restrained, one language across the whole page */
-.glow{animation:drift 16s ease-in-out infinite alternate;translate:0 var(--py,0)}
+.glow{translate:0 var(--py,0)}
 .js .r{transform:translateY(30px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
 .js h2.r{transform:translateY(22px)}
 .js .brand.r{transform:translateY(44px) scale(.985)}
@@ -150,7 +150,7 @@ html[dir=rtl].js .svc li.r,html[dir=rtl] .js .svc li.r{transform:translateX(12px
 .pc:hover{transform:translateY(-4px)}
 .steps li{transition:border-color .5s}.steps li.in{border-color:var(--gold2)}
 .top nav a.on{color:var(--ink)}
-.fig b{will-change:contents}
+.fig b{font-variant-numeric:tabular-nums}
 @keyframes figin{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion: no-preference){
   .brand.open .fig{animation:figin .55s cubic-bezier(.2,.7,.2,1) both}
@@ -163,10 +163,10 @@ html[dir=rtl].js .svc li.r,html[dir=rtl] .js .svc li.r{transform:translateX(12px
 
 /* floating background: the old soft gold glow, now three slow drifting washes on the light page */
 .bg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
-.bg i{position:absolute;border-radius:50%;filter:blur(70px);will-change:transform}
-.bg i:nth-child(1){width:46vw;height:46vw;max-width:620px;max-height:620px;top:-8%;inset-inline-end:-8%;background:radial-gradient(closest-side,var(--b1),transparent 72%);animation:fl1 22s ease-in-out infinite alternate}
-.bg i:nth-child(2){width:50vw;height:50vw;max-width:680px;max-height:680px;top:38%;inset-inline-start:-14%;background:radial-gradient(closest-side,var(--b2),transparent 72%);animation:fl2 28s ease-in-out infinite alternate}
-.bg i:nth-child(3){width:38vw;height:38vw;max-width:520px;max-height:520px;bottom:-10%;inset-inline-end:8%;background:radial-gradient(closest-side,var(--b3),transparent 72%);animation:fl3 25s ease-in-out infinite alternate}
+.bg i{position:absolute;border-radius:50%}
+.bg i:nth-child(1){width:46vw;height:46vw;max-width:620px;max-height:620px;top:-8%;inset-inline-end:-8%;background:radial-gradient(closest-side,var(--b1),transparent 72%)}
+.bg i:nth-child(2){width:50vw;height:50vw;max-width:680px;max-height:680px;top:38%;inset-inline-start:-14%;background:radial-gradient(closest-side,var(--b2),transparent 72%)}
+.bg i:nth-child(3){width:38vw;height:38vw;max-width:520px;max-height:520px;bottom:-10%;inset-inline-end:8%;background:radial-gradient(closest-side,var(--b3),transparent 72%)}
 @keyframes fl1{to{transform:translate3d(-9vw,12vh,0) scale(1.12)}}
 @keyframes fl2{to{transform:translate3d(10vw,-9vh,0) scale(1.08)}}
 @keyframes fl3{to{transform:translate3d(-8vw,-12vh,0) scale(1.15)}}
@@ -245,15 +245,14 @@ html[dir=rtl] .lbar i{transform-origin:right}
 .js .stage,.js .stage2{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
 .stage{background:#F2ECDF}
 .stage2{background:#131311}
-.grain{position:absolute;inset:0;pointer-events:none;opacity:.5;mix-blend-mode:multiply;z-index:3;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+.grain{display:none}
 .slide{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;text-align:start;padding:max(110px,calc(env(safe-area-inset-top,0px) + 96px)) max(26px,calc(50vw - 500px)) 60px;color:#141412}
 .slide.s1{background:#F2ECDF}
 .slide.s2{background:#131311;color:#F2ECDF}
 .slide.s3{background:#C9A227;color:#141412}
 .js .slide{position:absolute;inset:0;min-height:0;z-index:10;pointer-events:none;background:none;will-change:transform}
-.js .slide::before{content:"";position:absolute;inset:0;opacity:var(--bo,1);will-change:opacity}
-.js .slide>*{position:relative;opacity:var(--co,1);will-change:opacity}
+.js .slide::before{content:"";position:absolute;inset:0;opacity:var(--bo,1)}
+.js .slide>*{position:relative;opacity:var(--co,1)}
 /* hidden until the scroll renderer places them: if the cinematic script ever
    fails while .js is on, s2/s3 and the assembly layers must not stack into a
    smeared stamp; the render loop sets --bo/--co/inline opacity every frame */
@@ -261,9 +260,9 @@ html[dir=rtl] .lbar i{transform-origin:right}
 .js .slide.s2>*,.js .slide.s3>*{opacity:var(--co,0)}
 .js .blabel,.js .piece,.js .result2{opacity:0}
 .js .slide .pill2{pointer-events:auto}
-.js .slide.s1::before{background:#F2ECDF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.025 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");background-blend-mode:multiply}
-.js .slide.s2::before{background:#131311 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.025 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");background-blend-mode:multiply}
-.js .slide.s3::before{background:#C9A227 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.025 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");background-blend-mode:multiply}
+.js .slide.s1::before{background:#F2ECDF}
+.js .slide.s2::before{background:#131311}
+.js .slide.s3::before{background:#C9A227}
 .eyebrow2{font-size:12px;letter-spacing:.3em;font-weight:500;display:flex;align-items:center;gap:10px;margin-bottom:16px;opacity:.85}
 .eyebrow2:before{content:"";width:26px;height:1.5px;background:currentColor}
 html[lang=ar] .eyebrow2{letter-spacing:.06em;font-size:14px}
