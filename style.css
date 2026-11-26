@@ -323,9 +323,10 @@ html[lang=en] .top.inv .lang [data-l=en],html[lang=ar] .top.inv .lang [data-l=ar
 /* scene mobile layout */
 @media(max-width:520px){
   .slide{justify-content:flex-start;padding-top:15vh}
-  .vis{top:auto;bottom:4vh;--vbase:0px;width:53vw;inset-inline-end:2%}
-  #v2{width:58vw;inset-inline-end:-4%}
-  #v3{width:52vw;inset-inline-end:0}
+  .vis{top:auto;bottom:4vh;--vbase:0px;width:52vw;inset-inline-end:5%}
+  #v2{width:54vw;inset-inline-end:5%}
+  #v3{width:52vw;inset-inline-end:5%}
+  #c31{left:6%!important;top:7%!important}
   .bigtype{font-size:clamp(46px,14.5vw,120px)}
   html[lang=ar] .bigtype{font-size:clamp(36px,11vw,80px)}
   .sub2{max-width:64vw;font-size:12.5px}
