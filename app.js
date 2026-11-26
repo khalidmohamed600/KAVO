@@ -170,7 +170,7 @@ function slideIO(el,vis,pa,a0,a1,b0,b1,float){
 function piece(el,pb,x0,y0,r0,t0,t1,yEnd){
   var t=seg(pb,t0,t1);
   var x=(1-t)*x0,y=(1-t)*y0+t*yEnd,r=(1-t)*r0;
-  var merge=seg(pb,0.68,0.84);
+  var merge=seg(pb,0.56,0.72);
   var sc=(0.9+0.1*t)*(1-merge*0.35);
   el.style.opacity=t*(1-merge);
   el.style.transform='translate(-50%,-50%) translate('+x+'px,'+y+'px) rotate('+r+'deg) scale('+sc+')';
@@ -185,30 +185,30 @@ function render(){
   ticking=false;
   var pa=prog(cine),pb=prog(cine2);
   /* hero scene */
-  var t12=seg(pa,0.34,0.46),t23=seg(pa,0.68,0.80);
+  var t12=seg(pa,0.20,0.33),t23=seg(pa,0.56,0.68);
   var bg=mix(mix(cream,char,t12),gold,t23);
   stage.style.background=rgb(bg);
-  slideIO(s1,v1,pa,-1,-0.5,0.36,0.48,0.6);
-  slideIO(s2,v2,pa,0.38,0.50,0.70,0.82,1.0);
-  slideIO(s3,v3,pa,0.72,0.84,0.93,1.0,0.8);
+  slideIO(s1,v1,pa,-1,-0.5,0.22,0.35,0.6);
+  slideIO(s2,v2,pa,0.25,0.37,0.58,0.70,1.0);
+  slideIO(s3,v3,pa,0.61,0.73,1.2,1.4,0.8);
   var a2=pa*2.2;
   c21.style.left=(30+22*Math.cos(a2))+'%';c21.style.top=(6+5*Math.sin(a2))+'%';
   c22.style.left=(26+20*Math.cos(a2+2.4))+'%';c22.style.top=(86+4*Math.sin(a2+2.4))+'%';
   c21.style.opacity=c22.style.opacity=v2.style.opacity;
   c31.style.left='-4%';c31.style.top='5%';c31.style.opacity=v3.style.opacity;
-  var active=pa<0.36?0:(pa<0.7?1:2);
+  var active=pa<0.25?0:(pa<0.6?1:2);
   for(var i=0;i<3;i++)dotEls[i].className=(i===active&&pa<1)?'on':'';
   var ui=(t12>0.5&&t23<0.5)?'#F2ECDF':'#141412';
   dots.style.color=ui;hint.style.color=ui;
   dots.style.opacity=pa<1?1:0;
   hint.style.opacity=pa<0.04?1:0;
   /* assembly scene */
-  blabel.style.opacity=seg(pb,0,0.12)*(1-seg(pb,0.8,0.95));
-  blabel.style.transform='translateY('+((1-seg(pb,0,0.12))*30)+'px)';
-  piece(pc1,pb,-240,-220,-22,0.04,0.34,-86);
-  piece(pc2,pb,250,-110,18,0.16,0.46,0);
-  piece(pc3,pb,-230,240,14,0.28,0.58,86);
-  var rin=seg(pb,0.72,0.92);
+  blabel.style.opacity=seg(pb,0,0.10)*(1-seg(pb,0.70,0.86));
+  blabel.style.transform='translateY('+((1-seg(pb,0,0.10))*30)+'px)';
+  piece(pc1,pb,-240,-220,-22,0.03,0.28,-86);
+  piece(pc2,pb,250,-110,18,0.13,0.38,0);
+  piece(pc3,pb,-230,240,14,0.23,0.48,86);
+  var rin=seg(pb,0.60,0.80);
   result.style.opacity=rin;
   result.style.transform='translate(-50%,-50%) scale('+(0.6+0.4*rin)+') rotate('+((1-rin)*-4)+'deg)';
   /* header over scenes */
