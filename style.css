@@ -521,3 +521,9 @@ html[data-motion=soft] .js #about .beat,html[data-motion=soft] #about .beat{tran
   .js #about .pts b{font-size:clamp(30px,8.2vw,38px)}
   .js #about .pts p{font-size:clamp(18px,4.9vw,21px)}
 }
+
+/* Arabic letters must stay joined: no tracking on Arabic text */
+html[lang=ar] *:not(.logo):not(.mark):not(.mark *):not(.bignum):not(.lletters):not(.lletters *),html[lang=ar] #c31{letter-spacing:0!important}
+
+.theme{touch-action:manipulation;-webkit-tap-highlight-color:transparent;position:relative}
+.theme::after{content:"";position:absolute;inset:-6px}
