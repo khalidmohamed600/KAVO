@@ -135,3 +135,91 @@ f.addEventListener('submit',function(e){
   .catch(function(){stat.className='fstat err';stat.textContent=T.err[L()];done()});
 });
 })();
+/* cinematic scroll scenes: hero slides + assembly, driven by scroll position */
+(function(){
+var d=document;
+if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+var cine=d.querySelector('.cine'),cine2=d.querySelector('.cine2');
+if(!cine||!cine2)return;
+var stage=d.getElementById('stage');
+var s1=d.getElementById('s1'),s2=d.getElementById('s2'),s3=d.getElementById('s3');
+var v1=d.getElementById('v1'),v2=d.getElementById('v2'),v3=d.getElementById('v3');
+var c21=d.getElementById('c21'),c22=d.getElementById('c22'),c31=d.getElementById('c31');
+var dots=d.getElementById('dots2'),hint=d.getElementById('hint2'),top=d.querySelector('.top');
+var blabel=d.getElementById('blabel');
+var pc1=d.getElementById('pc1'),pc2=d.getElementById('pc2'),pc3=d.getElementById('pc3'),result=d.getElementById('result2');
+var dotEls=dots.querySelectorAll('i');
+var cream=[242,236,223],char=[19,19,17],gold=[201,162,39];
+function mix(a,b,t){return [0,1,2].map(function(i){return Math.round(a[i]+(b[i]-a[i])*t)})}
+function rgb(c){return 'rgb('+c[0]+','+c[1]+','+c[2]+')'}
+function clamp(v,a,b){return Math.min(b,Math.max(a,v))}
+function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
+function seg(p,a,b){return ease(clamp((p-a)/(b-a),0,1))}
+function slideIO(el,vis,pa,a0,a1,b0,b1,float){
+  var inn=seg(pa,a0,a1),out=1-seg(pa,b0,b1),io=inn*out;
+  el.style.opacity=io;
+  el.style.transform='translateY('+((1-inn)*60-(1-out)*60)+'px)';
+  if(vis){
+    var par=(pa-0.5)*-40*float;
+    var vIn=inn,vOut=out;
+    vis.style.opacity=vIn*vOut;
+    vis.style.transform='translateY(calc(var(--vbase, -50%) + '+((1-vIn)*90-(1-vOut)*90+par)+'px)) rotate('+((1-vIn)*6)+'deg)';
+  }
+  return io;
+}
+function piece(el,pb,x0,y0,r0,t0,t1,yEnd){
+  var t=seg(pb,t0,t1);
+  var x=(1-t)*x0,y=(1-t)*y0+t*yEnd,r=(1-t)*r0;
+  var merge=seg(pb,0.68,0.84);
+  var sc=(0.9+0.1*t)*(1-merge*0.35);
+  el.style.opacity=t*(1-merge);
+  el.style.transform='translate(-50%,-50%) translate('+x+'px,'+y+'px) rotate('+r+'deg) scale('+sc+')';
+}
+function prog(el){
+  var r=el.getBoundingClientRect();
+  var total=el.offsetHeight-innerHeight;
+  return total>0?clamp(-r.top/total,0,1):0;
+}
+var ticking=false;
+function render(){
+  ticking=false;
+  var pa=prog(cine),pb=prog(cine2);
+  /* hero scene */
+  var t12=seg(pa,0.34,0.46),t23=seg(pa,0.68,0.80);
+  var bg=mix(mix(cream,char,t12),gold,t23);
+  stage.style.background=rgb(bg);
+  slideIO(s1,v1,pa,-1,-0.5,0.36,0.48,0.6);
+  slideIO(s2,v2,pa,0.38,0.50,0.70,0.82,1.0);
+  slideIO(s3,v3,pa,0.72,0.84,0.93,1.0,0.8);
+  var a2=pa*2.2;
+  c21.style.left=(30+22*Math.cos(a2))+'%';c21.style.top=(6+5*Math.sin(a2))+'%';
+  c22.style.left=(26+20*Math.cos(a2+2.4))+'%';c22.style.top=(86+4*Math.sin(a2+2.4))+'%';
+  c21.style.opacity=c22.style.opacity=v2.style.opacity;
+  c31.style.left='-4%';c31.style.top='5%';c31.style.opacity=v3.style.opacity;
+  var active=pa<0.36?0:(pa<0.7?1:2);
+  for(var i=0;i<3;i++)dotEls[i].className=(i===active&&pa<1)?'on':'';
+  var ui=(t12>0.5&&t23<0.5)?'#F2ECDF':'#141412';
+  dots.style.color=ui;hint.style.color=ui;
+  dots.style.opacity=pa<1?1:0;
+  hint.style.opacity=pa<0.04?1:0;
+  /* assembly scene */
+  blabel.style.opacity=seg(pb,0,0.12)*(1-seg(pb,0.8,0.95));
+  blabel.style.transform='translateY('+((1-seg(pb,0,0.12))*30)+'px)';
+  piece(pc1,pb,-240,-220,-22,0.04,0.34,-86);
+  piece(pc2,pb,250,-110,18,0.16,0.46,0);
+  piece(pc3,pb,-230,240,14,0.28,0.58,86);
+  var rin=seg(pb,0.72,0.92);
+  result.style.opacity=rin;
+  result.style.transform='translate(-50%,-50%) scale('+(0.6+0.4*rin)+') rotate('+((1-rin)*-4)+'deg)';
+  /* header over scenes */
+  var r1=cine.getBoundingClientRect(),r2=cine2.getBoundingClientRect();
+  var over=(r1.top<70&&r1.bottom>0)||(r2.top<70&&r2.bottom>0);
+  top.classList.toggle('over-cine',over);
+  top.classList.toggle('inv',(over&&t12>0.5&&t23<0.5)||(r2.top<70&&r2.bottom>0));
+}
+function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(render)}}
+addEventListener('scroll',onScroll,{passive:true});
+addEventListener('resize',onScroll);
+new MutationObserver(onScroll).observe(d.documentElement,{attributes:true,attributeFilter:['lang']});
+render();
+})();
