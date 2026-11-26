@@ -118,7 +118,8 @@ function L(){return d.documentElement.lang==='ar'?'ar':'en'}
 f.addEventListener('submit',function(e){
   e.preventDefault();
   if(els['company2'].value)return;
-  var data={name:els['name'].value.trim(),brand:els['brand'].value.trim(),whatsapp:els['whatsapp'].value.trim(),product:els['product'].value.trim(),budget:els['budget'].value,goal:els['goal'].value.trim()};
+  var token='';try{token=(f.querySelector('[name=cf-turnstile-response]')||{}).value||''}catch(e){}
+  var data={name:els['name'].value.trim(),brand:els['brand'].value.trim(),whatsapp:els['whatsapp'].value.trim(),product:els['product'].value.trim(),budget:els['budget'].value,goal:els['goal'].value.trim(),turnstile:token};
   if(!data.name||!data.brand||!data.whatsapp){stat.className='fstat err';stat.textContent=T.req[L()];return}
   btn.disabled=true;stat.className='fstat';stat.textContent=T.sending[L()];
   function done(){btn.disabled=false}
