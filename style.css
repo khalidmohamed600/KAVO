@@ -136,8 +136,6 @@ html[dir=rtl] .pc a:hover i{transform:translateX(-3px) rotate(-135deg)}
 @media(max-width:760px){.people{grid-template-columns:1fr}}
 
 /* motion: restrained, one language across the whole page */
-.prog{position:fixed;inset:0 0 auto 0;height:2px;z-index:60;background:var(--gold2);transform:scaleX(0);transform-origin:left;pointer-events:none}
-html[dir=rtl] .prog{transform-origin:right}
 .glow{animation:drift 16s ease-in-out infinite alternate;translate:0 var(--py,0)}
 .js .r{transform:translateY(30px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
 .js h2.r{transform:translateY(22px)}
@@ -160,7 +158,7 @@ html[dir=rtl].js .svc li.r,html[dir=rtl] .js .svc li.r{transform:translateX(12px
   .brand.open .fig:nth-child(3){animation-delay:.24s}
   .brand.open .fig:nth-child(4){animation-delay:.36s}
 }
-@media(prefers-reduced-motion:reduce){.glow{animation:none}.prog{display:none}}
+@media(prefers-reduced-motion:reduce){.glow{animation:none}}
 .fig b.cur{unicode-bidi:plaintext}html[dir=rtl] .fig b.cur{direction:rtl}
 
 /* floating background: the old soft gold glow, now three slow drifting washes on the light page */
@@ -260,7 +258,10 @@ html[dir=rtl] .lbar i{transform-origin:right}
 .slide.s1{background:#F2ECDF}
 .slide.s2{background:#131311;color:#F2ECDF}
 .slide.s3{background:#C9A227;color:#141412}
-.js .slide{position:absolute;inset:0;min-height:0;background:transparent;opacity:0;will-change:opacity,transform;z-index:10}
+.js .slide{position:absolute;inset:0;min-height:0;opacity:0;will-change:opacity,transform;z-index:10}
+.js .slide.s1{background:#F2ECDF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.025 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");background-blend-mode:multiply}
+.js .slide.s2{background:#131311 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.025 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");background-blend-mode:multiply}
+.js .slide.s3{background:#C9A227 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.025 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");background-blend-mode:multiply}
 .eyebrow2{font-size:12px;letter-spacing:.3em;font-weight:500;display:flex;align-items:center;gap:10px;margin-bottom:16px;opacity:.85}
 .eyebrow2:before{content:"";width:26px;height:1.5px;background:currentColor}
 html[lang=ar] .eyebrow2{letter-spacing:.06em;font-size:14px}
@@ -275,7 +276,7 @@ html[lang=ar] .bigtype{font-family:PlexAr,Anton,sans-serif;font-weight:500;lette
 html[dir=rtl] .pill2 svg{transform:scaleX(-1)}
 html[lang=ar] .pill2{letter-spacing:.04em;font-size:14px}
 /* floating visuals */
-.vis{position:absolute;top:50%;inset-inline-end:3%;width:min(34vw,330px);aspect-ratio:0.86;z-index:5;--vbase:-50%;will-change:transform,opacity}
+.vis{position:absolute;top:50%;inset-inline-end:3%;width:min(34vw,330px);aspect-ratio:0.86;z-index:20;--vbase:-50%;will-change:transform,opacity}
 .adcard{position:absolute;inset:0;border-radius:26px;background:linear-gradient(160deg,#1b1b19,#2a2a26 60%,#1b1b19);box-shadow:0 40px 80px -20px rgba(20,20,18,.45);overflow:hidden;color:#F2ECDF}
 .adcard .orb{position:absolute;width:70%;aspect-ratio:1;border-radius:50%;left:15%;top:16%;background:radial-gradient(circle at 32% 28%,#f4d77b,#C9A227 45%,#8f6f10 78%,#3c2f06);box-shadow:0 18px 40px rgba(201,162,39,.35)}
 .adcard .shine{position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.10) 45%,transparent 60%)}
