@@ -221,6 +221,7 @@ html[dir=rtl] .sendb i{transform:rotate(-135deg)}
 html[dir=rtl] .sendb:hover i{transform:translateX(-3px) rotate(-135deg)}
 .sendb[disabled]{opacity:.55;cursor:default;transform:none}
 .fstat{margin:2px 0 0;font-size:15px;min-height:1.4em}
+.fnote{font-size:12.5px;color:var(--mute);line-height:1.65;max-width:52ch;margin:2px 0 0}
 .fstat.ok{color:var(--gold)}
 .fstat.err{color:#B4452F}
 @media (max-width:640px){.frow{grid-template-columns:1fr}.leadform{gap:30px}.frow{gap:30px}.fld{gap:3px}.fld input,.fld select,.fld textarea{padding:7px 2px}}
