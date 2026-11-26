@@ -223,4 +223,4 @@ html[dir=rtl] .sendb:hover i{transform:translateX(-3px) rotate(-135deg)}
 .fstat{margin:2px 0 0;font-size:15px;min-height:1.4em}
 .fstat.ok{color:var(--gold)}
 .fstat.err{color:#B4452F}
-@media (max-width:640px){.frow{grid-template-columns:1fr}}
+@media (max-width:640px){.frow{grid-template-columns:1fr}.leadform{gap:30px}.frow{gap:30px}.fld{gap:3px}.fld input,.fld select,.fld textarea{padding:7px 2px}}
