@@ -223,7 +223,29 @@
 <section class="sec end" id="contact">
   <p class="lab r" data-en="Contact" data-ar="تواصل">Contact</p>
   <h2 class="r" data-en="Have a brand to grow?" data-ar="عندك براند عايز تكبّره؟">Have a brand to grow?</h2>
-  <p class="lead r" data-en="Tell us about your product and your goal. Reach either of us directly." data-ar="احكي لنا عن منتجك وهدفك. تواصل مع أي واحد مننا مباشرة.">Tell us about your product and your goal. Reach either of us directly.</p>
+  <p class="lead r" data-en="Fill the form and your brief lands in our chat instantly. Or reach either of us directly." data-ar="املأ الفورم وتفاصيلك توصلنا في شاتنا على طول. أو تواصل مع أي واحد فينا مباشرة.">Fill the form and your brief lands in our chat instantly. Or reach either of us directly.</p>
+  <form class="leadform r" id="leadform" novalidate>
+    <div class="frow">
+      <label class="fld"><span data-en="Your name" data-ar="اسمك">Your name</span><input name="name" type="text" autocomplete="name" required maxlength="80"></label>
+      <label class="fld"><span data-en="Brand / store name" data-ar="اسم البراند / المتجر">Brand / store name</span><input name="brand" type="text" autocomplete="organization" required maxlength="80"></label>
+    </div>
+    <div class="frow">
+      <label class="fld"><span data-en="WhatsApp number" data-ar="رقم الواتساب">WhatsApp number</span><input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" required maxlength="24" dir="ltr"></label>
+      <label class="fld"><span data-en="What do you sell?" data-ar="بتبيع إيه؟">What do you sell?</span><input name="product" type="text" maxlength="120"></label>
+    </div>
+    <label class="fld"><span data-en="Monthly ad budget" data-ar="ميزانية الإعلانات الشهرية">Monthly ad budget</span><select name="budget">
+      <option value="" data-en="Choose a range" data-ar="اختار المدى">Choose a range</option>
+      <option value="under-10k" data-en="Under EGP 10,000" data-ar="أقل من 10,000 جنيه">Under EGP 10,000</option>
+      <option value="10k-30k" data-en="EGP 10,000 to 30,000" data-ar="من 10,000 لـ 30,000 جنيه">EGP 10,000 to 30,000</option>
+      <option value="30k-100k" data-en="EGP 30,000 to 100,000" data-ar="من 30,000 لـ 100,000 جنيه">EGP 30,000 to 100,000</option>
+      <option value="100k-plus" data-en="Over EGP 100,000" data-ar="أكتر من 100,000 جنيه">Over EGP 100,000</option>
+      <option value="unknown" data-en="Not sure yet" data-ar="لسه مش متأكد">Not sure yet</option>
+    </select></label>
+    <label class="fld"><span data-en="Your goal" data-ar="هدفك">Your goal</span><textarea name="goal" rows="3" maxlength="600" data-en-ph="Example: more store orders, lower cost per purchase" data-ar-ph="مثال: أوردرات أكتر للمتجر، تكلفة أقل للأوردر" placeholder="Example: more store orders, lower cost per purchase"></textarea></label>
+    <input type="text" name="company2" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button class="btn solid sendb" type="submit"><span data-en="Send the brief" data-ar="ابعت التفاصيل">Send the brief</span><i></i></button>
+    <p class="fstat" id="fstat" role="status" aria-live="polite"></p>
+  </form>
   <div class="people">
     <div class="pc r"><h3 data-en="Khalid" data-ar="خالد">Khalid</h3>
       <a href="https://wa.me/201022517124?text=Hi+Khalid%2C+I+saw+your+KAVO+portfolio+and+I+would+like+to+discuss+working+together." target="_blank" rel="noreferrer"><span>WhatsApp</span><i></i></a>

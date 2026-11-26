@@ -205,3 +205,22 @@ html[dir=rtl].js .svc li.r,html[dir=rtl] .js .svc li.r{transform:translateX(20px
 @media(prefers-reduced-motion:reduce){
   .js .r{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
 }
+/* lead form */
+.leadform{margin-top:34px;max-width:720px;display:flex;flex-direction:column;gap:18px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fld{display:flex;flex-direction:column;gap:7px;font-size:13px;letter-spacing:.04em;color:var(--mute)}
+.fld input,.fld select,.fld textarea{font:400 16px var(--sans);color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--line);padding:9px 2px;border-radius:0;transition:border-color .2s}
+.fld select{cursor:pointer}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-bottom-color:var(--gold)}
+.fld textarea{resize:vertical;min-height:64px}
+.hp{position:absolute;left:-9999px;top:-9999px;opacity:0;height:0;width:0;pointer-events:none}
+.sendb{align-self:flex-start;border:0;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:10px}
+.sendb i{width:8px;height:8px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);transition:transform .2s}
+html[dir=rtl] .sendb i{transform:rotate(-135deg)}
+.sendb:hover i{transform:translateX(3px) rotate(45deg)}
+html[dir=rtl] .sendb:hover i{transform:translateX(-3px) rotate(-135deg)}
+.sendb[disabled]{opacity:.55;cursor:default;transform:none}
+.fstat{margin:2px 0 0;font-size:15px;min-height:1.4em}
+.fstat.ok{color:var(--gold)}
+.fstat.err{color:#B4452F}
+@media (max-width:640px){.frow{grid-template-columns:1fr}}

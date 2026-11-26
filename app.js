@@ -7,6 +7,7 @@ if(intro){setTimeout(function(){intro.remove()},reduce?0:1750)}
 function setLang(l){
   root.lang=l;root.dir=l==='ar'?'rtl':'ltr';
   d.querySelectorAll('[data-en]').forEach(function(e){var v=e.getAttribute('data-'+l);if(v!=null)e.innerHTML=v});
+  d.querySelectorAll('[data-en-ph]').forEach(function(e){var v=e.getAttribute('data-'+l+'-ph');if(v!=null)e.placeholder=v});
   d.title=l==='ar'?'KAVO | خالد عبد العزيز - تسويق بالأداء':'KAVO | Khalid Abdelzizz - Performance Marketing';
   try{localStorage.setItem('kavo-lang',l)}catch(e){}
 }
@@ -106,4 +107,23 @@ size();make();
 addEventListener('resize',function(){size();make()});
 d.addEventListener('visibilitychange',function(){if(d.hidden)run=false;else if(!run){run=true;requestAnimationFrame(frame)}});
 requestAnimationFrame(frame);
+})();
+/* lead form -> Cloudflare Worker -> Telegram group */
+(function(){
+var f=d.getElementById('leadform');if(!f)return;
+var stat=d.getElementById('fstat'),btn=f.querySelector('.sendb'),els=f.elements;
+var ENDPOINT='https://kavo-leads.KAVO-SUBDOMAIN.workers.dev';
+var T={sending:{en:'Sending...',ar:'بنبعت...'},ok:{en:'Got it, your brief reached us. We reply on WhatsApp shortly.',ar:'وصلنا، تفاصيلك عندنا. هنرد عليك على واتساب قريب.'},err:{en:'Could not send. Please try again, or message us directly below.',ar:'حصلت مشكلة في الإرسال. جرب تاني، أو كلمنا مباشرة من تحت.'},req:{en:'Please fill your name, brand and WhatsApp number.',ar:'من فضلك املأ الاسم والبراند ورقم الواتساب.'}};
+function L(){return d.documentElement.lang==='ar'?'ar':'en'}
+f.addEventListener('submit',function(e){
+  e.preventDefault();
+  if(els['company2'].value)return;
+  var data={name:els['name'].value.trim(),brand:els['brand'].value.trim(),whatsapp:els['whatsapp'].value.trim(),product:els['product'].value.trim(),budget:els['budget'].value,goal:els['goal'].value.trim()};
+  if(!data.name||!data.brand||!data.whatsapp){stat.className='fstat err';stat.textContent=T.req[L()];return}
+  btn.disabled=true;stat.className='fstat';stat.textContent=T.sending[L()];
+  function done(){btn.disabled=false}
+  fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+  .then(function(r){if(!r.ok)throw 0;stat.className='fstat ok';stat.textContent=T.ok[L()];f.reset();done()})
+  .catch(function(){stat.className='fstat err';stat.textContent=T.err[L()];done()});
+});
 })();
