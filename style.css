@@ -211,7 +211,8 @@ body,.top,.brand,.pc{transition:background-color .5s,border-color .5s,color .5s,
 .fld select{cursor:pointer}
 .fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-bottom-color:var(--gold)}
 .fld textarea{resize:vertical;min-height:64px}
-.hp{position:absolute;left:-9999px;top:-9999px;opacity:0;height:0;width:0;pointer-events:none}
+.hp{position:absolute;left:0;top:0;opacity:0;height:1px;width:1px;overflow:hidden;clip-path:inset(50%);pointer-events:none}
+html[dir=rtl] .hp{left:auto;right:0}
 .sendb{align-self:flex-start;border:0;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:10px}
 .sendb i{width:8px;height:8px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);transition:transform .2s}
 html[dir=rtl] .sendb i{transform:rotate(-135deg)}
