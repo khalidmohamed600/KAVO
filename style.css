@@ -368,3 +368,6 @@ html[lang=en] .top.over-cine .lang [data-l=en],html[lang=ar] .top.over-cine .lan
 html[lang=en] .top.inv .lang [data-l=en],html[lang=ar] .top.inv .lang [data-l=ar]{background:#F2ECDF;color:#141412}
 .top.inv .theme{border-color:rgba(242,236,223,.45);color:rgba(242,236,223,.85)}
 @media(max-width:520px){.hint2{display:none}}
+
+/* keep the gold-scene chip inside the viewport in AR (card anchors to the inline end) */
+html[lang=ar] .chip2.c31{left:2%!important}
