@@ -230,7 +230,7 @@
       <label class="fld"><span data-en="Brand / store name" data-ar="اسم البراند / المتجر">Brand / store name</span><input name="brand" type="text" autocomplete="organization" required maxlength="80"></label>
     </div>
     <div class="frow">
-      <label class="fld"><span data-en="WhatsApp number" data-ar="رقم الواتساب">WhatsApp number</span><input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" required maxlength="24" dir="ltr"></label>
+      <label class="fld"><span data-en="WhatsApp number" data-ar="رقم الواتساب">WhatsApp number</span><input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" required maxlength="24" dir="ltr" pattern="^\+?[0-9][0-9 .\-()]{5,22}$" title="أدخل رقم واتساب صحيح بالكود الدولي / Enter a valid WhatsApp number with country code"></label>
       <label class="fld"><span data-en="What do you sell?" data-ar="بتبيع إيه؟">What do you sell?</span><input name="product" type="text" maxlength="120"></label>
     </div>
     <label class="fld"><span data-en="Monthly ad budget" data-ar="ميزانية الإعلانات الشهرية">Monthly ad budget</span><select name="budget">
