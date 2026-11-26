@@ -6,7 +6,7 @@
 :root{--bg:#F7F3EA;--bg2:#FFFDF8;--ink:#14213D;--mute:#566074;--line:#DDD4C2;--gold:#8A6D2C;--gold2:#B08F45;--shadow:0 1px 2px rgb(20 33 61/.05),0 18px 40px -22px rgb(20 33 61/.28);--fade:rgb(247 243 234/.85);--b1:rgb(176 143 69/.30);--b2:rgb(20 33 61/.10);--b3:rgb(176 143 69/.20);--hov:0 2px 4px rgb(20 33 61/.06),0 26px 50px -22px rgb(20 33 61/.34);--serif:Season,"PlexAr",Georgia,serif;--sans:Gt,"PlexAr",system-ui,sans-serif}
 html[lang=ar]{--serif:PlexAr,Season,serif;--sans:PlexAr,Gt,system-ui,sans-serif}
 *{box-sizing:border-box;margin:0}
-html{overflow-x:hidden;overflow-x:clip;scroll-behavior:smooth;scroll-padding-top:84px;background:var(--bg)}
+html{overflow-x:hidden;overflow-x:clip;scroll-padding-top:84px;background:var(--bg)}
 body{background:transparent;color:var(--ink);font:400 17px/1.6 var(--sans);overflow-x:hidden;overflow-x:clip;-webkit-font-smoothing:antialiased}
 html[lang=ar] body{line-height:1.85}
 a{color:inherit}
@@ -254,6 +254,12 @@ html[dir=rtl] .lbar i{transform-origin:right}
 .js .slide{position:absolute;inset:0;min-height:0;z-index:10;pointer-events:none;background:none;will-change:transform}
 .js .slide::before{content:"";position:absolute;inset:0;opacity:var(--bo,1);will-change:opacity}
 .js .slide>*{position:relative;opacity:var(--co,1);will-change:opacity}
+/* hidden until the scroll renderer places them: if the cinematic script ever
+   fails while .js is on, s2/s3 and the assembly layers must not stack into a
+   smeared stamp; the render loop sets --bo/--co/inline opacity every frame */
+.js .slide.s2::before,.js .slide.s3::before{opacity:var(--bo,0)}
+.js .slide.s2>*,.js .slide.s3>*{opacity:var(--co,0)}
+.js .blabel,.js .piece,.js .result2{opacity:0}
 .js .slide .pill2{pointer-events:auto}
 .js .slide.s1::before{background:#F2ECDF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.025 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");background-blend-mode:multiply}
 .js .slide.s2::before{background:#131311 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.025 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");background-blend-mode:multiply}
@@ -336,11 +342,13 @@ html[lang=en] .top.inv .lang [data-l=en],html[lang=ar] .top.inv .lang [data-l=ar
   .js .cine,.js .cine2{height:auto}
   .js .stage,.js .stage2{position:static;height:auto;overflow:visible}
   .js .slide{position:relative;opacity:1!important;transform:none!important;min-height:92vh;background:transparent}
+  .js .slide::before{opacity:1!important}
+  .js .slide>*{opacity:1!important}
   .stage{background:#F2ECDF}
   .slide.s1{background:#F2ECDF}.slide.s2{background:#131311}.slide.s3{background:#C9A227}
   .js .vis{position:relative;opacity:1!important;transform:none!important;inset:auto;--vbase:0px;margin:0 max(26px,calc(50vw - 500px)) 50px;width:min(70vw,320px)}
   .dots2,.hint2{display:none}
-  .blabel{position:static;padding-top:80px}
+  .blabel{position:static;padding-top:80px;opacity:.7!important}
   .stage2{display:block;padding-bottom:90px}
   .stackwrap{height:auto;margin:40px auto 0;display:flex;flex-direction:column;gap:14px}
   .piece,.result2{position:relative;left:auto;top:auto;transform:none!important;opacity:1!important;width:100%}
