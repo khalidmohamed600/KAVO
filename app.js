@@ -62,15 +62,13 @@ var mode='auto';try{var s=localStorage.getItem('kavo-theme');if(s==='light'||s==
 function auto(){var h=new Date().getHours();return(h>=7&&h<19)?'light':'dark'}
 function apply(){var t=mode==='auto'?auto():mode;
   if(r.getAttribute('data-theme')!==t)r.setAttribute('data-theme',t);
-  b.setAttribute('data-mode',mode);
-  b.setAttribute('aria-label',r.lang==='ar'?'المظهر: '+(mode==='auto'?'تلقائي':mode==='light'?'فاتح':'داكن'):'Theme: '+mode);
+  b.setAttribute('data-mode',t);
+  b.setAttribute('aria-label',r.lang==='ar'?'المظهر: '+(t==='light'?'فاتح':'داكن'):'Theme: '+t);
   var c=d.querySelector('meta[name=theme-color]');if(c)c.content=t==='dark'?'#121211':'#F7F3EA'}
 b.addEventListener('click',function(){
   /* auto -> the other look -> the first look -> back to auto */
-  if(mode==='auto')mode=auto()==='light'?'dark':'light';
-  else if(mode===auto())mode='auto';
-  else mode=auto();
-  try{if(mode==='auto')localStorage.removeItem('kavo-theme');else localStorage.setItem('kavo-theme',mode)}catch(e){}
+  mode=(r.getAttribute('data-theme')==='dark')?'light':'dark';
+  try{localStorage.setItem('kavo-theme',mode)}catch(e){}
   apply()});
 apply();
 setInterval(function(){if(mode==='auto')apply()},30000);
