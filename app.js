@@ -110,11 +110,11 @@ requestAnimationFrame(frame);
 })();
 /* lead form -> Cloudflare Worker -> Telegram group */
 (function(){
-var f=d.getElementById('leadform');if(!f)return;
-var stat=d.getElementById('fstat'),btn=f.querySelector('.sendb'),els=f.elements;
+var f=document.getElementById('leadform');if(!f)return;
+var stat=document.getElementById('fstat'),btn=f.querySelector('.sendb'),els=f.elements;
 var ENDPOINT='https://kavo-leads.adhmstarrrr.workers.dev';
 var T={sending:{en:'Sending...',ar:'بنبعت...'},ok:{en:'Got it, your brief reached us. We reply on WhatsApp shortly.',ar:'وصلنا، تفاصيلك عندنا. هنرد عليك على واتساب قريب.'},err:{en:'Could not send. Please try again, or message us directly below.',ar:'حصلت مشكلة في الإرسال. جرب تاني، أو كلمنا مباشرة من تحت.'},req:{en:'Please fill your name, brand and WhatsApp number.',ar:'من فضلك املأ الاسم والبراند ورقم الواتساب.'}};
-function L(){return d.documentElement.lang==='ar'?'ar':'en'}
+function L(){return document.documentElement.lang==='ar'?'ar':'en'}
 f.addEventListener('submit',function(e){
   e.preventDefault();
   if(els['company2'].value)return;
