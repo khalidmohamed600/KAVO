@@ -159,7 +159,7 @@ function putScene(el,vis,bo,co,rise,pa,float){
 function piece(el,pb,x0,y0,r0,t0,t1,yEnd){
   var t=seg(pb,t0,t1);
   var x=(1-t)*x0,y=(1-t)*y0+t*yEnd,r=(1-t)*r0;
-  var merge=seg(pb,0.56,0.72);
+  var merge=seg(pb,0.40,0.54);
   var sc=(0.9+0.1*t)*(1-merge*0.35);
   el.style.opacity=t*(1-merge);
   el.style.transform='translate(-50%,-50%) translate('+x+'px,'+y+'px) rotate('+r+'deg) scale('+sc+')';
@@ -213,12 +213,12 @@ function render(){
   var sceneCol=inC1?(pa<0.265?'#F2ECDF':(pa<0.62?'#131311':'#C9A227')):(inC2?'#131311':(d.documentElement.getAttribute('data-theme')==='dark'?'#121211':'#F7F3EA'));
   if(sceneCol!==lastChrome){lastChrome=sceneCol;if(themeMeta&&themeMeta.content!==sceneCol)themeMeta.content=sceneCol;cine.style.background=inC1?sceneCol:''}
   /* assembly scene */
-  blabel.style.opacity=seg(pb,0,0.05)*(1-seg(pb,0.70,0.86));
-  blabel.style.transform='translateY('+((1-seg(pb,0,0.05))*30)+'px)';
-  piece(pc1,pb,-240,-220,-22,0.03,0.28,-86);
-  piece(pc2,pb,250,-110,18,0.13,0.38,0);
-  piece(pc3,pb,-230,240,14,0.23,0.48,86);
-  var rin=seg(pb,0.60,0.80);
+  blabel.style.opacity=seg(pb,0,0.04)*(1-seg(pb,0.48,0.60));
+  blabel.style.transform='translateY('+((1-seg(pb,0,0.04))*30)+'px)';
+  piece(pc1,pb,-240,-220,-22,0.00,0.18,-86);
+  piece(pc2,pb,250,-110,18,0.06,0.24,0);
+  piece(pc3,pb,-230,240,14,0.12,0.30,86);
+  var rin=seg(pb,0.52,0.80);
   result.style.opacity=rin;
   result.style.transform='translate(-50%,-50%) scale('+(0.6+0.4*rin)+') rotate('+((1-rin)*-4)+'deg)';
   /* header over scenes */
