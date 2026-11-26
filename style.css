@@ -337,22 +337,7 @@ html[lang=en] .top.inv .lang [data-l=en],html[lang=ar] .top.inv .lang [data-l=ar
   .stackwrap{width:70vw}
   .result2 .bignum{font-size:64px}
 }
-/* reduced motion: scenes become calm stacked sections */
-@media(prefers-reduced-motion:reduce){
-  .js .cine,.js .cine2{height:auto}
-  .js .stage,.js .stage2{position:static;height:auto;overflow:visible}
-  .js .slide{position:relative;opacity:1!important;transform:none!important;min-height:92vh;background:transparent}
-  .js .slide::before{opacity:1!important}
-  .js .slide>*{opacity:1!important}
-  .stage{background:#F2ECDF}
-  .slide.s1{background:#F2ECDF}.slide.s2{background:#131311}.slide.s3{background:#C9A227}
-  .js .vis{position:relative;opacity:1!important;transform:none!important;inset:auto;--vbase:0px;margin:0 max(26px,calc(50vw - 500px)) 50px;width:min(70vw,320px)}
-  .dots2,.hint2{display:none}
-  .blabel{position:static;padding-top:80px;opacity:.7!important}
-  .stage2{display:block;padding-bottom:90px}
-  .stackwrap{height:auto;margin:40px auto 0;display:flex;flex-direction:column;gap:14px}
-  .piece,.result2{position:relative;left:auto;top:auto;transform:none!important;opacity:1!important;width:100%}
-}
+/* reduced motion: the scenes still run (opacity crossfades, no travel/rotation) via data-motion=soft in app.js */
 
 /* header legibility over light scenes (wins over dark page theme) */
 .top.over-cine{color:#141412}
