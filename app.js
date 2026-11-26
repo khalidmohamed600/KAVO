@@ -189,9 +189,9 @@ function render(){
      heading and card fade out in the first 40% of the swap and the incoming
      ones fade in only in the last 40%, with a clean text-free beat between,
      so no frame ever shows two headings or two cards at once */
-  var t12=seg(pa,0.20,0.33),t23=seg(pa,0.56,0.68);
-  var coOut12=1-seg(t12,0,0.4),coIn12=seg(t12,0.6,1);
-  var coOut23=1-seg(t23,0,0.4),coIn23=seg(t23,0.6,1);
+  var t12=seg(pa,0.22,0.27),t23=seg(pa,0.58,0.63);
+  var coOut12=1-seg(t12,0,0.3),coIn12=seg(t12,0.42,1);
+  var coOut23=1-seg(t23,0,0.3),coIn23=seg(t23,0.42,1);
   putScene(s1,v1,t12<1?1:0,coOut12,0,pa,0.6);
   if(pill)pill.style.pointerEvents=t12<0.02?'auto':'none';
   putScene(s2,v2,t23>0?(t23<1?1:0):t12,t23>0?coOut23:coIn12,t23>0?0:(1-t12)*90,pa,1.0);
