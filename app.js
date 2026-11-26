@@ -146,16 +146,14 @@ var dotEls=dots.querySelectorAll('i');
 function clamp(v,a,b){return Math.min(b,Math.max(a,v))}
 function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
 function seg(p,a,b){return ease(clamp((p-a)/(b-a),0,1))}
-function slideIO(el,vis,pa,a0,a1,b0,b1,float){
-  var inn=seg(pa,a0,a1),out=1-seg(pa,b0,b1),io=inn*out;
-  el.style.opacity=io;
-  el.style.transform='translateY('+((1-inn)*90-(1-out)*90)+'px)';
+function putScene(el,vis,op,rise,pa,float){
+  el.style.opacity=op;
+  el.style.transform='translateY('+rise+'px)';
   if(vis){
     var par=(pa-0.5)*-40*float;
-    vis.style.opacity=io;
-    vis.style.transform='translateY(calc(var(--vbase, -50%) + '+((1-inn)*90-(1-out)*90+par)+'px)) rotate('+((1-inn)*6)+'deg)';
+    vis.style.opacity=op;
+    vis.style.transform='translateY(calc(var(--vbase, -50%) + '+(rise+par)+'px)) rotate('+(rise/90*6)+'deg)';
   }
-  return io;
 }
 function piece(el,pb,x0,y0,r0,t0,t1,yEnd){
   var t=seg(pb,t0,t1);
@@ -177,6 +175,7 @@ function measure(){
   g.c2t=r2.top+y;g.c2b=g.c2t+cine2.offsetHeight;g.c2r=Math.max(cine2.offsetHeight-g.vh,1);
 }
 var lastPa=-1,lastPb=-1,lastOver=null,lastInv=null,lastCover=null,force=true,run=true;
+var themeMeta=d.querySelector('meta[name=theme-color]'),lastChrome=null;
 function render(){
   var y=window.pageYOffset||d.documentElement.scrollTop||0;
   var pa=clamp((y-g.c1t)/g.c1r,0,1),pb=clamp((y-g.c2t)/g.c2r,0,1);
@@ -184,13 +183,17 @@ function render(){
   var cover=(y+g.vh>g.c1t&&y<g.c1b)||(y+g.vh>g.c2t&&y<g.c2b);
   if(!force&&pa===lastPa&&pb===lastPb&&over===lastOver&&cover===lastCover)return;
   lastPa=pa;lastPb=pb;lastCover=cover;force=false;
-  /* hero scene: scenes crossfade by opacity only; each slide carries its own
-     opaque background so no per-frame background-color paint is needed */
+  /* hero scenes: the incoming scene fades and rises over the outgoing one,
+     which stays fully opaque underneath until it is completely covered, so
+     scenes never dissolve through each other or through the page background */
   var t12=seg(pa,0.20,0.33),t23=seg(pa,0.56,0.68);
-  var o1=slideIO(s1,v1,pa,-1,-0.5,0.22,0.35,0.6);
-  if(pill)pill.style.pointerEvents=o1>0.35?'auto':'none';
-  slideIO(s2,v2,pa,0.25,0.37,0.58,0.70,1.0);
-  slideIO(s3,v3,pa,0.61,0.73,1.2,1.4,0.8);
+  var o1=t12<1?1:0;
+  var o2=t23>0?(t23<1?1:0):t12;
+  var o3=t23;
+  putScene(s1,v1,o1,0,pa,0.6);
+  if(pill)pill.style.pointerEvents=t12<0.15?'auto':'none';
+  putScene(s2,v2,o2,(1-t12)*90,pa,1.0);
+  putScene(s3,v3,o3,(1-t23)*90,pa,0.8);
   var a2=pa*2.2;
   c21.style.left=(30+22*Math.cos(a2))+'%';c21.style.top=(6+5*Math.sin(a2))+'%';
   c22.style.left=(26+20*Math.cos(a2+2.4))+'%';c22.style.top=(86+4*Math.sin(a2+2.4))+'%';
@@ -202,6 +205,11 @@ function render(){
   dots.style.color=ui;hint.style.color=ui;
   dots.style.opacity=pa<1?1:0;
   hint.style.opacity=pa<0.04?1:0;
+  /* keep the phone status area and any sliver below the short viewport in
+     sync with the scene on screen, not the page's cream base */
+  var inC1=(y+70>g.c1t&&y<g.c1b),inC2=(y+70>g.c2t&&y<g.c2b);
+  var sceneCol=inC1?(pa<0.265?'#F2ECDF':(pa<0.62?'#131311':'#C9A227')):(inC2?'#131311':(d.documentElement.getAttribute('data-theme')==='dark'?'#121211':'#F7F3EA'));
+  if(sceneCol!==lastChrome){lastChrome=sceneCol;if(themeMeta&&themeMeta.content!==sceneCol)themeMeta.content=sceneCol;cine.style.background=inC1?sceneCol:''}
   /* assembly scene */
   blabel.style.opacity=seg(pb,0,0.05)*(1-seg(pb,0.70,0.86));
   blabel.style.transform='translateY('+((1-seg(pb,0,0.05))*30)+'px)';
