@@ -23,9 +23,9 @@ if('IntersectionObserver' in window&&!reduce){
 /* brand panels */
 function count(b){
   if(reduce)return;
-  b.querySelectorAll('[data-to]').forEach(function(e){
-    var t=parseFloat(e.dataset.to),dec=+(e.dataset.d||0),s=e.dataset.s||'',final=e.textContent,t0=performance.now();
-    (function k(n){var p=Math.min(Math.max((n-t0)/700,0),1),v=t*(1-Math.pow(1-p,3));
+  b.querySelectorAll('[data-to]').forEach(function(e,idx){
+    var t=parseFloat(e.dataset.to),dec=+(e.dataset.d||0),s=e.dataset.s||'',final=e.textContent,t0=performance.now()+idx*140;
+    (function k(n){var p=Math.min(Math.max((n-t0)/1100,0),1),v=t*(1-Math.pow(1-p,3));
       e.textContent=p<1?v.toLocaleString('en-US',{minimumFractionDigits:dec,maximumFractionDigits:dec})+s:final;
       if(p<1)requestAnimationFrame(k)})(t0);
   });

@@ -153,6 +153,13 @@ html[dir=rtl].js .svc li.r,html[dir=rtl] .js .svc li.r{transform:translateX(12px
 .steps li{transition:border-color .5s}.steps li.in{border-color:var(--gold2)}
 .top nav a.on{color:var(--ink)}
 .fig b{will-change:contents}
+@keyframes figin{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: no-preference){
+  .brand.open .fig{animation:figin .55s cubic-bezier(.2,.7,.2,1) both}
+  .brand.open .fig:nth-child(2){animation-delay:.12s}
+  .brand.open .fig:nth-child(3){animation-delay:.24s}
+  .brand.open .fig:nth-child(4){animation-delay:.36s}
+}
 @media(prefers-reduced-motion:reduce){.glow{animation:none}.prog{display:none}}
 .fig b.cur{unicode-bidi:plaintext}html[dir=rtl] .fig b.cur{direction:rtl}
 
