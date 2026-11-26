@@ -3,7 +3,7 @@ var d=document,root=d.documentElement,reduce=matchMedia('(prefers-reduced-motion
 root.setAttribute('data-motion',reduce?'soft':'full');
 /* intro: remove from the page once it has faded */
 var intro=d.getElementById('intro');
-if(intro){setTimeout(function(){intro.remove()},reduce?0:1750)}
+if(intro){setTimeout(function(){intro.remove()},reduce?0:1100)}
 /* language */
 function setLang(l){
   root.lang=l;root.dir=l==='ar'?'rtl':'ltr';
@@ -44,8 +44,9 @@ d.documentElement.classList.add('js');
   var hide=function(){if(ld.classList.contains('done'))return;ld.classList.add('done');setTimeout(function(){ld.remove()},650)};
   if(reduce){hide();return}
   var t0=Date.now();
-  addEventListener('load',function(){setTimeout(hide,Math.max(0,1500-(Date.now()-t0)))});
-  setTimeout(hide,2800)})();
+  addEventListener('load',function(){setTimeout(hide,Math.max(0,700-(Date.now()-t0)))});
+  ['pointerdown','keydown','wheel','touchstart'].forEach(function(ev){addEventListener(ev,hide,{once:true,passive:true})});
+  setTimeout(hide,1800)})();
 /* stagger inside each group, not across the page */
 d.querySelectorAll('main').forEach(function(m){m.querySelectorAll('.r').forEach(function(e){
   var sib=[].filter.call(e.parentNode.children,function(c){return c.classList.contains('r')});
@@ -161,7 +162,7 @@ function piece(el,pb,x0,y0,r0,t0,t1,yEnd){
   x0*=U;y0*=U;yEnd*=U;
   var t=seg(pb,t0,t1);
   var x=(1-t)*x0,y=(1-t)*y0+t*yEnd,r=(1-t)*r0;
-  var merge=seg(pb,0.36,0.46);
+  var merge=seg(pb,0.40,0.52);
   var sc=(0.9+0.1*t)*(1-merge*0.35);
   if(soft){x=0;y=yEnd;r=0;sc=0.98+0.02*t}
   el.style.opacity=t*(1-merge);
@@ -231,12 +232,13 @@ function render(now){
   var sceneCol=inC1?(pa<0.245?'#F2ECDF':(pa<0.60?'#131311':'#0E0E0D')):(inC2?'#131311':(d.documentElement.getAttribute('data-theme')==='dark'?'#121211':'#F7F3EA'));
   if(sceneCol!==lastChrome){lastChrome=sceneCol;if(themeMeta&&themeMeta.content!==sceneCol)themeMeta.content=sceneCol;cine.style.background=inC1?sceneCol:''}
   /* assembly scene */
-  blabel.style.opacity=seg(pb,0,0.04)*(1-seg(pb,0.40,0.50));
+  blabel.style.opacity=seg(pb,0,0.04)*(1-seg(pb,0.42,0.52));
   blabel.style.transform=soft?'none':'translateY('+((1-seg(pb,0,0.04))*30)+'px)';
-  piece(pc1,pb,-240,-220,-22,0.00,0.18,-86);
+  if(g.gw!==innerWidth||!g.gp){g.gw=innerWidth;g.gp=Math.max(86,pc2.offsetHeight+12)/U}var gap=g.gp;
+  piece(pc1,pb,-240,-220,-22,0.00,0.18,-gap);
   piece(pc2,pb,250,-110,18,0.06,0.24,0);
-  piece(pc3,pb,-230,240,14,0.12,0.30,86);
-  var rin=seg(pb,0.41,0.68);
+  piece(pc3,pb,-230,240,14,0.12,0.30,gap);
+  var rin=seg(pb,0.34,0.6);
   result.style.opacity=rin;
   result.style.transform=soft?'translate(-50%,-50%) scale('+(0.97+0.03*rin)+')':'translate(calc(-50% + '+((1-rin)*(root.dir==='rtl'?-1:1)*150)+'px),-50%) scale('+(0.7+0.3*rin)+') rotate('+((1-rin)*-4)+'deg)';
   /* header over scenes */
