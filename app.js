@@ -112,7 +112,7 @@ requestAnimationFrame(frame);
 (function(){
 var f=d.getElementById('leadform');if(!f)return;
 var stat=d.getElementById('fstat'),btn=f.querySelector('.sendb'),els=f.elements;
-var ENDPOINT='https://kavo-leads.KAVO-SUBDOMAIN.workers.dev';
+var ENDPOINT='https://kavo-leads.adhmstarrrr.workers.dev';
 var T={sending:{en:'Sending...',ar:'بنبعت...'},ok:{en:'Got it, your brief reached us. We reply on WhatsApp shortly.',ar:'وصلنا، تفاصيلك عندنا. هنرد عليك على واتساب قريب.'},err:{en:'Could not send. Please try again, or message us directly below.',ar:'حصلت مشكلة في الإرسال. جرب تاني، أو كلمنا مباشرة من تحت.'},req:{en:'Please fill your name, brand and WhatsApp number.',ar:'من فضلك املأ الاسم والبراند ورقم الواتساب.'}};
 function L(){return d.documentElement.lang==='ar'?'ar':'en'}
 f.addEventListener('submit',function(e){
