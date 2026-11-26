@@ -207,8 +207,8 @@ function render(now){
   var coOut23=1-seg(t23,0,0.3),coIn23=seg(t23,0.42,1);
   putScene(s1,v1,t12<1?1:0,coOut12,0,pa,0.6);
   if(pill)pill.style.pointerEvents=t12<0.02?'auto':'none';
-  putScene(s2,v2,t23>0?(t23<1?1:0):seg(t12,0,0.5),t23>0?coOut23:coIn12,t23>0?0:(1-t12)*90,pa,1.0);
-  putScene(s3,v3,seg(t23,0,0.5),coIn23,(1-t23)*90,pa,0.8);
+  putScene(s2,v2,t23>0?(t23<1?1:0):seg(t12,0,0.25),t23>0?coOut23:coIn12,t23>0?0:(1-t12)*90,pa,1.0);
+  putScene(s3,v3,seg(t23,0,0.25),coIn23,(1-t23)*90,pa,0.8);
   var a2=pa*2.2;
   c21.style.left=(30+22*Math.cos(a2))+'%';c21.style.top=(6+5*Math.sin(a2))+'%';
   c22.style.left=(26+20*Math.cos(a2+2.4))+'%';c22.style.top=(86+4*Math.sin(a2+2.4))+'%';
