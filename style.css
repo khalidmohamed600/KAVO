@@ -370,4 +370,4 @@ html[lang=en] .top.inv .lang [data-l=en],html[lang=ar] .top.inv .lang [data-l=ar
 @media(max-width:520px){.hint2{display:none}}
 
 /* keep the gold-scene chip inside the viewport in AR (card anchors to the inline end) */
-html[lang=ar] .chip2.c31{left:2%!important}
+html[lang=ar] #c31{left:2%!important}
