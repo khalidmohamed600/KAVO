@@ -45,6 +45,13 @@ if(first&&'IntersectionObserver' in window){var o2=new IntersectionObserver(func
 (function(){
 var d=document,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 d.documentElement.classList.add('js');
+/* loading screen */
+(function(){var ld=d.getElementById('loader');if(!ld)return;
+  var hide=function(){if(ld.classList.contains('done'))return;ld.classList.add('done');setTimeout(function(){ld.remove()},650)};
+  if(reduce){hide();return}
+  var t0=Date.now();
+  addEventListener('load',function(){setTimeout(hide,Math.max(0,1500-(Date.now()-t0)))});
+  setTimeout(hide,2800)})();
 /* stagger inside each group, not across the page */
 d.querySelectorAll('main').forEach(function(m){m.querySelectorAll('.r').forEach(function(e){
   var sib=[].filter.call(e.parentNode.children,function(c){return c.classList.contains('r')});
