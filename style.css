@@ -373,3 +373,130 @@ html[lang=ar] #c31{left:2%!important}
 #sidx div.on{opacity:1;transform:translateX(7px)}
 html[dir=rtl] #sidx div.on{transform:translateX(-7px)}
 #sidx div:before{content:'';display:inline-block;width:14px;height:1px;background:currentColor;margin-inline-end:9px;vertical-align:middle}
+
+/* ===== round 15: black + one gold + off-white, KAVO logo plate, readable type, pinned About, proof on the surface ===== */
+body{font-size:18px}
+.lead{font-size:20px}
+.sub2{font-size:clamp(15px,1.2vw,18px);max-width:390px;opacity:.88;line-height:1.6}
+.eyebrow2{font-size:13px}
+.lab{font-size:14px}
+h2{font-size:clamp(38px,5.2vw,70px);letter-spacing:-.012em}
+.tg{font-size:17px}.cap{font-size:14px}.fig span{font-size:15px}.priv{font-size:15px}
+.top nav a{font-size:15px}
+.svc li{font-size:21px}
+.steps p,.pts p{font-size:17px}
+#sidx{font-size:13px;letter-spacing:.12em}
+.chip2{font-size:12px}
+.numcard .numlbl,.result2 .numlbl{font-size:12px}
+/* scene 3 is black with a gold light, not a mustard fill */
+.js .slide.s3::before{background:radial-gradient(ellipse 52% 62% at 76% 52%,rgba(201,162,39,.30),rgba(201,162,39,0) 70%),#0E0E0D}
+html[dir=rtl] .js .slide.s3::before{background:radial-gradient(ellipse 52% 62% at 24% 52%,rgba(201,162,39,.30),rgba(201,162,39,0) 70%),#0E0E0D}
+.slide.s3{color:#F2ECDF}
+.s3 .bigtype i{color:#C9A227}
+.chip2.inkchip{border-color:rgba(242,236,223,.5);color:#F2ECDF}
+/* hero object: the real KAVO logo plate, larger */
+#v1{aspect-ratio:1}
+.adcard .logoimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit}
+.adcard .orb{display:none}
+.adcard .tag,.adcard .caprow{z-index:2}
+@media(min-width:521px){
+  .vis{width:min(38vw,60vh,470px)}
+  #v1{width:min(38vw,64vh,500px)}
+  .numcard .bignum{font-size:min(7.4vw,11vh,108px)}
+  .numcard.silver .bignum{font-size:min(7.8vw,11.5vh,116px)}
+  .chip2{font-size:12px;padding:9px 16px}
+  .stackwrap{width:min(60vw,420px);height:min(62vh,470px)}
+  .piece{padding:26px 28px;border-radius:24px}
+  .piece h3{font-size:clamp(30px,5.4vh,46px)}
+  .piece p{font-size:12px}
+  .result2 .bignum{font-size:clamp(70px,14vh,120px)}
+  .blabel{font-size:14px}
+}
+@media(max-width:520px){#v1{width:62vw;inset-inline-end:4%;bottom:3vh}.sub2{max-width:68vw;font-size:14px}}
+/* header: solid scene colour over the pinned scenes so headlines never run under it */
+.top.over-cine{background:var(--hdr,transparent)!important}
+/* About: pinned, one beat at a time */
+.js #about{padding:0;height:360vh;position:relative}
+.js #about .bstick{position:sticky;top:0;height:100vh;height:100svh;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);grid-template-rows:auto auto;align-content:center;column-gap:56px;padding-top:56px}
+.js #about .bstick>.lab{grid-column:1;grid-row:1;align-self:end}
+.js #about .bstick>h2{grid-column:1;grid-row:2;align-self:start;font-size:clamp(40px,5.4vw,78px);margin:0}
+.js #about .beats{grid-column:2;grid-row:1/span 2;position:relative;height:min(56vh,440px);align-self:center}
+.js #about .beat{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;margin:0;padding:0;border:0;opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1);pointer-events:none}
+.js #about .beat.on{opacity:1;transform:none;pointer-events:auto}
+.js #about .pts{display:block;margin:0}
+.js #about p.lead.beat{font:500 clamp(22px,2.3vw,34px)/1.4 var(--serif);color:var(--ink);max-width:none}
+.js #about .pts b{font:500 clamp(30px,3.6vw,52px)/1.1 var(--serif);margin-bottom:14px}
+.js #about .pts p{font-size:clamp(17px,1.5vw,21px);max-width:30em}
+.bprog{display:none}
+.js .bprog{display:block;position:absolute;inset-inline:max(22px,calc(50vw - 520px));bottom:9vh;height:2px;background:var(--line)}
+.js .bprog i{display:block;height:100%;background:var(--gold);transform-origin:left;transform:scaleX(var(--bp,0))}
+html[dir=rtl] .bprog i{transform-origin:right}
+.js #about .bstick{position:sticky}
+@media(max-width:820px){
+  .js #about{height:340vh}
+  .js #about .bstick{grid-template-columns:1fr;grid-template-rows:auto auto 1fr;align-content:start;padding-top:96px;row-gap:6px}
+  .js #about .bstick>.lab,.js #about .bstick>h2{grid-column:1}
+  .js #about .beats{grid-column:1;grid-row:3;height:auto;margin-top:26px;align-self:stretch}
+  .js #about .bstick>h2{font-size:clamp(32px,9vw,46px)}
+  .js #about p.lead.beat{font-size:clamp(20px,5.4vw,26px)}
+  .js .bprog{bottom:7vh}
+}
+html[data-motion=soft] .js #about .beat,html[data-motion=soft] #about .beat{transform:none}
+/* Brands: sticky readout on the left, proof visible on every row */
+.bgrid{display:block}
+.bidx{display:none}
+@media(min-width:1100px){
+  .bgrid{display:grid;grid-template-columns:300px minmax(0,1fr);gap:56px;align-items:start}
+  .bhead{position:sticky;top:19vh}
+  .bhead h2{margin-bottom:28px}
+  .bidx{display:block}
+  .bidx b{display:block;font:500 clamp(96px,10vw,150px)/.9 var(--serif);color:transparent;-webkit-text-stroke:1.5px var(--gold);letter-spacing:-.02em;direction:ltr;text-align:start}
+  .bidx span{display:block;color:var(--mute);font-size:15px;letter-spacing:.2em;margin-top:10px;direction:ltr;text-align:start}
+  .bidx em{display:block;font:500 24px var(--serif);margin-top:16px;color:var(--ink)}
+  .brand button .nm{font-size:clamp(28px,2.7vw,40px)}
+}
+.brand button{grid-template-columns:34px 76px 1fr 30px;gap:16px;padding:26px 0}
+.thumb{width:76px;aspect-ratio:1;border-radius:18px;border:1px solid var(--b1);background:linear-gradient(160deg,var(--bg),var(--bg2));display:grid;place-items:center;font:500 32px Season,serif;color:var(--gold);overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{display:inline-flex;gap:8px;align-items:baseline;border:1px solid var(--b1);border-radius:99px;padding:6px 13px;font-size:13.5px;color:var(--mute);background:color-mix(in srgb,var(--gold) 9%,transparent)}
+.chip b{font:500 16px var(--sans);color:var(--gold);direction:ltr}
+.panel>div{padding-inline-start:126px}
+@media(max-width:760px){
+  .brand{padding:0 18px}
+  .brand button{grid-template-columns:56px 1fr 24px;gap:12px}
+  .brand button .n{display:none}
+  .thumb{width:56px;border-radius:14px;font-size:24px}
+  .panel>div{padding-inline-start:0}
+  .brand button .nm{font-size:clamp(26px,7.4vw,34px)}
+  .chip{font-size:12.5px;padding:5px 10px}
+}
+.brand.open .chips{display:none}
+@media(min-width:521px){#v2,#v3{width:min(36vw,54vh,430px)}}
+.thumb.has-img{border-radius:50%;border:0;background:none}
+/* services: same twelve lines, grouped into four cards */
+.svcg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:8px;align-items:start}
+.svcc{border:1px solid var(--line);border-radius:24px;background:var(--bg2);box-shadow:var(--shadow);padding:30px 34px 12px}
+.svcc .sn{color:var(--gold);font-size:14px;direction:ltr;display:block}
+.svcc h3{font:500 clamp(28px,2.8vw,40px)/1.1 var(--serif);margin:8px 0 12px}
+.svcc ul{list-style:none;padding:0}
+.svcc li{padding:15px 0;border-top:1px solid var(--line);font-size:18px;line-height:1.5}
+.svcc.wide{grid-column:1/-1;background:linear-gradient(120deg,var(--bg2),color-mix(in srgb,var(--gold) 10%,var(--bg2)))}
+.svcc.wide li{font:500 clamp(22px,2.4vw,32px)/1.35 var(--serif);border-top:0;padding:6px 0 22px;max-width:30em}
+@media(max-width:820px){.svcg{grid-template-columns:1fr}.svcc{padding:24px 22px 8px}.svcc li{font-size:17px}}
+/* contact: form is the primary action */
+.leadform{max-width:760px;border:1px solid var(--line);border-radius:28px;background:var(--bg2);box-shadow:var(--shadow);padding:38px 40px 34px}
+.sendb{background:transparent!important;color:var(--ink)!important;border:1px solid var(--gold)!important;padding:14px 30px;font-size:16px;font-weight:500}
+.sendb:hover{background:var(--gold)!important;color:#0E0E0D!important}
+.cf-turnstile{width:max-content;max-width:100%;border-radius:12px;overflow:hidden;min-height:65px}
+@media(max-width:640px){.leadform{padding:26px 20px 24px;border-radius:22px}}
+
+/* WhatsApp is the primary action, the form is the secondary one */
+.wabtns{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.wabtn{display:inline-flex;align-items:center;gap:14px;background:var(--gold);color:#0E0E0D;padding:18px 30px;border-radius:99px;font-size:17px;font-weight:500;text-decoration:none;line-height:1.25}
+.wabtn:hover{background:var(--gold2)}
+.wabtn svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.wabtn span{display:flex;flex-direction:column;align-items:flex-start}
+.wabtn b{font:500 15px var(--sans);letter-spacing:.06em;opacity:.8;direction:ltr}
+@media(max-width:640px){.wabtns{flex-direction:column}.wabtn{justify-content:center}.wabtn span{align-items:center}}
+.leadform{margin-top:26px}
