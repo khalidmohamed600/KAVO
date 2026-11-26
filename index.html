@@ -9,11 +9,12 @@
 <link rel="icon" href="assets/Y4HUVKZJ.jpg">
 <link rel="preload" href="fonts/SeasonMix-Medium.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/GT-America-Standard-Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <script>document.documentElement.classList.add('js');(function(){var m=null;try{m=localStorage.getItem('kavo-theme')}catch(e){}var H=new Date().getHours(),t=(m==='light'||m==='dark')?m:((H>=7&&H<19)?'light':'dark');document.documentElement.setAttribute('data-theme',t);var c=document.querySelector('meta[name=theme-color]');if(c)c.content=t==='dark'?'#121211':'#F7F3EA'})();try{if(localStorage.getItem('kavo-lang')==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl'}}catch(e){}</script>
 </head>
 <body>
 <div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
+<canvas id="dust" aria-hidden="true"></canvas>
 <div class="intro" id="intro" aria-hidden="true"><div class="mark"><span>K</span><span>A</span><span>V</span><span>O</span></div><div class="bar"></div></div>
 
 <header class="top">
@@ -31,11 +32,13 @@
 <main>
 <section class="hero" id="home">
   <div class="glow" aria-hidden="true"></div>
+  <div class="hero-in">
   <p class="eyebrow r" data-en="Performance marketing · Media buying" data-ar="تسويق بالأداء · شراء إعلانات">Performance marketing · Media buying</p>
   <h1 class="r" data-en="Not every click is a customer. Make your ad bring a <em>buyer</em>." data-ar="مش كل كليك عميل. خلّي إعلانك يجيب <em>مشتري</em>.">Not every click is a customer. Make your ad bring a <em>buyer</em>.</h1>
   <p class="lead r" data-en="KAVO runs paid campaigns on Meta, TikTok and Snapchat for e-commerce brands." data-ar="KAVO بتدير حملات مدفوعة على ميتا وتيك توك وسناب لبراندات التجارة الإلكترونية.">KAVO runs paid campaigns on Meta, TikTok and Snapchat for e-commerce brands.</p>
   <div class="cta r">
     <a class="btn solid" href="#brands" data-en="See the work results" data-ar="شوف نتايج الشغل">See the work results</a>
+  </div>
   </div>
 </section>
 
@@ -169,6 +172,6 @@
 </section>
 </main>
 <footer class="foot"><span>KAVO</span><span data-en="Campaign money amounts are shared in person." data-ar="مبالغ الحملات بتتعرض في لقاء شخصي.">Campaign money amounts are shared in person.</span></footer>
-<script src="app.js?v=4" defer></script>
+<script src="app.js?v=5" defer></script>
 </body>
 </html>
