@@ -1,5 +1,6 @@
 (function(){
 var d=document,root=d.documentElement,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+root.setAttribute('data-motion',reduce?'soft':'full');
 /* intro: remove from the page once it has faded */
 var intro=d.getElementById('intro');
 if(intro){setTimeout(function(){intro.remove()},reduce?0:1750)}
@@ -22,7 +23,6 @@ if('IntersectionObserver' in window&&!reduce){
 }else els.forEach(function(e){e.classList.add('in')});
 /* brand panels */
 function count(b){
-  if(reduce)return;
   b.querySelectorAll('[data-to]').forEach(function(e,idx){
     var t=parseFloat(e.dataset.to),dec=+(e.dataset.d||0),s=e.dataset.s||'',final=e.textContent,t0=performance.now()+idx*140;
     (function k(n){var p=Math.min(Math.max((n-t0)/1100,0),1),v=t*(1-Math.pow(1-p,3));
@@ -58,7 +58,6 @@ d.querySelectorAll('main').forEach(function(m){m.querySelectorAll('.r').forEach(
   e.style.transitionDelay=(Math.min(sib.indexOf(e),5)*90)+'ms';
 })});
 d.addEventListener('transitionend',function(e){if(e.propertyName==='opacity'&&e.target.classList&&e.target.classList.contains('r'))e.target.style.transitionDelay='0ms'});
-if(reduce)return;
 /* active section in nav */
 var links={};d.querySelectorAll('.top nav a').forEach(function(a){links[a.getAttribute('href').slice(1)]=a});
 if('IntersectionObserver' in window){var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){Object.keys(links).forEach(function(k){links[k].classList.toggle('on',k===e.target.id)})}})},{rootMargin:'-45% 0px -50% 0px'});
@@ -132,7 +131,8 @@ f.addEventListener('submit',function(e){
 /* cinematic scroll scenes: hero slides + assembly, driven by scroll position */
 (function(){
 var d=document;
-if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+/* prefers-reduced-motion keeps the scenes but runs them as calm in-place crossfades (soft mode) */
+var soft=matchMedia('(prefers-reduced-motion: reduce)').matches;
 var cine=d.querySelector('.cine'),cine2=d.querySelector('.cine2');
 if(!cine||!cine2)return;
 var s1=d.getElementById('s1'),s2=d.getElementById('s2'),s3=d.getElementById('s3');
@@ -149,11 +149,12 @@ function seg(p,a,b){return ease(clamp((p-a)/(b-a),0,1))}
 function putScene(el,vis,bo,co,rise,pa,float){
   el.style.setProperty('--bo',bo);
   el.style.setProperty('--co',co);
+  if(soft){rise=0;float=0}
   el.style.transform='translateY('+rise+'px)';
   if(vis){
     var par=(pa-0.5)*-40*float;
     vis.style.opacity=co;
-    vis.style.transform='translateY(calc(var(--vbase, -50%) + '+(rise+par)+'px)) rotate('+(rise/90*6)+'deg)';
+    vis.style.transform=soft?'translateY(var(--vbase, -50%))':'translateY(calc(var(--vbase, -50%) + '+(rise+par)+'px)) rotate('+(rise/90*6)+'deg)';
   }
 }
 function piece(el,pb,x0,y0,r0,t0,t1,yEnd){
@@ -161,6 +162,7 @@ function piece(el,pb,x0,y0,r0,t0,t1,yEnd){
   var x=(1-t)*x0,y=(1-t)*y0+t*yEnd,r=(1-t)*r0;
   var merge=seg(pb,0.40,0.54);
   var sc=(0.9+0.1*t)*(1-merge*0.35);
+  if(soft){x=0;y=yEnd;r=0;sc=0.98+0.02*t}
   el.style.opacity=t*(1-merge);
   el.style.transform='translate(-50%,-50%) translate('+x+'px,'+y+'px) rotate('+r+'deg) scale('+sc+')';
 }
@@ -209,7 +211,7 @@ function render(now){
   if(pill)pill.style.pointerEvents=t12<0.02?'auto':'none';
   putScene(s2,v2,t23>0?(t23<1?1:0):seg(t12,0,0.25),t23>0?coOut23:coIn12,t23>0?0:(1-t12)*90,pa,1.0);
   putScene(s3,v3,seg(t23,0,0.25),coIn23,(1-t23)*90,pa,0.8);
-  var a2=pa*2.2;
+  var a2=soft?0.8:pa*2.2;
   c21.style.left=(30+22*Math.cos(a2))+'%';c21.style.top=(6+5*Math.sin(a2))+'%';
   c22.style.left=(26+20*Math.cos(a2+2.4))+'%';c22.style.top=(86+4*Math.sin(a2+2.4))+'%';
   c21.style.opacity=c22.style.opacity=v2.style.opacity;
@@ -227,13 +229,13 @@ function render(now){
   if(sceneCol!==lastChrome){lastChrome=sceneCol;if(themeMeta&&themeMeta.content!==sceneCol)themeMeta.content=sceneCol;cine.style.background=inC1?sceneCol:''}
   /* assembly scene */
   blabel.style.opacity=seg(pb,0,0.04)*(1-seg(pb,0.48,0.60));
-  blabel.style.transform='translateY('+((1-seg(pb,0,0.04))*30)+'px)';
+  blabel.style.transform=soft?'none':'translateY('+((1-seg(pb,0,0.04))*30)+'px)';
   piece(pc1,pb,-240,-220,-22,0.00,0.18,-86);
   piece(pc2,pb,250,-110,18,0.06,0.24,0);
   piece(pc3,pb,-230,240,14,0.12,0.30,86);
   var rin=seg(pb,0.52,0.80);
   result.style.opacity=rin;
-  result.style.transform='translate(-50%,-50%) scale('+(0.6+0.4*rin)+') rotate('+((1-rin)*-4)+'deg)';
+  result.style.transform=soft?'translate(-50%,-50%) scale('+(0.97+0.03*rin)+')':'translate(-50%,-50%) scale('+(0.6+0.4*rin)+') rotate('+((1-rin)*-4)+'deg)';
   /* header over scenes */
   var inv=(over&&t12>0.5&&t23<0.5)||(ry+70>g.c2t&&ry<g.c2b);
   if(over!==lastOver){top.classList.toggle('over-cine',over);lastOver=over}
