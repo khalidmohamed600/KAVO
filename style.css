@@ -575,3 +575,5 @@ html[lang=ar] .piece p{font-size:13px}
 .top .logo{padding:10px 0;display:inline-block}
 html[data-theme=light] .wabtn{background:#C9A227;color:#0E0E0D}
 html[data-theme=light] .wabtn:hover{background:#D9B53A}
+.cap{overflow-wrap:anywhere;line-height:1.8}
+.cap bdi{unicode-bidi:isolate}
