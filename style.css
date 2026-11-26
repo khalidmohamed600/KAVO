@@ -236,7 +236,7 @@ html[dir=rtl] .sendb:hover i{transform:translateX(-3px) rotate(-135deg)}
 /* loading screen: KAVO letters assemble over a filling bar */
 .loader{position:fixed;inset:0;z-index:200;background:var(--bg);display:flex;flex-direction:column;gap:22px;align-items:center;justify-content:center;transition:opacity .5s ease,visibility .5s}
 .loader.done{opacity:0;visibility:hidden}
-.lletters{display:flex;gap:.18em;font:500 clamp(34px,6vw,54px)/1 Season,serif;letter-spacing:.28em;color:var(--ink)}
+.lletters{display:flex;direction:ltr;gap:.18em;font:500 clamp(34px,6vw,54px)/1 Season,serif;letter-spacing:.28em;color:var(--ink)}
 .lletters span{opacity:0;transform:translateY(16px);animation:ltr .45s cubic-bezier(.2,.7,.2,1) forwards}
 .lletters span:nth-child(2){animation-delay:.12s}
 .lletters span:nth-child(3){animation-delay:.24s}
