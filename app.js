@@ -139,6 +139,7 @@ var s1=d.getElementById('s1'),s2=d.getElementById('s2'),s3=d.getElementById('s3'
 var v1=d.getElementById('v1'),v2=d.getElementById('v2'),v3=d.getElementById('v3');
 var c21=d.getElementById('c21'),c22=d.getElementById('c22'),c31=d.getElementById('c31');
 var dots=d.getElementById('dots2'),hint=d.getElementById('hint2'),top=d.querySelector('.top');
+var pill=d.querySelector('.pill2');
 var blabel=d.getElementById('blabel');
 var pc1=d.getElementById('pc1'),pc2=d.getElementById('pc2'),pc3=d.getElementById('pc3'),result=d.getElementById('result2');
 var dotEls=dots.querySelectorAll('i');
@@ -186,7 +187,8 @@ function render(){
   /* hero scene: scenes crossfade by opacity only; each slide carries its own
      opaque background so no per-frame background-color paint is needed */
   var t12=seg(pa,0.20,0.33),t23=seg(pa,0.56,0.68);
-  slideIO(s1,v1,pa,-1,-0.5,0.22,0.35,0.6);
+  var o1=slideIO(s1,v1,pa,-1,-0.5,0.22,0.35,0.6);
+  if(pill)pill.style.pointerEvents=o1>0.35?'auto':'none';
   slideIO(s2,v2,pa,0.25,0.37,0.58,0.70,1.0);
   slideIO(s3,v3,pa,0.61,0.73,1.2,1.4,0.8);
   var a2=pa*2.2;
