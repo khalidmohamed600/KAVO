@@ -177,11 +177,24 @@ function measure(){
 }
 var lastPa=-1,lastPb=-1,lastOver=null,lastInv=null,lastCover=null,force=true,run=true;
 var themeMeta=d.querySelector('meta[name=theme-color]'),lastChrome=null;
-function render(){
-  var y=window.pageYOffset||d.documentElement.scrollTop||0;
+/* mouse wheels move in coarse steps: ease the scene progress toward the real scroll
+   position on fine-pointer devices (touch keeps exact 1:1). Big jumps (nav clicks,
+   keyboard End/Home) snap so the page never glides through the scenes. */
+var smooth=matchMedia('(pointer:fine)').matches,sy=null,lastT=0;
+function eased(y,now){
+  if(!smooth||sy===null){sy=y;lastT=now;return y}
+  var dt=Math.min(now-lastT,64);lastT=now;
+  var diff=y-sy;
+  if(Math.abs(diff)>g.vh*1.6||Math.abs(diff)<0.4){sy=y;return y}
+  sy+=diff*(1-Math.exp(-dt/70));
+  return sy;
+}
+function render(now){
+  var ry=window.pageYOffset||d.documentElement.scrollTop||0;
+  var y=eased(ry,now||performance.now());
   var pa=clamp((y-g.c1t)/g.c1r,0,1),pb=clamp((y-g.c2t)/g.c2r,0,1);
-  var over=(y+70>g.c1t&&y<g.c1b)||(y+70>g.c2t&&y<g.c2b);
-  var cover=(y+g.vh>g.c1t&&y<g.c1b)||(y+g.vh>g.c2t&&y<g.c2b);
+  var over=(ry+70>g.c1t&&ry<g.c1b)||(ry+70>g.c2t&&ry<g.c2b);
+  var cover=(ry+g.vh>g.c1t&&ry<g.c1b)||(ry+g.vh>g.c2t&&ry<g.c2b);
   if(!force&&pa===lastPa&&pb===lastPb&&over===lastOver&&cover===lastCover)return;
   lastPa=pa;lastPb=pb;lastCover=cover;force=false;
   /* hero scenes: backgrounds crossfade with the outgoing one fully opaque
@@ -209,7 +222,7 @@ function render(){
   hint.style.opacity=pa<0.04?1:0;
   /* keep the phone status area and any sliver below the short viewport in
      sync with the scene on screen, not the page's cream base */
-  var inC1=(y+70>g.c1t&&y<g.c1b),inC2=(y+70>g.c2t&&y<g.c2b);
+  var inC1=(ry+70>g.c1t&&ry<g.c1b),inC2=(ry+70>g.c2t&&ry<g.c2b);
   var sceneCol=inC1?(pa<0.265?'#F2ECDF':(pa<0.62?'#131311':'#C9A227')):(inC2?'#131311':(d.documentElement.getAttribute('data-theme')==='dark'?'#121211':'#F7F3EA'));
   if(sceneCol!==lastChrome){lastChrome=sceneCol;if(themeMeta&&themeMeta.content!==sceneCol)themeMeta.content=sceneCol;cine.style.background=inC1?sceneCol:''}
   /* assembly scene */
@@ -222,7 +235,7 @@ function render(){
   result.style.opacity=rin;
   result.style.transform='translate(-50%,-50%) scale('+(0.6+0.4*rin)+') rotate('+((1-rin)*-4)+'deg)';
   /* header over scenes */
-  var inv=(over&&t12>0.5&&t23<0.5)||(y+70>g.c2t&&y<g.c2b);
+  var inv=(over&&t12>0.5&&t23<0.5)||(ry+70>g.c2t&&ry<g.c2b);
   if(over!==lastOver){top.classList.toggle('over-cine',over);lastOver=over}
   if(inv!==lastInv){top.classList.toggle('inv',inv);lastInv=inv}
   /* the dust canvas sits behind the opaque scene stages: stop painting it while they cover the screen */
@@ -231,7 +244,7 @@ function render(){
 function kick(){force=true;render()}
 /* a continuous frame loop, not scroll-event delivery: every composited scroll
    position gets its matching scene state in the same frame */
-function loop(){if(!run)return;render();requestAnimationFrame(loop)}
+function loop(t){if(!run)return;render(t);requestAnimationFrame(loop)}
 addEventListener('scroll',kick,{passive:true});
 addEventListener('resize',function(){measure();kick()});
 addEventListener('load',function(){measure();kick()});
