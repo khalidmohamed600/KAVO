@@ -245,3 +245,126 @@ html[dir=rtl] .sendb:hover i{transform:translateX(-3px) rotate(-135deg)}
 .lbar i{display:block;height:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;animation:fill 1.5s .2s ease forwards}
 html[dir=rtl] .lbar i{transform-origin:right}
 @media (prefers-reduced-motion: reduce){.lletters span{animation:none;opacity:1;transform:none}.lbar i{animation:none;transform:scaleX(1)}}
+
+/* ===== cinematic scroll scenes (approved Nov 26 direction) ===== */
+.cine,.cine2{position:relative;margin:0 calc(50% - 50vw);width:100vw}
+.js .cine{height:430vh}
+.js .cine2{height:320vh}
+.stage,.stage2{position:relative}
+.js .stage,.js .stage2{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.stage{background:#F2ECDF}
+.stage2{background:#131311}
+.grain{position:absolute;inset:0;pointer-events:none;opacity:.5;mix-blend-mode:multiply;z-index:3;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+.slide{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;text-align:start;padding:110px max(26px,calc(50vw - 500px)) 60px;color:#141412}
+.slide.s1{background:#F2ECDF}
+.slide.s2{background:#131311;color:#F2ECDF}
+.slide.s3{background:#C9A227;color:#141412}
+.js .slide{position:absolute;inset:0;min-height:0;background:transparent;opacity:0;will-change:opacity,transform;z-index:10}
+.eyebrow2{font-size:12px;letter-spacing:.3em;font-weight:500;display:flex;align-items:center;gap:10px;margin-bottom:16px;opacity:.85}
+.eyebrow2:before{content:"";width:26px;height:1.5px;background:currentColor}
+html[lang=ar] .eyebrow2{letter-spacing:.06em;font-size:14px}
+.bigtype{font:400 clamp(52px,9vw,124px)/0.95 Anton,"PlexAr",sans-serif;letter-spacing:.01em;text-transform:uppercase;margin:0}
+.bigtype i{font-style:normal;color:#C9A227}
+.s3 .bigtype i{color:#141412}
+html[lang=ar] .bigtype{font-family:PlexAr,Anton,sans-serif;font-weight:500;letter-spacing:0;text-transform:none;font-size:clamp(40px,7.4vw,96px);line-height:1.15}
+.sub2{margin-top:18px;max-width:330px;font-size:14.5px;line-height:1.65;opacity:.78}
+.pill2{margin-top:28px;display:inline-flex;align-items:center;gap:10px;border:1.5px solid currentColor;border-radius:999px;padding:12px 22px;font-size:12px;letter-spacing:.18em;font-weight:500;color:inherit;text-decoration:none;width:max-content;background:transparent;transition:transform .2s,background .2s,color .2s}
+.pill2:hover{transform:translateY(-2px)}
+.pill2 svg{width:13px;height:13px}
+html[dir=rtl] .pill2 svg{transform:scaleX(-1)}
+html[lang=ar] .pill2{letter-spacing:.04em;font-size:14px}
+/* floating visuals */
+.vis{position:absolute;top:50%;inset-inline-end:3%;width:min(34vw,330px);aspect-ratio:0.86;z-index:5;--vbase:-50%;will-change:transform,opacity}
+.adcard{position:absolute;inset:0;border-radius:26px;background:linear-gradient(160deg,#1b1b19,#2a2a26 60%,#1b1b19);box-shadow:0 40px 80px -20px rgba(20,20,18,.45);overflow:hidden;color:#F2ECDF}
+.adcard .orb{position:absolute;width:70%;aspect-ratio:1;border-radius:50%;left:15%;top:16%;background:radial-gradient(circle at 32% 28%,#f4d77b,#C9A227 45%,#8f6f10 78%,#3c2f06);box-shadow:0 18px 40px rgba(201,162,39,.35)}
+.adcard .shine{position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.10) 45%,transparent 60%)}
+.adcard .tag{position:absolute;inset-inline-start:18px;bottom:44px;font-size:10px;letter-spacing:.24em;opacity:.85;white-space:nowrap}
+.adcard .caprow{position:absolute;inset-inline-start:18px;inset-inline-end:18px;bottom:18px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.14em;opacity:.55}
+.numcard{position:absolute;inset:0;border-radius:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(165deg,#232320,#131311 60%,#1c1c19);color:#F2ECDF;border:1px solid rgba(201,162,39,.35);box-shadow:0 40px 90px -18px rgba(0,0,0,.6)}
+.numcard .bignum{font:400 min(6vw,84px)/1 Anton,sans-serif;color:#C9A227;direction:ltr}
+.numcard .numlbl{font-size:10px;letter-spacing:.26em;margin-top:10px;font-weight:500;opacity:.8;text-align:center;padding:0 10px}
+.numcard.silver{background:linear-gradient(165deg,#fbf8f0,#EDEAE2 55%,#cfcabf);border:0;color:#141412;box-shadow:0 40px 90px -18px rgba(20,20,18,.35)}
+.numcard.silver .bignum{color:#141412;font-size:min(6.4vw,88px)}
+.numcard .curnote{font-size:11px;letter-spacing:.28em;font-weight:500;margin-bottom:8px;opacity:.6}
+.chip2{position:absolute;border:1.5px solid rgba(242,236,223,.5);color:#F2ECDF;border-radius:999px;padding:8px 14px;font-size:10px;letter-spacing:.18em;font-weight:500;white-space:nowrap;z-index:6}
+.chip2.inkchip{border-color:rgba(20,20,18,.55);color:#141412}
+.dots2{position:absolute;inset-inline-start:max(26px,calc(50vw - 500px));bottom:34px;display:flex;gap:7px;z-index:30;color:#141412}
+.dots2 i{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.25}
+.dots2 i.on{opacity:1}
+.hint2{position:absolute;bottom:34px;inset-inline-end:max(26px,calc(50vw - 500px));z-index:30;font-size:10px;letter-spacing:.3em;opacity:.55;color:#141412}
+/* assembly scene */
+.stage2{display:flex;align-items:center;justify-content:center;color:#F2ECDF;overflow:hidden}
+.js .stage2{display:flex}
+.blabel{position:absolute;top:16%;inset-inline:0;text-align:center;font-size:12px;letter-spacing:.38em;font-weight:500;opacity:.7;z-index:5}
+html[lang=ar] .blabel{letter-spacing:.08em;font-size:15px}
+.stackwrap{position:relative;width:min(64vw,300px);height:340px;z-index:5}
+.piece{position:absolute;left:50%;top:50%;width:100%;border-radius:20px;padding:20px 22px;background:rgba(242,236,223,.06);border:1.5px solid rgba(242,236,223,.28);will-change:transform,opacity;text-align:start}
+.piece h3{font:400 30px Anton,"PlexAr",sans-serif;letter-spacing:.04em;text-transform:uppercase;margin:0;color:#F2ECDF}
+html[lang=ar] .piece h3{font-family:PlexAr,Anton,sans-serif;font-weight:500;letter-spacing:0}
+.piece p{font-size:10.5px;letter-spacing:.14em;opacity:.6;margin:6px 0 0}
+html[lang=ar] .piece p{letter-spacing:0;font-size:12.5px}
+.result2{position:absolute;left:50%;top:50%;width:108%;border-radius:24px;padding:32px 24px;text-align:center;background:linear-gradient(165deg,#f2d67c,#C9A227 55%,#a8821a);color:#141412;box-shadow:0 40px 90px -18px rgba(201,162,39,.5);will-change:transform,opacity}
+.result2 .bignum{font:400 78px/1 Anton,sans-serif;direction:ltr}
+.result2 .numlbl{font-size:10px;letter-spacing:.26em;font-weight:500;margin-top:10px;opacity:.85}
+html[lang=ar] .result2 .numlbl{letter-spacing:.02em;font-size:12px}
+/* header over scenes */
+.top.over-cine{background:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.top.inv{color:#F2ECDF}
+.top.inv .logo{color:#F2ECDF}
+.top.inv nav a{color:rgba(242,236,223,.72)}
+.top.inv nav a.on,.top.inv nav a:hover{color:#F2ECDF}
+.top.inv .lang{border-color:rgba(242,236,223,.45)}
+.top.inv .lang span{color:rgba(242,236,223,.75)}
+html[lang=en] .top.inv .lang [data-l=en],html[lang=ar] .top.inv .lang [data-l=ar]{background:#F2ECDF;color:#141412}
+.top.inv .theme{border-color:rgba(242,236,223,.45);color:rgba(242,236,223,.85)}
+/* scene mobile layout */
+@media(max-width:520px){
+  .slide{justify-content:flex-start;padding-top:15vh}
+  .vis{top:auto;bottom:4vh;--vbase:0px;width:53vw;inset-inline-end:2%}
+  #v2{width:58vw;inset-inline-end:-4%}
+  #v3{width:52vw;inset-inline-end:0}
+  .bigtype{font-size:clamp(46px,14.5vw,120px)}
+  html[lang=ar] .bigtype{font-size:clamp(36px,11vw,80px)}
+  .sub2{max-width:64vw;font-size:12.5px}
+  .pill2{margin-top:20px}
+  .numcard .bignum{font-size:min(17vw,76px)}
+  .numcard.silver .bignum{font-size:min(15vw,64px)}
+  .chip2{font-size:9px;padding:7px 11px}
+  .stackwrap{width:70vw}
+  .result2 .bignum{font-size:64px}
+}
+/* reduced motion: scenes become calm stacked sections */
+@media(prefers-reduced-motion:reduce){
+  .js .cine,.js .cine2{height:auto}
+  .js .stage,.js .stage2{position:static;height:auto;overflow:visible}
+  .js .slide{position:relative;opacity:1!important;transform:none!important;min-height:92vh;background:transparent}
+  .stage{background:#F2ECDF}
+  .slide.s1{background:#F2ECDF}.slide.s2{background:#131311}.slide.s3{background:#C9A227}
+  .js .vis{position:relative;opacity:1!important;transform:none!important;inset:auto;--vbase:0px;margin:0 max(26px,calc(50vw - 500px)) 50px;width:min(70vw,320px)}
+  .dots2,.hint2{display:none}
+  .blabel{position:static;padding-top:80px}
+  .stage2{display:block;padding-bottom:90px}
+  .stackwrap{height:auto;margin:40px auto 0;display:flex;flex-direction:column;gap:14px}
+  .piece,.result2{position:relative;left:auto;top:auto;transform:none!important;opacity:1!important;width:100%}
+}
+
+/* header legibility over light scenes (wins over dark page theme) */
+.top.over-cine{color:#141412}
+.top.over-cine .logo{color:#141412}
+.top.over-cine nav a{color:rgba(20,20,18,.65)}
+.top.over-cine nav a.on,.top.over-cine nav a:hover{color:#141412}
+.top.over-cine .lang{border-color:rgba(20,20,18,.4)}
+.top.over-cine .lang span{color:rgba(20,20,18,.7)}
+html[lang=en] .top.over-cine .lang [data-l=en],html[lang=ar] .top.over-cine .lang [data-l=ar]{background:#141412;color:#F2ECDF}
+.top.over-cine .theme{border-color:rgba(20,20,18,.4);color:rgba(20,20,18,.75)}
+/* re-declare dark-scene inversion so it wins over the light rules above */
+.top.inv{color:#F2ECDF}
+.top.inv .logo{color:#F2ECDF}
+.top.inv nav a{color:rgba(242,236,223,.72)}
+.top.inv nav a.on,.top.inv nav a:hover{color:#F2ECDF}
+.top.inv .lang{border-color:rgba(242,236,223,.45)}
+.top.inv .lang span{color:rgba(242,236,223,.75)}
+html[lang=en] .top.inv .lang [data-l=en],html[lang=ar] .top.inv .lang [data-l=ar]{background:#F2ECDF;color:#141412}
+.top.inv .theme{border-color:rgba(242,236,223,.45);color:rgba(242,236,223,.85)}
+@media(max-width:520px){.hint2{display:none}}
