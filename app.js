@@ -16,7 +16,7 @@ d.getElementById('lang').addEventListener('click',function(){setLang(root.lang==
 /* reveal */
 var els=d.querySelectorAll('.r');
 if('IntersectionObserver' in window&&!reduce){
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -14% 0px'});
   els.forEach(function(e,i){e.style.transitionDelay=(Math.min(i%4,3)*60)+'ms';io.observe(e)});
   setTimeout(function(){els.forEach(function(e){if(e.getBoundingClientRect().top<innerHeight)e.classList.add('in')})},900);
 }else els.forEach(function(e){e.classList.add('in')});
@@ -148,7 +148,7 @@ function seg(p,a,b){return ease(clamp((p-a)/(b-a),0,1))}
 function slideIO(el,vis,pa,a0,a1,b0,b1,float){
   var inn=seg(pa,a0,a1),out=1-seg(pa,b0,b1),io=inn*out;
   el.style.opacity=io;
-  el.style.transform='translateY('+((1-inn)*60-(1-out)*60)+'px)';
+  el.style.transform='translateY('+((1-inn)*90-(1-out)*90)+'px)';
   if(vis){
     var par=(pa-0.5)*-40*float;
     vis.style.opacity=io;
@@ -201,8 +201,8 @@ function render(){
   dots.style.opacity=pa<1?1:0;
   hint.style.opacity=pa<0.04?1:0;
   /* assembly scene */
-  blabel.style.opacity=seg(pb,0,0.10)*(1-seg(pb,0.70,0.86));
-  blabel.style.transform='translateY('+((1-seg(pb,0,0.10))*30)+'px)';
+  blabel.style.opacity=seg(pb,0,0.05)*(1-seg(pb,0.70,0.86));
+  blabel.style.transform='translateY('+((1-seg(pb,0,0.05))*30)+'px)';
   piece(pc1,pb,-240,-220,-22,0.03,0.28,-86);
   piece(pc2,pb,250,-110,18,0.13,0.38,0);
   piece(pc3,pb,-230,240,14,0.23,0.48,86);
