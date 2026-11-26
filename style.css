@@ -240,7 +240,7 @@ html[dir=rtl] .lbar i{transform-origin:right}
 /* ===== cinematic scroll scenes (approved Nov 26 direction) ===== */
 .cine,.cine2{position:relative;margin:0 calc(50% - 50vw);width:100vw}
 .js .cine{height:300vh}
-.js .cine2{height:230vh}
+.js .cine2{height:170vh}
 .stage,.stage2{position:relative}
 .js .stage,.js .stage2{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
 .stage{background:#F2ECDF}
