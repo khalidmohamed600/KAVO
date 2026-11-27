@@ -95,3 +95,10 @@ html.flat .lbar i{background:linear-gradient(90deg,#3b63ff,#9bb6ff 55%,#ecd089);
 /* v3 fix: form fields were 4px wider than the card on 360px phones in Arabic */
 html.flat .frow>*,html.flat .leadform>*{min-width:0}
 html.flat .fld input,html.flat .fld select,html.flat .fld textarea{width:100%;min-width:0;box-sizing:border-box}
+/* v5: scroll reveals. Hidden state only exists when JS adds .rv, and a safety timer reveals leftovers. */
+html.flat.js .rv{opacity:0;transform:translate3d(0,22px,0);transition:opacity .8s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+html.flat.js .rv.rv-in{opacity:1;transform:none}
+html.flat.js .fcard.rv-in .fnum b,html.flat.js .fresult.rv-in .bignum{animation:numin 1s .25s cubic-bezier(.2,.7,.2,1) both}
+html.flat.js .fcard.rv-in .fchips span{animation:numin .8s .45s ease both}
+@keyframes numin{from{opacity:0;transform:translate3d(0,12px,0) scale(.97)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){html.flat.js .rv{opacity:1;transform:none;transition:none}}
