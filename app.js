@@ -80,12 +80,15 @@ new MutationObserver(apply).observe(r,{attributes:true,attributeFilter:['lang']}
 (function(){var d=document;
 if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
 var cv=d.getElementById('dust');if(!cv||!cv.getContext)return;
-var cx=cv.getContext('2d'),W,H,P=[],run=true,dpr=Math.min(devicePixelRatio||1,2);
+var cx=cv.getContext('2d'),W,H,P=[],run=true,dpr=1;
 function size(){W=cv.width=innerWidth*dpr;H=cv.height=innerHeight*dpr;cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px'}
-function make(){P=[];var n=innerWidth<760?26:54;
+function make(){P=[];var n=innerWidth<760?16:40;
   for(var i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,r:(Math.random()*1.6+.5)*dpr,s:(Math.random()*.22+.06)*dpr,dr:(Math.random()-.5)*.12*dpr,o:Math.random()*.5+.15,ph:Math.random()*6.283,tw:Math.random()*.9+.3,ci:Math.random()<.75?0:1})}
+var lastT=0,cov0=0,cov1=0;
+function cover(){var c1=d.querySelector('.cine'),c2=d.querySelector('.cine2');if(!c1||!c2){cov0=cov1=0;return}var y=pageYOffset;cov0=c1.getBoundingClientRect().top+y;cov1=c2.getBoundingClientRect().bottom+y}
 function frame(n){if(!run)return;
-  if(window.__kavoDustOff){requestAnimationFrame(frame);return}
+  if(window.__kavoDustOff||n-lastT<33){requestAnimationFrame(frame);return}lastT=n;
+  var yy=pageYOffset;if(cov1>cov0&&yy>cov0-4&&yy+innerHeight<cov1+4){requestAnimationFrame(frame);return}
   var dark=d.documentElement.getAttribute('data-theme')==='dark',c=dark?['201,162,75','226,198,119']:['138,109,44','20,33,61'],mul=dark?1:.7,t=n/1000;
   cx.clearRect(0,0,W,H);
   for(var i=0;i<P.length;i++){var p=P[i];
@@ -96,8 +99,8 @@ function frame(n){if(!run)return;
     cx.beginPath();cx.arc(p.x,p.y,p.r,0,6.283);
     cx.fillStyle='rgba('+c[p.ci]+','+a.toFixed(3)+')';cx.fill()}
   requestAnimationFrame(frame)}
-size();make();
-addEventListener('resize',function(){size();make()});
+size();make();cover();addEventListener('load',cover);
+addEventListener('resize',function(){size();make();cover()});
 d.addEventListener('visibilitychange',function(){if(d.hidden)run=false;else if(!run){run=true;requestAnimationFrame(frame)}});
 requestAnimationFrame(frame);
 })();
@@ -351,3 +354,8 @@ if(d.fonts&&d.fonts.ready)d.fonts.ready.then(meas);
 if('ResizeObserver' in window){new ResizeObserver(function(){meas()}).observe(list)}
 meas();
 })();
+
+/* Cloudflare Turnstile loads only when the contact form is near the screen (keeps its iframe and challenge script off the hero) */
+(function(){var f=document.getElementById('leadform');if(!f)return;var done=false;function load(){if(done)return;done=true;var s=document.createElement('script');s.src='https://challenges.cloudflare.com/turnstile/v0/api.js';s.async=true;s.defer=true;document.head.appendChild(s)}
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es.some(function(e){return e.isIntersecting})){load();io.disconnect()}},{rootMargin:'900px 0px'});io.observe(f)}else{addEventListener('load',load)}
+f.addEventListener('focusin',load);f.addEventListener('pointerdown',load)})();
