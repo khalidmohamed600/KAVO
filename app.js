@@ -193,7 +193,7 @@ var themeMeta=d.querySelector('meta[name=theme-color]'),lastChrome=null;
 /* mouse wheels move in coarse steps: ease the scene progress toward the real scroll
    position on fine-pointer devices (touch keeps exact 1:1). Big jumps (nav clicks,
    keyboard End/Home) snap so the page never glides through the scenes. */
-var smooth=matchMedia('(pointer:fine)').matches,sy=null,lastT=0;
+var smooth=matchMedia('(pointer:fine)').matches&&!d.documentElement.classList.contains('lite'),sy=null,lastT=0;
 function eased(y,now){
   if(!smooth||sy===null){sy=y;lastT=now;return y}
   var dt=Math.min(now-lastT,64);lastT=now;
@@ -202,6 +202,7 @@ function eased(y,now){
   sy+=diff*(1-Math.exp(-dt/110));
   return sy;
 }
+var lite=d.documentElement.classList.contains('lite');
 function render(now){
   var ry=window.pageYOffset||d.documentElement.scrollTop||0;
   var y=eased(ry,now||performance.now());
@@ -215,7 +216,7 @@ function render(now){
      heading and card fade out in the first 40% of the swap and the incoming
      ones fade in only in the last 40%, with a clean text-free beat between,
      so no frame ever shows two headings or two cards at once */
-  var t12=seg(pa,0.20,0.29),t23=seg(pa,0.56,0.65);
+  var t12=lite?seg(pa,0.215,0.26):seg(pa,0.20,0.29),t23=lite?seg(pa,0.58,0.625):seg(pa,0.56,0.65);
   var coOut12=1-seg(t12,0.05,0.36),coIn12=seg(t12,0.26,0.9);
   var coOut23=1-seg(t23,0.05,0.36),coIn23=seg(t23,0.26,0.9);
   putScene(s1,v1,t12<1?1:0,coOut12,0,pa,0.6);
