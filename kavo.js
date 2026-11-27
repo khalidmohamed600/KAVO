@@ -79,7 +79,7 @@ d.querySelectorAll('main section[id]').forEach(function(s){so.observe(s)})}
 })();
 (function(){var d=document,r=d.documentElement,b=d.getElementById('theme');if(!b)return;
 var mode='auto';try{var s=localStorage.getItem('kavo-theme-v2');if(s==='light'||s==='dark')mode=s}catch(e){}
-function auto(){var h=new Date().getHours();return(h>=7&&h<19)?'light':'dark'}
+function auto(){var n=new Date(),m=n.getHours()*60+n.getMinutes();return(m>=360&&m<1050)?'light':'dark'}
 function apply(){var t=mode==='auto'?auto():mode;
   if(r.getAttribute('data-theme')!==t)r.setAttribute('data-theme',t);
   b.setAttribute('data-mode',t);
@@ -131,7 +131,7 @@ requestAnimationFrame(frame);
 var f=document.getElementById('leadform');if(!f)return;
 var stat=document.getElementById('fstat'),btn=f.querySelector('.sendb'),els=f.elements;
 var ENDPOINT='https://kavo-leads.adhmstarrrr.workers.dev';
-var T={verify:{en:'Please tick "Verify you are human" above the button, then send again.',ar:'علّم على "Verify you are human" فوق الزرار وبعدين ابعت تاني.'},sending:{en:'Sending...',ar:'بنبعت...'},ok:{en:'Got it, your brief reached us. We reply on WhatsApp shortly.',ar:'وصلنا، تفاصيلك عندنا. هنرد عليك على واتساب قريب.'},err:{en:'Could not send. Please try again, or message us directly below.',ar:'حصلت مشكلة في الإرسال. جرب تاني، أو كلمنا مباشرة من تحت.'},num:{en:'Please check your WhatsApp number: digits only, with country code.',ar:'راجع رقم الواتساب: أرقام بس، ومعاه كود الدولة.'},req:{en:'Please fill your name, brand and WhatsApp number.',ar:'من فضلك املأ الاسم والبراند ورقم الواتساب.'}};
+var T={verify:{en:'Please tick "Verify you are human" above the button, then send again.',ar:'علّم على "Verify you are human" فوق الزرار وبعدين ابعت تاني.'},sending:{en:'Sending...',ar:'بنبعت...'},ok:{en:'Got it, your brief reached us. We reply on WhatsApp shortly.',ar:'وصلنا، تفاصيلك عندنا. هنرد عليك على واتساب قريب.'},err:{en:'Could not send. Please try again in a moment.',ar:'حصلت مشكلة في الإرسال. جرب تاني بعد شوية.'},num:{en:'Please check your WhatsApp number: digits only, with country code.',ar:'راجع رقم الواتساب: أرقام بس، ومعاه كود الدولة.'},req:{en:'Please fill your name, brand and WhatsApp number.',ar:'من فضلك املأ الاسم والبراند ورقم الواتساب.'}};
 function L(){return document.documentElement.lang==='ar'?'ar':'en'}
 f.addEventListener('submit',function(e){
   e.preventDefault();
