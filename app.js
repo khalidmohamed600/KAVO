@@ -1,3 +1,6 @@
+/* touch browsers fire resize on every toolbar show/hide; only re-measure when the width really changed */
+window.__rz=function(f){var w=innerWidth,c=document.documentElement.classList.contains('lite');return function(){if(c&&innerWidth===w)return;w=innerWidth;f()}};
+function __rz(f){return window.__rz(f)}
 (function(){
 var d=document,root=d.documentElement,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 root.setAttribute('data-motion',reduce?'soft':'full');
@@ -80,6 +83,7 @@ new MutationObserver(apply).observe(r,{attributes:true,attributeFilter:['lang']}
 (function(){var d=document;
 if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
 var cv=d.getElementById('dust');if(!cv||!cv.getContext)return;
+if(d.documentElement.classList.contains('lite')||innerWidth<760){cv.style.display='none';return}
 var cx=cv.getContext('2d'),W,H,P=[],run=true,dpr=1;
 function size(){W=cv.width=innerWidth*dpr;H=cv.height=innerHeight*dpr;cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px'}
 function make(){P=[];var n=innerWidth<760?16:40;
@@ -100,7 +104,7 @@ function frame(n){if(!run)return;
     cx.fillStyle='rgba('+c[p.ci]+','+a.toFixed(3)+')';cx.fill()}
   requestAnimationFrame(frame)}
 size();make();cover();addEventListener('load',cover);
-addEventListener('resize',function(){size();make();cover()});
+addEventListener('resize',__rz(function(){size();make();cover()}));
 d.addEventListener('visibilitychange',function(){if(d.hidden)run=false;else if(!run){run=true;requestAnimationFrame(frame)}});
 requestAnimationFrame(frame);
 })();
@@ -140,7 +144,7 @@ var blabel=d.getElementById('blabel');
 var pc1=d.getElementById('pc1'),pc2=d.getElementById('pc2'),pc3=d.getElementById('pc3'),result=d.getElementById('result2');
 var dotEls=dots.querySelectorAll('i');
 var sidx=d.getElementById('sidx'),sidxEls=sidx?sidx.children:[];
-var tiltA=matchMedia('(max-width:820px)').matches?7:16,tiltP=matchMedia('(pointer:fine)').matches?5:0,px=0,py=0;
+var coarse=d.documentElement.classList.contains('lite'),tiltA=matchMedia('(max-width:820px)').matches?7:16,tiltP=matchMedia('(pointer:fine)').matches?5:0,px=0,py=0;
 if(tiltP&&!soft)addEventListener('pointermove',function(e){px=e.clientX/innerWidth-0.5;py=e.clientY/innerHeight-0.5;force=true},{passive:true});
 function clamp(v,a,b){return Math.min(b,Math.max(a,v))}
 function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
@@ -154,6 +158,7 @@ function putScene(el,vis,bo,co,rise,pa,float){
     var par=(pa-0.5)*-40*float;
     vis.style.opacity=co;
     if(soft){vis.style.transform='translateY(var(--vbase, -50%))'}
+    else if(coarse){vis.style.transform='translateY(calc(var(--vbase, -50%) + '+(rise+par)+'px)) rotate('+(rise/90*6)+'deg)'}
     else{
       /* small-element depth: perspective lives in the transform of the card itself, no big layers */
       var ty=Math.sin(pa*12.6)*tiltA+px*tiltP,tx=Math.cos(pa*12.6)*tiltA*0.45-py*tiltP*0.7;
@@ -257,7 +262,7 @@ function kick(){force=true;render()}
    position gets its matching scene state in the same frame */
 function loop(t){if(!run)return;render(t);requestAnimationFrame(loop)}
 addEventListener('scroll',kick,{passive:true});
-addEventListener('resize',function(){measure();kick()});
+addEventListener('resize',__rz(function(){measure();kick()}));
 addEventListener('load',function(){measure();kick()});
 if(d.fonts&&d.fonts.ready)d.fonts.ready.then(function(){measure();kick()});
 new MutationObserver(function(){measure();kick()}).observe(d.documentElement,{attributes:true,attributeFilter:['lang']});
@@ -297,7 +302,7 @@ function frame(){
 }
 function re(){vh=innerHeight;var t=[];items.forEach(function(it){it.e.style.translate=''});collect();lastY=-1}
 addEventListener('load',function(){setTimeout(re,200)});
-addEventListener('resize',re);
+addEventListener('resize',__rz(re));
 d.addEventListener('click',function(){setTimeout(re,700)});
 if(d.fonts&&d.fonts.ready)d.fonts.ready.then(re);
 new MutationObserver(function(){setTimeout(re,100)}).observe(root,{attributes:true,attributeFilter:['lang']});
@@ -316,7 +321,7 @@ function f(){tick=0;var p=Math.min(1,Math.max(0,((window.pageYOffset||0)-top)/h)
   if(i!==last){last=i;beats.forEach(function(b,k){b.classList.toggle('on',k===i)})}
   if(prog)prog.style.setProperty('--bp',p.toFixed(3))}
 addEventListener('scroll',function(){if(!tick){tick=1;requestAnimationFrame(f)}},{passive:true});
-addEventListener('resize',m);addEventListener('load',m);
+addEventListener('resize',__rz(m));addEventListener('load',m);
 if(d.fonts&&d.fonts.ready)d.fonts.ready.then(m);
 m();
 })();
@@ -348,7 +353,7 @@ function upd(){tick=0;var y=window.pageYOffset||0,best=0,bd=1e9;
     if(full&&ad<vh*1.2){var k=1-Math.min(ad/(vh*.62),1);rows[i].style.opacity=(0.55+0.45*k).toFixed(3);rows[i].style.scale=(0.965+0.035*k).toFixed(4)}}
   if(bidx&&best!==lastBest){lastBest=best;bn.textContent=pad(best+1);bs.textContent='/ '+pad(rows.length);var nm=rows[best].querySelector('.nm');be.textContent=nm?nm.textContent:''}}
 addEventListener('scroll',function(){if(!tick){tick=1;requestAnimationFrame(upd)}},{passive:true});
-addEventListener('resize',meas);addEventListener('load',meas);
+addEventListener('resize',__rz(meas));addEventListener('load',meas);
 d.addEventListener('click',function(){setTimeout(meas,700)});
 if(d.fonts&&d.fonts.ready)d.fonts.ready.then(meas);
 if('ResizeObserver' in window){new ResizeObserver(function(){meas()}).observe(list)}
