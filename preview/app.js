@@ -131,7 +131,7 @@ requestAnimationFrame(frame);
 var f=document.getElementById('leadform');if(!f)return;
 var stat=document.getElementById('fstat'),btn=f.querySelector('.sendb'),els=f.elements;
 var ENDPOINT='https://kavo-leads.adhmstarrrr.workers.dev';
-var T={verify:{en:'Please tick "Verify you are human" above the button, then send again.',ar:'علّم على "Verify you are human" فوق الزرار وبعدين ابعت تاني.'},sending:{en:'Sending...',ar:'بنبعت...'},ok:{en:'Got it, your brief reached us. We reply on WhatsApp shortly.',ar:'وصلنا، تفاصيلك عندنا. هنرد عليك على واتساب قريب.'},err:{en:'Could not send. Please try again, or message us directly below.',ar:'حصلت مشكلة في الإرسال. جرب تاني، أو كلمنا مباشرة من تحت.'},num:{en:'Please check your WhatsApp number: digits only, with country code.',ar:'راجع رقم الواتساب: أرقام بس، ومعاه كود الدولة.'},req:{en:'Please fill your name, brand and WhatsApp number.',ar:'من فضلك املأ الاسم والبراند ورقم الواتساب.'}};
+var T={verify:{en:'Please tick "Verify you are human" above the button, then send again.',ar:'علّم على "Verify you are human" فوق الزرار وبعدين ابعت تاني.'},sending:{en:'Sending...',ar:'بنبعت...'},ok:{en:'Got it, your brief reached us. We reply on WhatsApp shortly.',ar:'وصلنا، تفاصيلك عندنا. هنرد عليك على واتساب قريب.'},err:{en:'Could not send. Please try again in a moment.',ar:'حصلت مشكلة في الإرسال. جرب تاني بعد شوية.'},num:{en:'Please check your WhatsApp number: digits only, with country code.',ar:'راجع رقم الواتساب: أرقام بس، ومعاه كود الدولة.'},req:{en:'Please fill your name, brand and WhatsApp number.',ar:'من فضلك املأ الاسم والبراند ورقم الواتساب.'}};
 function L(){return document.documentElement.lang==='ar'?'ar':'en'}
 f.addEventListener('submit',function(e){
   e.preventDefault();
