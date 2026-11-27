@@ -62,7 +62,7 @@ if('IntersectionObserver' in window){var so=new IntersectionObserver(function(es
 d.querySelectorAll('main section[id]').forEach(function(s){so.observe(s)})}
 })();
 (function(){var d=document,r=d.documentElement,b=d.getElementById('theme');if(!b)return;
-var mode='auto';try{var s=localStorage.getItem('kavo-theme');if(s==='light'||s==='dark')mode=s}catch(e){}
+var mode='auto';try{var s=localStorage.getItem('kavo-theme-v2');if(s==='light'||s==='dark')mode=s}catch(e){}
 function auto(){var h=new Date().getHours();return(h>=7&&h<19)?'light':'dark'}
 function apply(){var t=mode==='auto'?auto():mode;
   if(r.getAttribute('data-theme')!==t)r.setAttribute('data-theme',t);
@@ -72,7 +72,7 @@ function apply(){var t=mode==='auto'?auto():mode;
 b.addEventListener('click',function(){
   /* auto -> the other look -> the first look -> back to auto */
   mode=(r.getAttribute('data-theme')==='dark')?'light':'dark';
-  try{localStorage.setItem('kavo-theme',mode)}catch(e){}
+  try{localStorage.setItem('kavo-theme-v2',mode)}catch(e){}
   apply()});
 apply();
 setInterval(function(){if(mode==='auto')apply()},30000);
@@ -374,7 +374,18 @@ meas();
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es.some(function(e){return e.isIntersecting})){load();io.disconnect()}},{rootMargin:'900px 0px'});io.observe(f)}else{addEventListener('load',load)}
 f.addEventListener('focusin',load);f.addEventListener('pointerdown',load)})();
 
-/* preview: run the soft sheen/glow animations only while their card is on screen */
-(function(){if(!('IntersectionObserver' in window))return;
-var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('live',e.isIntersecting)})},{rootMargin:'80px'});
-document.querySelectorAll('.wordmark,.fcard,.fresult,.fpiece').forEach(function(e){io.observe(e)})})();
+/* preview: soft scroll reveals (opacity/transform only, one-shot via IntersectionObserver, no layout work) */
+(function(){var d=document;
+var mm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!('IntersectionObserver' in window)||mm)return;
+/* sheen/glow animations run only while on screen */
+var io1=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('live',e.isIntersecting)})},{rootMargin:'80px'});
+d.querySelectorAll('.wordmark,.fcard,.fresult').forEach(function(e){io1.observe(e)});
+var sel='.fcard,.fresult,.fpiece,#about .lab,#about h2,#about .beat,#approach .steps li,#services .svcc,#services .lab,#services h2,#contact .lab,#contact h2';
+var els=[].slice.call(d.querySelectorAll(sel)),h=innerHeight;
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('rv-in');io.unobserve(e.target)}})},{threshold:0.06,rootMargin:'0px 0px -4% 0px'});
+els.forEach(function(e,i){if(e.getBoundingClientRect().top<h*0.92)return;e.classList.add('rv');io.observe(e)});
+/* safety: never leave anything hidden */
+setTimeout(function(){d.querySelectorAll('.rv:not(.rv-in)').forEach(function(e){if(e.getBoundingClientRect().top<innerHeight)e.classList.add('rv-in')})},5000);
+addEventListener('pagehide',function(){io.disconnect()});
+})();
