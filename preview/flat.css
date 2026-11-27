@@ -92,3 +92,6 @@ html.flat .loader{background:radial-gradient(120% 80% at 50% 38%,#12255a 0,#0a12
 html.flat .lletters{font:400 clamp(64px,18vw,132px)/1 Anton,sans-serif;letter-spacing:.1em;color:#fff7e0;text-shadow:0 0 16px rgba(255,214,120,.8),0 0 50px rgba(201,162,39,.55),0 0 100px rgba(90,130,255,.4)}
 html.flat .lbar{width:min(220px,56vw);height:3px;background:rgba(160,185,255,.16);box-shadow:0 0 14px rgba(90,130,255,.25)}
 html.flat .lbar i{background:linear-gradient(90deg,#3b63ff,#9bb6ff 55%,#ecd089);box-shadow:0 0 12px rgba(155,182,255,.9)}
+/* v3 fix: form fields were 4px wider than the card on 360px phones in Arabic */
+html.flat .frow>*,html.flat .leadform>*{min-width:0}
+html.flat .fld input,html.flat .fld select,html.flat .fld textarea{width:100%;min-width:0;box-sizing:border-box}
