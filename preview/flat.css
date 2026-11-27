@@ -102,3 +102,11 @@ html.flat.js .fcard.rv-in .fnum b,html.flat.js .fresult.rv-in .bignum{animation:
 html.flat.js .fcard.rv-in .fchips span{animation:numin .8s .45s ease both}
 @keyframes numin{from{opacity:0;transform:translate3d(0,12px,0) scale(.97)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){html.flat.js .rv{opacity:1;transform:none;transition:none}}
+
+/* v8: Arabic needs taller lines (tashkeel/ascenders collided at 1.02-1.2) */
+html[lang=ar].flat .fhead{line-height:1.5}
+html[lang=ar].flat .fh,html[lang=ar].flat .fpiece h3,html[lang=ar].flat .brand .nm,html[lang=ar].flat main h2{line-height:1.45}
+html[lang=ar].flat .fnum b,html[lang=ar].flat .fresult .bignum{line-height:1.15}
+html[lang=ar].flat p,html[lang=ar].flat .desc,html[lang=ar].flat .cap,html[lang=ar].flat .tg,html[lang=ar].flat li,html[lang=ar].flat .fnum span,html[lang=ar].flat .fnum small,html[lang=ar].flat .fresult .numlbl{line-height:1.75}
+html[lang=ar].flat main b,html[lang=ar].flat .cur{line-height:1.5}
+html[lang=ar].flat.js #about .beat b{line-height:1.5}
