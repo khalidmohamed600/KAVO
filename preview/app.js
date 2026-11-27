@@ -12,7 +12,7 @@ function setLang(l){
   root.lang=l;root.dir=l==='ar'?'rtl':'ltr';
   d.querySelectorAll('[data-en]').forEach(function(e){var v=e.getAttribute('data-'+l);if(v!=null)e.innerHTML=v});
   d.querySelectorAll('[data-en-ph]').forEach(function(e){var v=e.getAttribute('data-'+l+'-ph');if(v!=null)e.placeholder=v});
-  d.title=l==='ar'?'KAVO | خالد عبد العزيز - تسويق بالأداء':'KAVO | Khalid Abdelzizz - Performance Marketing';
+  d.title=l==='ar'?'KAVO | خالد عبد العزيز - إعلانات بتبيع':'KAVO | Khalid Abdelzizz - Performance Marketing';
   try{localStorage.setItem('kavo-lang',l)}catch(e){}
 }
 if(root.lang==='ar')setLang('ar');
@@ -83,7 +83,7 @@ function auto(){var n=new Date(),m=n.getHours()*60+n.getMinutes();return(m>=360&
 function apply(){var t=mode==='auto'?auto():mode;
   if(r.getAttribute('data-theme')!==t)r.setAttribute('data-theme',t);
   b.setAttribute('data-mode',t);
-  b.setAttribute('aria-label',r.lang==='ar'?'المظهر: '+(t==='light'?'فاتح':'داكن'):'Theme: '+t);
+  b.setAttribute('aria-label',r.lang==='ar'?'الثيم: '+(t==='light'?'نهاري':'ليلي'):'Theme: '+t);
   var c=d.querySelector('meta[name=theme-color]');if(c)c.content=t==='dark'?'#0a0e1a':'#F7F3EA'}
 b.addEventListener('click',function(){
   /* auto -> the other look -> the first look -> back to auto */
@@ -131,7 +131,7 @@ requestAnimationFrame(frame);
 var f=document.getElementById('leadform');if(!f)return;
 var stat=document.getElementById('fstat'),btn=f.querySelector('.sendb'),els=f.elements;
 var ENDPOINT='https://kavo-leads.adhmstarrrr.workers.dev';
-var T={verify:{en:'Please tick "Verify you are human" above the button, then send again.',ar:'علّم على "Verify you are human" فوق الزرار وبعدين ابعت تاني.'},sending:{en:'Sending...',ar:'بنبعت...'},ok:{en:'Got it, your brief reached us. We reply on WhatsApp shortly.',ar:'وصلنا، تفاصيلك عندنا. هنرد عليك على واتساب قريب.'},err:{en:'Could not send. Please try again in a moment.',ar:'حصلت مشكلة في الإرسال. جرب تاني بعد شوية.'},num:{en:'Please check your WhatsApp number: digits only, with country code.',ar:'راجع رقم الواتساب: أرقام بس، ومعاه كود الدولة.'},req:{en:'Please fill your name, brand and WhatsApp number.',ar:'من فضلك املأ الاسم والبراند ورقم الواتساب.'}};
+var T={verify:{en:'Please tick "Verify you are human" above the button, then send again.',ar:'علّم على "Verify you are human" فوق الزرار وبعدين ابعت تاني.'},sending:{en:'Sending...',ar:'بنبعت...'},ok:{en:'Got it, your brief reached us. We reply on WhatsApp shortly.',ar:'وصلنا، كلامك وصلنا. هنرد عليك على واتساب في أقرب وقت.'},err:{en:'Could not send. Please try again in a moment.',ar:'حصلت مشكلة وانت بتبعت. جرّب تاني كمان شوية.'},num:{en:'Please check your WhatsApp number: digits only, with country code.',ar:'راجع رقم الواتساب: أرقام بس ومعاها كود الدولة.'},req:{en:'Please fill your name, brand and WhatsApp number.',ar:'اكتب اسمك واسم البراند ورقم الواتساب.'}};
 function L(){return document.documentElement.lang==='ar'?'ar':'en'}
 f.addEventListener('submit',function(e){
   e.preventDefault();
