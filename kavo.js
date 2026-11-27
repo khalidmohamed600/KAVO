@@ -78,7 +78,8 @@ if('IntersectionObserver' in window){var so=new IntersectionObserver(function(es
 d.querySelectorAll('main section[id]').forEach(function(s){so.observe(s)})}
 })();
 (function(){var d=document,r=d.documentElement,b=d.getElementById('theme');if(!b)return;
-var mode='auto';try{var s=localStorage.getItem('kavo-theme-v2');if(s==='light'||s==='dark')mode=s}catch(e){}
+var mode='auto';function nb(){var n=new Date(),m=n.getHours()*60+n.getMinutes(),x=new Date(n);x.setSeconds(0,0);var tg=(m>=360&&m<1050)?1050:(m<360?360:1800);x.setHours(0,0,0,0);x.setMinutes(tg);return x.getTime()}
+try{var s=JSON.parse(localStorage.getItem('kavo-theme-v3')||'null');if(s&&(s.m==='light'||s.m==='dark')&&Date.now()<s.u)mode=s.m;localStorage.removeItem('kavo-theme-v2')}catch(e){}
 function auto(){var n=new Date(),m=n.getHours()*60+n.getMinutes();return(m>=360&&m<1050)?'light':'dark'}
 function apply(){var t=mode==='auto'?auto():mode;
   if(r.getAttribute('data-theme')!==t)r.setAttribute('data-theme',t);
@@ -88,10 +89,10 @@ function apply(){var t=mode==='auto'?auto():mode;
 b.addEventListener('click',function(){
   /* auto -> the other look -> the first look -> back to auto */
   mode=(r.getAttribute('data-theme')==='dark')?'light':'dark';
-  try{localStorage.setItem('kavo-theme-v2',mode)}catch(e){}
+  try{localStorage.setItem('kavo-theme-v3',JSON.stringify({m:mode,u:nb()}))}catch(e){}
   apply()});
 apply();
-setInterval(function(){if(mode==='auto')apply()},30000);
+setInterval(function(){try{var s=JSON.parse(localStorage.getItem('kavo-theme-v3')||'null');if(mode!=='auto'&&(!s||Date.now()>=s.u))mode='auto'}catch(e){}apply()},30000);
 d.addEventListener('visibilitychange',function(){if(!d.hidden&&mode==='auto')apply()});
 new MutationObserver(apply).observe(r,{attributes:true,attributeFilter:['lang']});
 })();
