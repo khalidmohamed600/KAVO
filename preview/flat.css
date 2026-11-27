@@ -110,3 +110,14 @@ html[lang=ar].flat .fnum b,html[lang=ar].flat .fresult .bignum{line-height:1.15}
 html[lang=ar].flat p,html[lang=ar].flat .desc,html[lang=ar].flat .cap,html[lang=ar].flat .tg,html[lang=ar].flat li,html[lang=ar].flat .fnum span,html[lang=ar].flat .fnum small,html[lang=ar].flat .fresult .numlbl{line-height:1.75}
 html[lang=ar].flat main b,html[lang=ar].flat .cur{line-height:1.5}
 html[lang=ar].flat.js #about .beat b{line-height:1.5}
+
+/* v9: floating "start your brief" pill. fixed, opacity/transform only */
+.cta{position:fixed;left:0;right:0;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;justify-content:center;pointer-events:none;opacity:0;transform:translateY(18px);transition:opacity .45s ease,transform .45s cubic-bezier(.2,.7,.2,1);visibility:hidden}
+.cta.show{opacity:1;transform:none;visibility:visible}
+.cta a{pointer-events:none;position:relative;display:inline-flex;align-items:center;gap:10px;padding:13px 20px 13px 22px;min-height:46px;border-radius:999px;border:1px solid var(--gold);background:var(--bg2);color:var(--ink);font:500 15px/1.4 Inter,PlexAr,system-ui,sans-serif;text-decoration:none;box-shadow:0 8px 26px -10px rgb(0 0 0/.55),0 0 22px -6px var(--gold);-webkit-tap-highlight-color:transparent}
+.cta.show a{pointer-events:auto}
+html[data-theme=dark] .cta a{background:#0b1230}
+html[lang=ar] .cta a{font-family:PlexAr,Inter,system-ui,sans-serif;padding:13px 22px 13px 20px}
+.cta svg{width:18px;height:18px;fill:none;stroke:var(--gold);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;animation:ctab 2.2s ease-in-out infinite}
+@keyframes ctab{0%,100%{transform:translateY(-1px)}50%{transform:translateY(3px)}}
+@media(prefers-reduced-motion:reduce){.cta{transition:opacity .01s;transform:none}.cta svg{animation:none}}
