@@ -407,3 +407,14 @@ els.forEach(function(e,i){if(e.getBoundingClientRect().top<h*0.92)return;e.class
 setTimeout(function(){d.querySelectorAll('.rv:not(.rv-in)').forEach(function(e){if(e.getBoundingClientRect().top<innerHeight)e.classList.add('rv-in')})},5000);
 addEventListener('pagehide',function(){io.disconnect()});
 })();
+
+/* floating CTA: appears early, hides when the form is on screen */
+(function(){var d=document,c=d.getElementById('cta'),f=d.getElementById('leadform');if(!c||!f)return;
+var a=c.querySelector('a'),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,formOn=false,ready=false,t=0;
+function upd(){var on=ready&&!formOn&&!d.getElementById('loader');c.classList.toggle('show',on);c.setAttribute('aria-hidden',on?'false':'true');a.tabIndex=on?0:-1}
+if('IntersectionObserver' in window){new IntersectionObserver(function(es){formOn=es[0].isIntersecting;upd()},{threshold:0,rootMargin:'0px 0px -12% 0px'}).observe(f)}
+function go(){ready=true;upd()}
+setTimeout(go,2200);addEventListener('scroll',function(){if(!ready&&pageYOffset>60)go()},{passive:true});
+setInterval(function(){if(ready)upd()},800);
+a.addEventListener('click',function(e){e.preventDefault();f.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'})});
+})();
