@@ -131,7 +131,7 @@ requestAnimationFrame(frame);
 var f=document.getElementById('leadform');if(!f)return;
 var stat=document.getElementById('fstat'),btn=f.querySelector('.sendb'),els=f.elements;
 var ENDPOINT='https://kavo-leads.adhmstarrrr.workers.dev';
-var T={verify:{en:'Please tick "Verify you are human" above the button, then send again.',ar:'علّم على "Verify you are human" فوق الزرار وبعدين ابعت تاني.'},sending:{en:'Sending...',ar:'بنبعت...'},ok:{en:'Got it, your brief reached us. We reply on WhatsApp shortly.',ar:'وصلنا، تفاصيلك عندنا. هنرد عليك على واتساب قريب.'},err:{en:'Could not send. Please try again, or message us directly below.',ar:'حصلت مشكلة في الإرسال. جرب تاني، أو كلمنا مباشرة من تحت.'},req:{en:'Please fill your name, brand and WhatsApp number.',ar:'من فضلك املأ الاسم والبراند ورقم الواتساب.'}};
+var T={verify:{en:'Please tick "Verify you are human" above the button, then send again.',ar:'علّم على "Verify you are human" فوق الزرار وبعدين ابعت تاني.'},sending:{en:'Sending...',ar:'بنبعت...'},ok:{en:'Got it, your brief reached us. We reply on WhatsApp shortly.',ar:'وصلنا، تفاصيلك عندنا. هنرد عليك على واتساب قريب.'},err:{en:'Could not send. Please try again, or message us directly below.',ar:'حصلت مشكلة في الإرسال. جرب تاني، أو كلمنا مباشرة من تحت.'},num:{en:'Please check your WhatsApp number: digits only, with country code.',ar:'راجع رقم الواتساب: أرقام بس، ومعاه كود الدولة.'},req:{en:'Please fill your name, brand and WhatsApp number.',ar:'من فضلك املأ الاسم والبراند ورقم الواتساب.'}};
 function L(){return document.documentElement.lang==='ar'?'ar':'en'}
 f.addEventListener('submit',function(e){
   e.preventDefault();
@@ -142,8 +142,10 @@ f.addEventListener('submit',function(e){
   btn.disabled=true;stat.className='fstat';stat.textContent=T.sending[L()];
   function done(){btn.disabled=false;try{if(window.turnstile)window.turnstile.reset()}catch(x){}}
   fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
-  .then(function(r){if(!r.ok)throw 0;stat.className='fstat ok';stat.textContent=T.ok[L()];f.reset();done()})
-  .catch(function(){stat.className='fstat err';stat.textContent=token?T.err[L()]:T.verify[L()];done()});
+  .then(function(r){if(!r.ok){var er=new Error('http');er.code=r.status;throw er}stat.className='fstat ok';stat.textContent=T.ok[L()];f.reset();done()})
+  .catch(function(e){var c=e&&e.code,m;
+    if(c===400)m=T.num[L()];else if(c===403)m=T.verify[L()];else m=(c||!token)&&c!==undefined?T.err[L()]:(token?T.err[L()]:T.verify[L()]);
+    stat.className='fstat err';stat.textContent=m+' ['+(c||'net')+']';done()});
 });
 })();
 /* cinematic scroll scenes: hero slides + assembly, driven by scroll position */
