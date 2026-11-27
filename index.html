@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="style.css?v=43">
 <link rel="stylesheet" href="flat.css?v=53">
-<script>document.documentElement.classList.add('js','flat');(function(){var q=location.search,l=/[?&]lite=1/.test(q),f=/[?&]full=1/.test(q),t=false;try{t=matchMedia('(pointer:coarse)').matches}catch(e){}if(l||(t&&!f))document.documentElement.classList.add('lite')})();(function(){var m=null;try{m=localStorage.getItem('kavo-theme-v2')}catch(e){}var D=new Date(),H=D.getHours()*60+D.getMinutes(),t=(m==='light'||m==='dark')?m:((H>=360&&H<1050)?'light':'dark');document.documentElement.setAttribute('data-theme',t);var c=document.querySelector('meta[name=theme-color]');if(c)c.content=t==='dark'?'#0a0e1a':'#F7F3EA'})();try{if(localStorage.getItem('kavo-lang')==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl'}}catch(e){}</script>
+<script>document.documentElement.classList.add('js','flat');(function(){var q=location.search,l=/[?&]lite=1/.test(q),f=/[?&]full=1/.test(q),t=false;try{t=matchMedia('(pointer:coarse)').matches}catch(e){}if(l||(t&&!f))document.documentElement.classList.add('lite')})();(function(){var m=null;try{var o=JSON.parse(localStorage.getItem('kavo-theme-v3')||'null');if(o&&(o.m==='light'||o.m==='dark')&&Date.now()<o.u)m=o.m}catch(e){}var D=new Date(),H=D.getHours()*60+D.getMinutes(),t=(m==='light'||m==='dark')?m:((H>=360&&H<1050)?'light':'dark');document.documentElement.setAttribute('data-theme',t);var c=document.querySelector('meta[name=theme-color]');if(c)c.content=t==='dark'?'#0a0e1a':'#F7F3EA'})();try{if(localStorage.getItem('kavo-lang')==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl'}}catch(e){}</script>
 </head>
 <body>
 <div class="sky" id="sky" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i><i class="e"></i></div>
@@ -323,7 +323,7 @@
 <footer class="foot"><span>KAVO</span><span data-en="© 2026 KAVO. All rights reserved." data-ar="© 2026 KAVO. كل الحقوق محفوظة.">© 2026 KAVO. All rights reserved.</span><span data-en="Campaign money amounts are shared in person." data-ar="مبالغ الحملات بنوريها في لقاء.">Campaign money amounts are shared in person.</span></footer>
 <script>(function(){var t=document.documentElement.getAttribute("data-theme"),e=document.querySelector(".cf-turnstile");if(e)e.setAttribute("data-theme",t==="dark"?"dark":(t==="light"?"light":"auto"))})()</script>
 
-<script src="kavo.js?v=53" defer></script>
+<script src="kavo.js?v=54" defer></script>
 <div class="cta" id="cta" aria-hidden="true"><a href="#leadform" tabindex="-1"><span data-en="Start your brief" data-ar="ابعت تفاصيل براندك">Start your brief</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v13M6 13l6 6 6-6"/></svg></a></div>
 </body>
 </html>
