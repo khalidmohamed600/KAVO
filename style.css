@@ -592,3 +592,5 @@ html.lite *,html.lite *::before,html.lite *::after{-webkit-backdrop-filter:none;
 html.lite.js .cine{height:270vh}
 html.lite.js .cine2{height:130vh}
 html.lite.js #about{height:290vh}
+html.lite.js #brands{padding-bottom:28px}
+html.lite.js #approach{padding-top:0;padding-bottom:0}
