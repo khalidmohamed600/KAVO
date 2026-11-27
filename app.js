@@ -206,7 +206,7 @@ var lite=d.documentElement.classList.contains('lite');
 function render(now){
   var ry=window.pageYOffset||d.documentElement.scrollTop||0;
   var y=eased(ry,now||performance.now());
-  var pa=clamp((y-g.c1t)/g.c1r,0,1),pb=clamp((y-(g.c2t-g.vh*0.6))/(g.c2r+g.vh*0.6),0,1);
+  var pa=clamp((y-g.c1t)/g.c1r,0,1),pb=lite?clamp((y-(g.c2t-g.vh*0.97))/(g.c2r+g.vh*0.97),0,1):clamp((y-(g.c2t-g.vh*0.6))/(g.c2r+g.vh*0.6),0,1);
   var over=(ry+70>g.c1t&&ry<g.c1b)||(ry+70>g.c2t&&ry<g.c2b);
   var cover=(ry+g.vh>g.c1t&&ry<g.c1b)||(ry+g.vh>g.c2t&&ry<g.c2b);
   if(!force&&pa===lastPa&&pb===lastPb&&over===lastOver&&cover===lastCover)return;
