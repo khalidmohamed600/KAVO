@@ -68,7 +68,7 @@ function apply(){var t=mode==='auto'?auto():mode;
   if(r.getAttribute('data-theme')!==t)r.setAttribute('data-theme',t);
   b.setAttribute('data-mode',t);
   b.setAttribute('aria-label',r.lang==='ar'?'المظهر: '+(t==='light'?'فاتح':'داكن'):'Theme: '+t);
-  var c=d.querySelector('meta[name=theme-color]');if(c)c.content=t==='dark'?'#121211':'#F7F3EA'}
+  var c=d.querySelector('meta[name=theme-color]');if(c)c.content=t==='dark'?'#0a0e1a':'#F7F3EA'}
 b.addEventListener('click',function(){
   /* auto -> the other look -> the first look -> back to auto */
   mode=(r.getAttribute('data-theme')==='dark')?'light':'dark';
@@ -242,7 +242,7 @@ function render(now){
   /* keep the phone status area and any sliver below the short viewport in
      sync with the scene on screen, not the page's cream base */
   var inC1=(ry+70>g.c1t&&ry<g.c1b),inC2=(ry+70>g.c2t&&ry<g.c2b);
-  var sceneCol=inC1?(pa<0.245?'#F2ECDF':(pa<0.60?'#131311':'#0E0E0D')):(inC2?'#131311':(d.documentElement.getAttribute('data-theme')==='dark'?'#121211':'#F7F3EA'));
+  var sceneCol=inC1?(pa<0.245?'#F2ECDF':(pa<0.60?'#131311':'#0E0E0D')):(inC2?'#131311':(d.documentElement.getAttribute('data-theme')==='dark'?'#0a0e1a':'#F7F3EA'));
   if(sceneCol!==lastChrome){lastChrome=sceneCol;if(themeMeta&&themeMeta.content!==sceneCol)themeMeta.content=sceneCol;cine.style.background=inC1?sceneCol:''}
   /* assembly scene */
   blabel.style.opacity=seg(pb,0,0.04)*(1-seg(pb,0.42,0.52));
@@ -373,3 +373,8 @@ meas();
 (function(){var f=document.getElementById('leadform');if(!f)return;var done=false;function load(){if(done)return;done=true;var s=document.createElement('script');s.src='https://challenges.cloudflare.com/turnstile/v0/api.js';s.async=true;s.defer=true;document.head.appendChild(s)}
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es.some(function(e){return e.isIntersecting})){load();io.disconnect()}},{rootMargin:'900px 0px'});io.observe(f)}else{addEventListener('load',load)}
 f.addEventListener('focusin',load);f.addEventListener('pointerdown',load)})();
+
+/* preview: run the soft sheen/glow animations only while their card is on screen */
+(function(){if(!('IntersectionObserver' in window))return;
+var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('live',e.isIntersecting)})},{rootMargin:'80px'});
+document.querySelectorAll('.wordmark,.fcard,.fresult,.fpiece').forEach(function(e){io.observe(e)})})();
