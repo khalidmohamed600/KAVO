@@ -121,3 +121,6 @@ html[lang=ar] .cta a{font-family:PlexAr,Inter,system-ui,sans-serif;padding:13px 
 .cta svg{width:18px;height:18px;fill:none;stroke:var(--gold);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;animation:ctab 2.2s ease-in-out infinite}
 @keyframes ctab{0%,100%{transform:translateY(-1px)}50%{transform:translateY(3px)}}
 @media(prefers-reduced-motion:reduce){.cta{transition:opacity .01s;transform:none}.cta svg{animation:none}}
+/* v10: lighter glass pill. semi-transparent solid, no backdrop-filter (cheap on iPhone) */
+.cta a{background:rgb(255 253 248/.55);border-color:rgb(138 109 44/.55);color:var(--ink);box-shadow:0 4px 16px -8px rgb(0 0 0/.35);text-shadow:0 0 6px rgb(255 253 248/.9),0 0 2px rgb(255 253 248/.9)}
+html[data-theme=dark] .cta a{background:rgb(11 18 48/.5);border-color:rgb(201 162 75/.5);box-shadow:0 4px 16px -8px rgb(0 0 0/.6);text-shadow:0 0 6px rgb(5 8 24/.95),0 0 2px rgb(5 8 24/.95)}
