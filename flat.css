@@ -1,0 +1,126 @@
+/* KAVO flat preview: one normal-flow page, no pinned scenes, no overlapping sections, no 3D */
+html.flat .bg,html.flat #dust,html.flat .glow{display:none}
+html.flat .fwrap{width:100%}
+html.flat .fhero{padding:132px 0 56px;position:relative}
+html.flat .wordmark{font:400 clamp(84px,24vw,230px)/.9 Anton,"PlexAr",sans-serif;letter-spacing:.06em;margin:0 0 26px;max-width:none;color:var(--ink);text-transform:uppercase;text-shadow:0 0 18px rgba(201,162,39,.55),0 0 48px rgba(201,162,39,.35)}
+html[data-theme=dark].flat .wordmark,html[data-theme=dark] .wordmark{color:#fff7e0;text-shadow:0 0 14px rgba(255,214,120,.75),0 0 42px rgba(201,162,39,.55),0 0 90px rgba(201,162,39,.3)}
+html.flat .fhead{font-size:clamp(34px,6vw,72px);margin:6px 0 0}
+html[lang=ar].flat .fhead{font-size:clamp(30px,5.4vw,60px)}
+html.flat .fhero .sub2{max-width:520px}
+html.flat .fnums{padding:20px 0 10px}
+html.flat .fgrid{display:grid;grid-template-columns:1fr;gap:18px}
+@media(min-width:760px){html.flat .fgrid{grid-template-columns:1fr 1fr;gap:22px}}
+html.flat .fcard{background:var(--bg2);border:1px solid var(--line);border-radius:24px;padding:30px 28px 26px;box-shadow:none}
+html.flat .fh{font:400 clamp(28px,4vw,44px)/1.05 Anton,"PlexAr",sans-serif;text-transform:uppercase;margin:6px 0 12px}
+html[lang=ar].flat .fh{font-family:PlexAr,Anton,sans-serif;font-weight:500;text-transform:none;line-height:1.2}
+html.flat .fh i{font-style:normal;color:var(--gold)}
+html.flat .fcard .sub2{max-width:none;margin-top:0}
+html.flat .fnum{margin-top:22px;display:flex;flex-direction:column;gap:6px}
+html.flat .fnum b{font:400 clamp(54px,9vw,84px)/1 Anton,sans-serif;color:var(--gold);direction:ltr;text-align:start}
+html.flat .fnum small{font-size:11px;letter-spacing:.28em;opacity:.65}
+html.flat .fnum span{font-size:11px;letter-spacing:.24em;opacity:.75}
+html.flat .fchips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+html.flat .fchips span{border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:11px;letter-spacing:.16em}
+/* about: normal reading flow, every beat visible */
+html.flat.js #about{height:auto;padding-top:72px}
+html.flat.js #about .bstick{position:static;height:auto;display:block;padding:0}
+html.flat.js #about .beats{height:auto;margin-top:20px;position:static}
+html.flat.js #about .beat,html.flat.js #about .beat.on{position:static;opacity:1;transform:none;pointer-events:auto;transition:none;margin:0 0 26px;display:block}
+html.flat.js #about .pts{display:grid;gap:22px;margin-top:22px}
+html.flat.js #about .pts .beat{margin:0}
+html.flat.js .bprog{display:none}
+@media(min-width:900px){html.flat.js #about .bstick{display:grid;grid-template-columns:5fr 6fr;column-gap:56px;align-content:start}html.flat.js #about .bstick>.lab,html.flat.js #about .bstick>h2{grid-column:1}html.flat.js #about .beats{grid-column:2;grid-row:1/span 2;margin-top:0}}
+/* how it happens: plain cards */
+html.flat .fproof{margin:70px 0 10px}
+html.flat .fsteps{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:760px){html.flat .fsteps{grid-template-columns:repeat(3,1fr)}}
+html.flat .fpiece{background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:22px}
+html.flat .fpiece h3{font:400 28px Anton,"PlexAr",sans-serif;text-transform:uppercase;margin:0 0 8px}
+html[lang=ar].flat .fpiece h3{font-family:PlexAr,Anton,sans-serif;font-weight:500;text-transform:none}
+html.flat .fpiece p{font-size:11px;letter-spacing:.18em;opacity:.7}
+html.flat .fresult{margin-top:14px;border:1px solid var(--gold);border-radius:22px;padding:28px 24px;text-align:center;background:var(--bg2)}
+html.flat .fresult .bignum{font:400 clamp(64px,12vw,110px)/1 Anton,sans-serif;color:var(--gold);direction:ltr}
+html.flat .fresult .numlbl{font-size:11px;letter-spacing:.24em;margin-top:8px}
+html.flat .fresult .rcap{font-size:13px;opacity:.7;margin-top:8px}
+/* nothing sticky or pinned except the header */
+html.flat .bhead{position:static}
+html.flat .brand,html.flat .svcc,html.flat .steps li,html.flat main .lab,html.flat main h2{translate:none!important}
+html.flat.js #about .pts{grid-template-columns:1fr!important}
+/* v2: lighter, more premium type for headings and numbers. KAVO wordmark keeps the bold glowing Anton. */
+html.flat{--lux:"Cormorant Garamond",Season,Georgia,serif}
+html.flat .fhead,html.flat .fh,html.flat .fnum b,html.flat .fpiece h3,html.flat .fresult .bignum{font-family:var(--lux);font-weight:300;text-transform:none;letter-spacing:.01em}
+html.flat .fhead{font-size:clamp(40px,6.4vw,82px);line-height:1.02}
+html.flat .fh{font-size:clamp(30px,4vw,46px);line-height:1.08}
+html.flat .fnum b{font-size:clamp(64px,11vw,104px);line-height:.95;font-weight:300}
+html.flat .fpiece h3{font-size:30px;font-weight:400}
+html.flat .fresult .bignum{font-size:clamp(76px,14vw,128px);font-weight:300}
+html.flat .bigtype i,html.flat .fh i{color:var(--gold2)}
+html[lang=ar].flat .fhead,html[lang=ar].flat .fh,html[lang=ar].flat .fpiece h3{font-family:PlexAr,sans-serif;font-weight:400;letter-spacing:0}
+html[lang=ar].flat .fnum b,html[lang=ar].flat .fresult .bignum{font-family:var(--lux)}
+html.flat .eyebrow2,html.flat .lab,html.flat .fnum span,html.flat .fnum small,html.flat .fchips span,html.flat .fpiece p,html.flat .fresult .numlbl{font-weight:400}
+html.flat .fcard,html.flat .fpiece,html.flat .fresult{border-color:color-mix(in srgb,var(--line) 70%,transparent)}
+html.flat .fcard{padding:34px 30px 30px}
+html.flat .fcard .sub2,html.flat .fhero .sub2{opacity:.72;font-weight:400}
+html.flat .pill2{font-weight:400;letter-spacing:.2em}
+html[lang=ar].flat .eyebrow2,html[lang=ar].flat .fchips span,html[lang=ar].flat .fnum span,html[lang=ar].flat .fnum small,html[lang=ar].flat .fpiece p,html[lang=ar].flat .fresult .numlbl{letter-spacing:.02em}
+html.flat .fnum b,html.flat .fresult .bignum,html.flat .fhead,html.flat .fh{font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
+/* v3: VIP look. Deep blue blending into black in the dark theme; soft glow + sheen; branded loader. Animations are opacity/transform only. */
+html[data-theme=dark].flat{--bg:#080b14;--bg2:#0d1325;--line:#1c2644;--mute:#9aa4bf;--ink:#eef1fa;--gold:#d3ad55;--gold2:#ecd089;--b1:rgb(60 100 220/.14)}
+html[data-theme=dark].flat body{background:linear-gradient(180deg,#0c1738 0,#0a1230 360px,#080b14 1400px,#07080c 100%) no-repeat,#07080c}
+html[data-theme=dark].flat .fcard,html[data-theme=dark].flat .fpiece,html[data-theme=dark].flat .fresult{background:linear-gradient(160deg,rgba(24,38,82,.55),rgba(10,14,28,.7));border-color:rgba(120,150,255,.16)}
+html[data-theme=dark].flat .fresult{border-color:rgba(211,173,85,.45)}
+html[data-theme=dark].flat .fnum b,html[data-theme=dark].flat .fresult .bignum{text-shadow:0 0 22px rgba(236,208,137,.35)}
+html[data-theme=light].flat .fnum b,html[data-theme=light].flat .fresult .bignum{text-shadow:0 0 18px rgba(176,143,69,.25)}
+html.flat .wordmark{position:relative;display:inline-block;text-shadow:none!important}
+html.flat .wordmark::before{content:attr(data-t);position:absolute;inset:0;z-index:-1;color:transparent;text-shadow:0 0 14px rgba(255,214,120,.8),0 0 44px rgba(201,162,39,.55),0 0 90px rgba(120,150,255,.35)}
+html.flat .wordmark::after{content:attr(data-t);position:absolute;inset:0;z-index:-1;color:transparent;text-shadow:0 0 30px rgba(255,236,180,.9),0 0 80px rgba(201,162,39,.6);opacity:0}
+html.flat .wordmark{z-index:0;isolation:isolate;color:#fff7e0}
+html[data-theme=light].flat .wordmark{color:var(--ink)}
+html[data-theme=light].flat .wordmark::before{text-shadow:0 0 16px rgba(201,162,39,.55),0 0 46px rgba(201,162,39,.3)}
+html.flat .fcard,html.flat .fresult,html.flat .fpiece{position:relative;overflow:hidden}
+html.flat .fcard::after,html.flat .fresult::after{content:"";position:absolute;top:0;bottom:0;left:0;width:55%;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,255,255,.07),transparent);transform:translate3d(-130%,0,0);opacity:0}
+html[data-theme=light].flat .fcard::after,html[data-theme=light].flat .fresult::after{background:linear-gradient(100deg,transparent,rgba(201,162,39,.12),transparent)}
+@media(prefers-reduced-motion:no-preference){
+ html.flat .wordmark.live::after{animation:wmglow 4.5s ease-in-out infinite}
+ html.flat .fcard.live::after,html.flat .fresult.live::after{animation:sheen 7s ease-in-out 1.2s infinite}
+ html.flat .fcard:nth-child(2).live::after{animation-delay:3.4s}
+}
+@keyframes wmglow{0%,100%{opacity:0}50%{opacity:.85}}
+@keyframes sheen{0%{transform:translate3d(-130%,0,0);opacity:0}12%{opacity:1}45%{transform:translate3d(260%,0,0);opacity:1}46%,100%{transform:translate3d(260%,0,0);opacity:0}}
+/* loader: dark blue-to-black stage, glowing KAVO, glowing bar */
+html.flat .loader{background:radial-gradient(120% 80% at 50% 38%,#12255a 0,#0a1230 45%,#05060a 100%);gap:30px}
+html.flat .lletters{font:400 clamp(64px,18vw,132px)/1 Anton,sans-serif;letter-spacing:.1em;color:#fff7e0;text-shadow:0 0 16px rgba(255,214,120,.8),0 0 50px rgba(201,162,39,.55),0 0 100px rgba(90,130,255,.4)}
+html.flat .lbar{width:min(220px,56vw);height:3px;background:rgba(160,185,255,.16);box-shadow:0 0 14px rgba(90,130,255,.25)}
+html.flat .lbar i{background:linear-gradient(90deg,#3b63ff,#9bb6ff 55%,#ecd089);box-shadow:0 0 12px rgba(155,182,255,.9)}
+/* v3 fix: form fields were 4px wider than the card on 360px phones in Arabic */
+html.flat .frow>*,html.flat .leadform>*{min-width:0}
+html.flat .fld input,html.flat .fld select,html.flat .fld textarea{width:100%;min-width:0;box-sizing:border-box}
+/* v5: scroll reveals. Hidden state only exists when JS adds .rv, and a safety timer reveals leftovers. */
+html.flat.js .rv{opacity:0;transform:translate3d(0,22px,0);transition:opacity .8s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+html.flat.js .rv.rv-in{opacity:1;transform:none}
+html.flat.js .fcard.rv-in .fnum b,html.flat.js .fresult.rv-in .bignum{animation:numin 1s .25s cubic-bezier(.2,.7,.2,1) both}
+html.flat.js .fcard.rv-in .fchips span{animation:numin .8s .45s ease both}
+@keyframes numin{from{opacity:0;transform:translate3d(0,12px,0) scale(.97)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){html.flat.js .rv{opacity:1;transform:none;transition:none}}
+
+/* v8: Arabic needs taller lines (tashkeel/ascenders collided at 1.02-1.2) */
+html[lang=ar].flat .fhead{line-height:1.5}
+html[lang=ar].flat .fh,html[lang=ar].flat .fpiece h3,html[lang=ar].flat .brand .nm,html[lang=ar].flat main h2{line-height:1.45}
+html[lang=ar].flat .fnum b,html[lang=ar].flat .fresult .bignum{line-height:1.15}
+html[lang=ar].flat p,html[lang=ar].flat .desc,html[lang=ar].flat .cap,html[lang=ar].flat .tg,html[lang=ar].flat li,html[lang=ar].flat .fnum span,html[lang=ar].flat .fnum small,html[lang=ar].flat .fresult .numlbl{line-height:1.75}
+html[lang=ar].flat main b,html[lang=ar].flat .cur{line-height:1.5}
+html[lang=ar].flat.js #about .beat b{line-height:1.5}
+
+/* v9: floating "start your brief" pill. fixed, opacity/transform only */
+.cta{position:fixed;left:0;right:0;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;justify-content:center;pointer-events:none;opacity:0;transform:translateY(18px);transition:opacity .45s ease,transform .45s cubic-bezier(.2,.7,.2,1);visibility:hidden}
+.cta.show{opacity:1;transform:none;visibility:visible}
+.cta a{pointer-events:none;position:relative;display:inline-flex;align-items:center;gap:10px;padding:13px 20px 13px 22px;min-height:46px;border-radius:999px;border:1px solid var(--gold);background:var(--bg2);color:var(--ink);font:500 15px/1.4 Inter,PlexAr,system-ui,sans-serif;text-decoration:none;box-shadow:0 8px 26px -10px rgb(0 0 0/.55),0 0 22px -6px var(--gold);-webkit-tap-highlight-color:transparent}
+.cta.show a{pointer-events:auto}
+html[data-theme=dark] .cta a{background:#0b1230}
+html[lang=ar] .cta a{font-family:PlexAr,Inter,system-ui,sans-serif;padding:13px 22px 13px 20px}
+.cta svg{width:18px;height:18px;fill:none;stroke:var(--gold);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;animation:ctab 2.2s ease-in-out infinite}
+@keyframes ctab{0%,100%{transform:translateY(-1px)}50%{transform:translateY(3px)}}
+@media(prefers-reduced-motion:reduce){.cta{transition:opacity .01s;transform:none}.cta svg{animation:none}}
+/* v10: lighter glass pill. semi-transparent solid, no backdrop-filter (cheap on iPhone) */
+.cta a{background:rgb(255 253 248/.55);border-color:rgb(138 109 44/.55);color:var(--ink);box-shadow:0 4px 16px -8px rgb(0 0 0/.35);text-shadow:0 0 6px rgb(255 253 248/.9),0 0 2px rgb(255 253 248/.9)}
+html[data-theme=dark] .cta a{background:rgb(11 18 48/.5);border-color:rgb(201 162 75/.5);box-shadow:0 4px 16px -8px rgb(0 0 0/.6);text-shadow:0 0 6px rgb(5 8 24/.95),0 0 2px rgb(5 8 24/.95)}
