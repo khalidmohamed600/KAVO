@@ -589,3 +589,6 @@ html.lite .adcard,html.lite .numcard,html.lite .numcard.silver{box-shadow:0 12px
 html.lite .adcard .orb{box-shadow:none}
 html.lite .vis,html.lite .piece,html.lite .result2{filter:none;backdrop-filter:none;-webkit-backdrop-filter:none;mix-blend-mode:normal}
 html.lite *,html.lite *::before,html.lite *::after{-webkit-backdrop-filter:none;backdrop-filter:none}
+html.lite.js .cine{height:270vh}
+html.lite.js .cine2{height:130vh}
+html.lite.js #about{height:290vh}
