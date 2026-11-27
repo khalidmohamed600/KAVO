@@ -64,3 +64,31 @@ html.flat .fcard .sub2,html.flat .fhero .sub2{opacity:.72;font-weight:400}
 html.flat .pill2{font-weight:400;letter-spacing:.2em}
 html[lang=ar].flat .eyebrow2,html[lang=ar].flat .fchips span,html[lang=ar].flat .fnum span,html[lang=ar].flat .fnum small,html[lang=ar].flat .fpiece p,html[lang=ar].flat .fresult .numlbl{letter-spacing:.02em}
 html.flat .fnum b,html.flat .fresult .bignum,html.flat .fhead,html.flat .fh{font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
+/* v3: VIP look. Deep blue blending into black in the dark theme; soft glow + sheen; branded loader. Animations are opacity/transform only. */
+html[data-theme=dark].flat{--bg:#080b14;--bg2:#0d1325;--line:#1c2644;--mute:#9aa4bf;--ink:#eef1fa;--gold:#d3ad55;--gold2:#ecd089;--b1:rgb(60 100 220/.14)}
+html[data-theme=dark].flat body{background:linear-gradient(180deg,#0c1738 0,#0a1230 360px,#080b14 1400px,#07080c 100%) no-repeat,#07080c}
+html[data-theme=dark].flat .fcard,html[data-theme=dark].flat .fpiece,html[data-theme=dark].flat .fresult{background:linear-gradient(160deg,rgba(24,38,82,.55),rgba(10,14,28,.7));border-color:rgba(120,150,255,.16)}
+html[data-theme=dark].flat .fresult{border-color:rgba(211,173,85,.45)}
+html[data-theme=dark].flat .fnum b,html[data-theme=dark].flat .fresult .bignum{text-shadow:0 0 22px rgba(236,208,137,.35)}
+html[data-theme=light].flat .fnum b,html[data-theme=light].flat .fresult .bignum{text-shadow:0 0 18px rgba(176,143,69,.25)}
+html.flat .wordmark{position:relative;display:inline-block;text-shadow:none!important}
+html.flat .wordmark::before{content:attr(data-t);position:absolute;inset:0;z-index:-1;color:transparent;text-shadow:0 0 14px rgba(255,214,120,.8),0 0 44px rgba(201,162,39,.55),0 0 90px rgba(120,150,255,.35)}
+html.flat .wordmark::after{content:attr(data-t);position:absolute;inset:0;z-index:-1;color:transparent;text-shadow:0 0 30px rgba(255,236,180,.9),0 0 80px rgba(201,162,39,.6);opacity:0}
+html.flat .wordmark{z-index:0;isolation:isolate;color:#fff7e0}
+html[data-theme=light].flat .wordmark{color:var(--ink)}
+html[data-theme=light].flat .wordmark::before{text-shadow:0 0 16px rgba(201,162,39,.55),0 0 46px rgba(201,162,39,.3)}
+html.flat .fcard,html.flat .fresult,html.flat .fpiece{position:relative;overflow:hidden}
+html.flat .fcard::after,html.flat .fresult::after{content:"";position:absolute;top:0;bottom:0;left:0;width:55%;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,255,255,.07),transparent);transform:translate3d(-130%,0,0);opacity:0}
+html[data-theme=light].flat .fcard::after,html[data-theme=light].flat .fresult::after{background:linear-gradient(100deg,transparent,rgba(201,162,39,.12),transparent)}
+@media(prefers-reduced-motion:no-preference){
+ html.flat .wordmark.live::after{animation:wmglow 4.5s ease-in-out infinite}
+ html.flat .fcard.live::after,html.flat .fresult.live::after{animation:sheen 7s ease-in-out 1.2s infinite}
+ html.flat .fcard:nth-child(2).live::after{animation-delay:3.4s}
+}
+@keyframes wmglow{0%,100%{opacity:0}50%{opacity:.85}}
+@keyframes sheen{0%{transform:translate3d(-130%,0,0);opacity:0}12%{opacity:1}45%{transform:translate3d(260%,0,0);opacity:1}46%,100%{transform:translate3d(260%,0,0);opacity:0}}
+/* loader: dark blue-to-black stage, glowing KAVO, glowing bar */
+html.flat .loader{background:radial-gradient(120% 80% at 50% 38%,#12255a 0,#0a1230 45%,#05060a 100%);gap:30px}
+html.flat .lletters{font:400 clamp(64px,18vw,132px)/1 Anton,sans-serif;letter-spacing:.1em;color:#fff7e0;text-shadow:0 0 16px rgba(255,214,120,.8),0 0 50px rgba(201,162,39,.55),0 0 100px rgba(90,130,255,.4)}
+html.flat .lbar{width:min(220px,56vw);height:3px;background:rgba(160,185,255,.16);box-shadow:0 0 14px rgba(90,130,255,.25)}
+html.flat .lbar i{background:linear-gradient(90deg,#3b63ff,#9bb6ff 55%,#ecd089);box-shadow:0 0 12px rgba(155,182,255,.9)}
