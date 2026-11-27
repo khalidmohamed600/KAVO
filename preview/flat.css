@@ -1,0 +1,48 @@
+/* KAVO flat preview: one normal-flow page, no pinned scenes, no overlapping sections, no 3D */
+html.flat .bg,html.flat #dust,html.flat .glow{display:none}
+html.flat .fwrap{width:100%}
+html.flat .fhero{padding:132px 0 56px;position:relative}
+html.flat .wordmark{font:400 clamp(84px,24vw,230px)/.9 Anton,"PlexAr",sans-serif;letter-spacing:.06em;margin:0 0 26px;max-width:none;color:var(--ink);text-transform:uppercase;text-shadow:0 0 18px rgba(201,162,39,.55),0 0 48px rgba(201,162,39,.35)}
+html[data-theme=dark].flat .wordmark,html[data-theme=dark] .wordmark{color:#fff7e0;text-shadow:0 0 14px rgba(255,214,120,.75),0 0 42px rgba(201,162,39,.55),0 0 90px rgba(201,162,39,.3)}
+html.flat .fhead{font-size:clamp(34px,6vw,72px);margin:6px 0 0}
+html[lang=ar].flat .fhead{font-size:clamp(30px,5.4vw,60px)}
+html.flat .fhero .sub2{max-width:520px}
+html.flat .fnums{padding:20px 0 10px}
+html.flat .fgrid{display:grid;grid-template-columns:1fr;gap:18px}
+@media(min-width:760px){html.flat .fgrid{grid-template-columns:1fr 1fr;gap:22px}}
+html.flat .fcard{background:var(--bg2);border:1px solid var(--line);border-radius:24px;padding:30px 28px 26px;box-shadow:none}
+html.flat .fh{font:400 clamp(28px,4vw,44px)/1.05 Anton,"PlexAr",sans-serif;text-transform:uppercase;margin:6px 0 12px}
+html[lang=ar].flat .fh{font-family:PlexAr,Anton,sans-serif;font-weight:500;text-transform:none;line-height:1.2}
+html.flat .fh i{font-style:normal;color:var(--gold)}
+html.flat .fcard .sub2{max-width:none;margin-top:0}
+html.flat .fnum{margin-top:22px;display:flex;flex-direction:column;gap:6px}
+html.flat .fnum b{font:400 clamp(54px,9vw,84px)/1 Anton,sans-serif;color:var(--gold);direction:ltr;text-align:start}
+html.flat .fnum small{font-size:11px;letter-spacing:.28em;opacity:.65}
+html.flat .fnum span{font-size:11px;letter-spacing:.24em;opacity:.75}
+html.flat .fchips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+html.flat .fchips span{border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:11px;letter-spacing:.16em}
+/* about: normal reading flow, every beat visible */
+html.flat.js #about{height:auto;padding-top:72px}
+html.flat.js #about .bstick{position:static;height:auto;display:block;padding:0}
+html.flat.js #about .beats{height:auto;margin-top:20px;position:static}
+html.flat.js #about .beat,html.flat.js #about .beat.on{position:static;opacity:1;transform:none;pointer-events:auto;transition:none;margin:0 0 26px;display:block}
+html.flat.js #about .pts{display:grid;gap:22px;margin-top:22px}
+html.flat.js #about .pts .beat{margin:0}
+html.flat.js .bprog{display:none}
+@media(min-width:900px){html.flat.js #about .bstick{display:grid;grid-template-columns:5fr 6fr;column-gap:56px;align-content:start}html.flat.js #about .bstick>.lab,html.flat.js #about .bstick>h2{grid-column:1}html.flat.js #about .beats{grid-column:2;grid-row:1/span 2;margin-top:0}}
+/* how it happens: plain cards */
+html.flat .fproof{margin:70px 0 10px}
+html.flat .fsteps{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:760px){html.flat .fsteps{grid-template-columns:repeat(3,1fr)}}
+html.flat .fpiece{background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:22px}
+html.flat .fpiece h3{font:400 28px Anton,"PlexAr",sans-serif;text-transform:uppercase;margin:0 0 8px}
+html[lang=ar].flat .fpiece h3{font-family:PlexAr,Anton,sans-serif;font-weight:500;text-transform:none}
+html.flat .fpiece p{font-size:11px;letter-spacing:.18em;opacity:.7}
+html.flat .fresult{margin-top:14px;border:1px solid var(--gold);border-radius:22px;padding:28px 24px;text-align:center;background:var(--bg2)}
+html.flat .fresult .bignum{font:400 clamp(64px,12vw,110px)/1 Anton,sans-serif;color:var(--gold);direction:ltr}
+html.flat .fresult .numlbl{font-size:11px;letter-spacing:.24em;margin-top:8px}
+html.flat .fresult .rcap{font-size:13px;opacity:.7;margin-top:8px}
+/* nothing sticky or pinned except the header */
+html.flat .bhead{position:static}
+html.flat .brand,html.flat .svcc,html.flat .steps li,html.flat main .lab,html.flat main h2{translate:none!important}
+html.flat.js #about .pts{grid-template-columns:1fr!important}
