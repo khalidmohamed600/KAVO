@@ -24,11 +24,11 @@
 <link rel="preload" href="fonts/GT-America-Standard-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="style.css?v=43">
-<link rel="stylesheet" href="flat.css?v=51">
-<script>document.documentElement.classList.add('js','flat');(function(){var q=location.search,l=/[?&]lite=1/.test(q),f=/[?&]full=1/.test(q),t=false;try{t=matchMedia('(pointer:coarse)').matches}catch(e){}if(l||(t&&!f))document.documentElement.classList.add('lite')})();(function(){var m=null;try{m=localStorage.getItem('kavo-theme-v2')}catch(e){}var H=new Date().getHours(),t=(m==='light'||m==='dark')?m:((H>=7&&H<19)?'light':'dark');document.documentElement.setAttribute('data-theme',t);var c=document.querySelector('meta[name=theme-color]');if(c)c.content=t==='dark'?'#0a0e1a':'#F7F3EA'})();try{if(localStorage.getItem('kavo-lang')==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl'}}catch(e){}</script>
+<link rel="stylesheet" href="flat.css?v=52">
+<script>document.documentElement.classList.add('js','flat');(function(){var q=location.search,l=/[?&]lite=1/.test(q),f=/[?&]full=1/.test(q),t=false;try{t=matchMedia('(pointer:coarse)').matches}catch(e){}if(l||(t&&!f))document.documentElement.classList.add('lite')})();(function(){var m=null;try{m=localStorage.getItem('kavo-theme-v2')}catch(e){}var D=new Date(),H=D.getHours()*60+D.getMinutes(),t=(m==='light'||m==='dark')?m:((H>=360&&H<1050)?'light':'dark');document.documentElement.setAttribute('data-theme',t);var c=document.querySelector('meta[name=theme-color]');if(c)c.content=t==='dark'?'#0a0e1a':'#F7F3EA'})();try{if(localStorage.getItem('kavo-lang')==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl'}}catch(e){}</script>
 </head>
 <body>
-<div class="sky" id="sky" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i></div>
+<div class="sky" id="sky" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i><i class="e"></i></div>
 
 <a class="skip" href="#main" data-en="Skip to content" data-ar="تخطي للمحتوى">Skip to content</a>
 
@@ -294,10 +294,6 @@
   <p class="lab r" data-en="Contact" data-ar="تواصل">Contact</p>
   <h2 class="r" data-en="Have a brand to grow?" data-ar="عندك براند عايز تكبّره؟">Have a brand to grow?</h2>
   <p class="lead r" data-en="Fill the form and your brief lands in our chat instantly. We reply on WhatsApp." data-ar="املأ الفورم وتفاصيلك توصلنا في شاتنا على طول، وهنرد عليك على واتساب.">Fill the form and your brief lands in our chat instantly. We reply on WhatsApp.</p>
-  <div class="wabtns r">
-    <a class="btn wabtn" href="https://wa.me/201022517124" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.3 2.6 2.6 5 5.5 6l1.2-1.4-2-1-.8.7c-.8-.4-1.5-1.1-1.9-1.9l.7-.8-1-2L9 8.5Z"/></svg><span><span data-en="WhatsApp Khalid" data-ar="واتساب خالد">WhatsApp Khalid</span><b dir="ltr">01022517124</b></span></a>
-    <a class="btn wabtn" href="https://wa.me/201120058157" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.3 2.6 2.6 5 5.5 6l1.2-1.4-2-1-.8.7c-.8-.4-1.5-1.1-1.9-1.9l.7-.8-1-2L9 8.5Z"/></svg><span><span data-en="WhatsApp Abdelaziz" data-ar="واتساب عبد العزيز">WhatsApp Abdelaziz</span><b dir="ltr">01120058157</b></span></a>
-  </div>
   <form class="leadform r" id="leadform" method="POST" action="https://kavo-leads.adhmstarrrr.workers.dev/">
     <div class="frow">
       <label class="fld"><span data-en="Your name" data-ar="اسمك">Your name</span><input name="name" type="text" autocomplete="name" required maxlength="80"></label>
@@ -327,7 +323,7 @@
 <footer class="foot"><span>KAVO</span><span data-en="Campaign money amounts are shared in person." data-ar="مبالغ الحملات بنعرضها في لقاء شخصي.">Campaign money amounts are shared in person.</span></footer>
 <script>(function(){var t=document.documentElement.getAttribute("data-theme"),e=document.querySelector(".cf-turnstile");if(e)e.setAttribute("data-theme",t==="dark"?"dark":(t==="light"?"light":"auto"))})()</script>
 
-<script src="kavo.js?v=51" defer></script>
+<script src="kavo.js?v=52" defer></script>
 <div class="cta" id="cta" aria-hidden="true"><a href="#leadform" tabindex="-1"><span data-en="Start your brief" data-ar="ابعت تفاصيل براندك">Start your brief</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v13M6 13l6 6 6-6"/></svg></a></div>
 </body>
 </html>
